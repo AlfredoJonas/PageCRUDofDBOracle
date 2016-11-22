@@ -10,7 +10,7 @@
 - [ ] Terminar de definir las busquedas y formularios necesarios.
 - [ ] Es importante hacer para cada doctor una agenda diaria, semanal, mensual.
 - [ ] Hay que calcular los ingresos/gastos en un periodo.
-- [ ] El resto está pro discutirse.
+- [ ] El resto está por discutirse.
 
 ### Formularios
 
