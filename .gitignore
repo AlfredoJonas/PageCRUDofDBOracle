@@ -105,3 +105,8 @@ fabric.properties
 /fuel/app/logs/*/*/*
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
+
+# from Laravel
+/vendor
+/node_modules
+.env
