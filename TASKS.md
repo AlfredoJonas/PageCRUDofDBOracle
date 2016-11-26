@@ -1,4 +1,4 @@
-# :fire: Cosas por hacer del proyecto de PHP :fire:
+# :fire: Cosas por hacer del sistema :fire:
 
 ## :rocket: URGENTE :rocket:
 
