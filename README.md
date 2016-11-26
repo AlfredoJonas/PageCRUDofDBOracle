@@ -1,6 +1,6 @@
-## PROYECTO DE BASE DE DATOS I
+# PROYECTO DE BASE DE DATOS I
 
-# Desarrollado con:
+## Desarrollado con:
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img width="150"src="https://laravel.com/laravel.png"></a></p>
 
