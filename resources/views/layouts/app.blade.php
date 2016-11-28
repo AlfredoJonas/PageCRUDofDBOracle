@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Páginas para el proyecto de base de datos 1">
+    <meta name="author" content='Jonas Gonzalez, Jesús Reyes, Edwin Vargas, Yosswan Vecino'>
+    <meta name="description" content="Proyecto para Bases de Datos I. 2016-1. UNET">
     <meta name="_token" content="{!! csrf_token() !!}"/>
     <link rel="icon" href="../../favicon.ico">
 
