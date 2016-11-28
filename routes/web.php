@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/integrantes', function () {
+    return view('integrantes/integrantes');
+});
