@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<?php include('../head.php'); ?>
+		<?php include('head.php'); ?>
 	</head>
 	<body>
-		<?php include('../header.php'); ?>
+		<?php include('header.php'); ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-5">
@@ -55,6 +55,6 @@
 					</div>
 				</div>
 			</div>
-		<?php include('../footer.php'); ?>
+		<?php include('footer.php'); ?>
 </body>
 </html>
