@@ -4,7 +4,9 @@
     <?php include('head.php')  ?>
   </head>  
   <body>
-    <?php include('header.php'); ?>
-    <?php include('footer.php'); ?>
+  	<div class="container-fluid">
+	    <?php include('header.php'); ?>
+	    <?php include('footer.php'); ?>
+  	</div>
   </body>
 </html>

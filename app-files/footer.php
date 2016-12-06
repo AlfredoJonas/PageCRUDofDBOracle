@@ -1,5 +1,5 @@
 <?php echo '
-	<footer>
+	<footer class="container">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row title-integrantes">
