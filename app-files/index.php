@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <?php echo head.php; ?>
+    <?php include('head.php')  ?>
   </head>  
   <body>
-    <?php echo header.php; ?>
-    <?php echo footer.php; ?>
+    <?php include('header.php'); ?>
+    <?php include('footer.php'); ?>
   </body>
 </html>
