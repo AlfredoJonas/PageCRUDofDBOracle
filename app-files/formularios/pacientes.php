@@ -5,8 +5,9 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-		<?php include('header.php'); ?>
-		<?php include('footer.php'); ?>
+			<?php include('header.php'); ?>
+				
+			<?php include('footer.php'); ?>
 		</div>
 	</body>
 </html>
