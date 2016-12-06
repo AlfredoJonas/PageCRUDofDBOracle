@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ESPECIALIZACION MED EMP MEDICO FK" id="1E170CDE-3DBF-4150-DF1D-A72C52224316" directorySegmentName="seg_0">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>640EAD98-6EF5-4862-73FF-6F4EECB3CDF7</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EC7EEE75-8452-597E-42C4-E1D65FBCBDEA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D6A5CC1A-65D8-DCC7-C7B0-2EB8B6237265</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

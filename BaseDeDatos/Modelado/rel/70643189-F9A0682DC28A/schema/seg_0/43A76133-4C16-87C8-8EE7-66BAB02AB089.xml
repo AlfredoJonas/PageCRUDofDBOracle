@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="BD12016USER24" id="43A76133-4C16-87C8-8EE7-66BAB02AB089" directorySegmentName="seg_0">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:10 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO BD</ownerDesignName>
+</SchemaObject>

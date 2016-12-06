@@ -1,0 +1,181 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="2FB1B895-3BAD-4121-4F9E-0CC6970FD891" directorySegmentName="seg_0" name="TRATAMIENTO_IMPLEMENTO">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>TRATAMIENTO_IMPLEMENTO</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<pkName>TRATAMIENTO_IMPLEMENTO_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Columna</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dato</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Primaria</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Ajena</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Única</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>No Nulo</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Clave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CITA_TRATAMIENTO_TRATAMIENTO" id="D264B826-6F62-1C61-50BB-9E80A2C35151">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>TRATAMIENTO_IMPLEMENTO</sourceObjSchema>
+<sourceObjName>TRATAMIENTO</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>737296A3-2E2D-3A8B-AD47-E079C0E2634A</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="16E11D83-29C8-238D-AD72-FDA898AEBE15" referredColumn="737296A3-2E2D-3A8B-AD47-E079C0E2634A"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="IMPLEMENTO_ID" id="38ACF371-675D-C8EA-2EF3-FAB348ED3B89">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>TRATAMIENTO_IMPLEMENTO</sourceObjSchema>
+<sourceObjName>IMPLEMENTO</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>6D2A6E56-F0DC-B566-74A0-D18E8B5C8D0F</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27546560-053C-54B5-86E0-937C81E30669" referredColumn="6D2A6E56-F0DC-B566-74A0-D18E8B5C8D0F"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CANTIDAD" id="F0AE77EB-2652-EC1A-A66D-0EBABAB3B9EB">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>TRATAMIENTO_IMPLEMENTO</sourceObjSchema>
+<sourceObjName>CANTIDAD</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="COSTO" id="62931D87-1751-6A5D-C8BB-8D3BBC121EF2">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>TRATAMIENTO_IMPLEMENTO</sourceObjSchema>
+<sourceObjName>COSTO</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CITA_TRATAMIENTO_CITA" id="865F7D1B-74A2-034B-D3D8-6E3A81667337">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>TRATAMIENTO_IMPLEMENTO</sourceObjSchema>
+<sourceObjName>CITA</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>49278824-7C9C-537F-ECFB-8EE565EE4ECF</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="16E11D83-29C8-238D-AD72-FDA898AEBE15" referredColumn="49278824-7C9C-537F-ECFB-8EE565EE4ECF"/>
+</associations>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="BB9C4956-95B7-51AE-65B6-B79D5C71F4C0" name="TRATAMIENTO_IMPLEMENTO_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>TRATAMIENTO_IMPLEMENTO_PK</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="38ACF371-675D-C8EA-2EF3-FAB348ED3B89"/>
+<colUsage columnID="865F7D1B-74A2-034B-D3D8-6E3A81667337"/>
+<colUsage columnID="D264B826-6F62-1C61-50BB-9E80A2C35151"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="D6E3A9F2-3888-D58B-99C3-EBABF2074A28" name="TRATAMIENTO_IMPLEMENTO_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>TRATAMIENTO_IMPLEMENTO_PK</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<indexState>Unique Plain Index</indexState>
+<indexColumnUsage>
+<colUsage columnID="D264B826-6F62-1C61-50BB-9E80A2C35151"/>
+<colUsage columnID="38ACF371-675D-C8EA-2EF3-FAB348ED3B89"/>
+<colUsage columnID="865F7D1B-74A2-034B-D3D8-6E3A81667337"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="86C6320F-2DF8-55C3-FD43-D409AAEAC1C1" name="TRATAMIENTO_IMPLEMENTO_IMPLEMENTO_FK">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="38ACF371-675D-C8EA-2EF3-FAB348ED3B89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="DF393CA3-E4ED-6340-E9A6-16F8AC8C03C0" name="TRATAMIENTO_IMPLEMENTO_CITA_TRATAMIENTO_FK">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="865F7D1B-74A2-034B-D3D8-6E3A81667337"/>
+<colUsage columnID="D264B826-6F62-1C61-50BB-9E80A2C35151"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="B7FB347C-6F65-1DD9-3410-CCC3C1572146" directorySegmentName="seg_0" name="TRATAMIENTO IMPLEMENTO">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>2FB1B895-3BAD-4121-4F9E-0CC6970FD891</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<pkName>TRATAMIENTO IMPLEMENTO PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Atributo</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dato</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Primaria</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Ajena</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Única</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>No Nulo</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Clave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="CITA TRATAMIENTO TRATAMIENTO" id="E279C2A9-B959-711E-2E70-58E76C2E54CB">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>0C13E30E-673D-2B6D-6F75-A4F4C44EA622</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<referedAttribute>C416C7AB-5323-AA0B-76E0-CDEAC43BC0ED</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="IMPLEMENTO ID" id="AC918AD1-BD80-1BB6-3A68-498F8CE5DD24">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>500A099B-017C-1B79-DE14-360636ED59EC</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<referedAttribute>BEC4581A-D62E-C00F-593A-C3B8EDE6C426</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="CANTIDAD" id="950C80C8-D08A-EC15-9C21-60ACA6DFA9D0">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>F0AE77EB-2652-EC1A-A66D-0EBABAB3B9EB</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="COSTO" id="51FEB72F-1C37-83D0-DF26-56DDB117C29A">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>62931D87-1751-6A5D-C8BB-8D3BBC121EF2</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="CITA TRATAMIENTO CITA" id="099731BE-836F-DE94-CAA0-AEA35FA99FA9">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>0C13E30E-673D-2B6D-6F75-A4F4C44EA622</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<referedAttribute>E5C4E785-08A9-2860-1341-1580C92BE55E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="6B4AB7DB-5A1B-F8DB-1F17-03972624373F" name="TRATAMIENTO IMPLEMENTO PK">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>BB9C4956-95B7-51AE-65B6-B79D5C71F4C0</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AC918AD1-BD80-1BB6-3A68-498F8CE5DD24</attributeRef>
+<attributeRef>099731BE-836F-DE94-CAA0-AEA35FA99FA9</attributeRef>
+<attributeRef>E279C2A9-B959-711E-2E70-58E76C2E54CB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

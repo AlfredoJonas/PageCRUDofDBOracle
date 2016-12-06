@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PACIENTE HIS MED PACIENTE FK" id="97F1CF12-460F-1183-AEA4-229BD9FAD1AD" directorySegmentName="seg_0">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>3602EFCF-8C22-DECE-64FE-14A9BEF00895</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>35206E7D-92BA-0737-2C90-310B8473807E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3D63819A-D723-BC27-924A-965FB35270A7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

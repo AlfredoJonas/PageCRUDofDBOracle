@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="8F92D591-66FB-4209-EB6A-550692387451" directorySegmentName="seg_0" name="RADIOGRAFIA">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>RADIOGRAFIA</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<pkName>RADIOGRAFIA_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Columna</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dato</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Primaria</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Ajena</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Única</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>No Nulo</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Clave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="ID" id="92A27B7F-7D0D-3BEF-CC81-BE6AFA0C1F01">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>RADIOGRAFIA</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="URL_IMAGEN" id="B6E20467-D311-7457-F52E-78C69DE3B5D5">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>RADIOGRAFIA</sourceObjSchema>
+<sourceObjName>URL_IMAGEN</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CITA_ID" id="C8772D66-71B8-7BCD-FDB6-21405D192DAE">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>RADIOGRAFIA</sourceObjSchema>
+<sourceObjName>CITA</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>F7B53C52-4E1D-85C5-71E6-A403B0C51E36</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C6C67B67-661E-8339-585E-7365D667DB31" referredColumn="F7B53C52-4E1D-85C5-71E6-A403B0C51E36"/>
+</associations>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="DB93B748-62D5-206E-2A48-6DFB57CF37B6" name="RADIOGRAFIA_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>RADIOGRAFIA_PK</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="92A27B7F-7D0D-3BEF-CC81-BE6AFA0C1F01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="F74D1846-DF10-B37D-272A-B2EEDACCAF86" name="RADIOGRAFIA_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>RADIOGRAFIA_PK</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<indexState>Unique Plain Index</indexState>
+<indexColumnUsage>
+<colUsage columnID="92A27B7F-7D0D-3BEF-CC81-BE6AFA0C1F01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="C107391E-D722-BAFB-415E-DEE609EC92E7" name="RADIOGRAFIA_CITA_FK">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="C8772D66-71B8-7BCD-FDB6-21405D192DAE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

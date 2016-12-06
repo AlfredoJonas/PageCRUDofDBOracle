@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CITA TRATAMIENTO CITA FK" id="EA416AB7-8C4C-7804-1903-F1DB3BC0C9D9" directorySegmentName="seg_0">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>F2614B41-1EFE-269F-6E5D-39D4F3E36990</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BAE470C8-A08E-6417-1780-6407DE8B3EA7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>05B4EE0C-ABE1-5E2E-2C70-C24E68F89C6E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

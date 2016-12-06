@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="FDC99DF5-C9C8-189D-17DF-168C94C1639C" directorySegmentName="seg_0" name="CARGO_EMPLEADO_CARGO_FK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>CARGO_EMPLEADO_FK2</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<containerWithKeyObject>466EDDBC-87DE-50D4-E880-E977FF492FAA</containerWithKeyObject>
+<deleteRule>CASCADE</deleteRule>
+<localFKIndex>DF48471B-B310-9CCB-F4A4-288D9CA889B2</localFKIndex>
+<keyObject>CF6A2C01-0E13-40A3-A9F7-CB1C9E18A3A5</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

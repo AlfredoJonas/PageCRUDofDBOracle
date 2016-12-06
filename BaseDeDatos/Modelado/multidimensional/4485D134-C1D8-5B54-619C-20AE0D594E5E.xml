@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<MultidimensionalDesign class="oracle.dbtools.crest.model.design.multidimensional.MultidimensionalDesign" name="Multidimensional_1" id="4485D134-C1D8-5B54-619C-20AE0D594E5E" mainViewID="340FB9F7-924E-4224-32B0-4DD3C5BB9DBA">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:09:10 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO BD</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+</MultidimensionalDesign>

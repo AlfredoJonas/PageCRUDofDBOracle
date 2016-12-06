@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="103CE299-C604-4BA4-EA06-1FF084BB1279" directorySegmentName="seg_0" name="ESPECIALIZACION">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>ESPECIALIZACION</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<pkName>ESPECIALIZACION_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Columna</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dato</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Primaria</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Ajena</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Única</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>No Nulo</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Clave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="NOMBRE" id="32EF65B6-0587-782F-88CD-BED9534C706E">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>ESPECIALIZACION</sourceObjSchema>
+<sourceObjName>NOMBRE</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="DESCRIPCION" id="EF9F2691-6E39-C191-3C36-770FCFEE7701">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>ESPECIALIZACION</sourceObjSchema>
+<sourceObjName>DESCRIPCION</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="E8351C2E-1CBA-EAD0-9DCC-1A1E34629BDD" name="ESPECIALIZACION_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>ESPECIALIZACION_PK</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:12 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="32EF65B6-0587-782F-88CD-BED9534C706E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5E84FFEE-7042-E1F3-2DDD-CB870A4D49F7" name="ESPECIALIZACION_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>ESPECIALIZACION_PK</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<indexState>Unique Plain Index</indexState>
+<indexColumnUsage>
+<colUsage columnID="32EF65B6-0587-782F-88CD-BED9534C706E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

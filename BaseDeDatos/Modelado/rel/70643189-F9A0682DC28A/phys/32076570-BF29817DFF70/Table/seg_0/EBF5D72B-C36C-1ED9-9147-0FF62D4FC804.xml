@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="IMPLEMENTO" id="EBF5D72B-C36C-1ED9-9147-0FF62D4FC804" directorySegmentName="seg_0">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>80BF425C-A94C-D615-8DF4-0DDC814FE55C</segment>
+<tableSpace>BED63EC5-6056-3BAB-338B-D67ED8937C91</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="MARCA" id="19D1373E-A9CA-2471-B80D-BE1C0EF73E6D">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="CANTIDAD" id="3F1AFDFB-DEA6-546A-8E8D-FF2BCF02AF60">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="NOMBRE" id="61142E01-1684-ED36-9763-852EF26DF3F8">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="ID" id="6D2A6E56-F0DC-B566-74A0-D18E8B5C8D0F">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="COSTO" id="8CBA837E-FC92-5DA7-4970-A49CCE4D3A27">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="DESCRIPCION" id="CEA390BF-1B11-69C3-9C93-4B8B792CD136">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IMPLEMENTO_PK" id="A861E704-CE7E-0969-544A-47BB8847EE2C">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<segment>E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F</segment>
+<tableSpace>BED63EC5-6056-3BAB-338B-D67ED8937C91</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="IMPLEMENTO_PK" id="B685C695-456C-CCAD-BFE8-FF1DEA717723">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:12 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<segment>E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F</segment>
+<tableSpace>BED63EC5-6056-3BAB-338B-D67ED8937C91</tableSpace>
+<existingIndex>A861E704-CE7E-0969-544A-47BB8847EE2C</existingIndex>
+<indexSegment>E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

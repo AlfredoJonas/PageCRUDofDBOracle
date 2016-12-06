@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="78788D92-8641-E2EF-5293-589831BE6435" directorySegmentName="seg_0" name="DETALLE HIS MED">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>0A5D6B2F-5ABA-5DC7-210C-607870F93882</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<pkName>DETALLE HIS MED PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Atributo</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dato</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Primaria</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Ajena</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Clave Única</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>No Nulo</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Clave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="ID" id="12F02E7A-7BA0-4A92-4065-0ED4CFC1E3DA">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>8D879142-5F88-30F3-B980-D6E88806A9ED</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="DESCRIPCION" id="A031530C-D396-3E88-CFBE-5CA74A3CFC3F">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>73F640CC-6C6E-ADA7-570D-B19D08222C04</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="5022A48C-A06E-4BD2-A678-560CA8D7D1AD" name="DETALLE HIS MED PK">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>504C09E1-29D8-5D9E-BFD5-200915AD5CDF</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>12F02E7A-7BA0-4A92-4065-0ED4CFC1E3DA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

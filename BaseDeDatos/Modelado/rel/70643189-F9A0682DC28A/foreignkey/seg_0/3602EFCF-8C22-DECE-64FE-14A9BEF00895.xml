@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="3602EFCF-8C22-DECE-64FE-14A9BEF00895" directorySegmentName="seg_0" name="PACIENTE_HIS_MED_PACIENTE_FK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>PACIENTE_HIS_MED_FK2</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<containerWithKeyObject>AB67C49A-0FA4-C551-AB91-C9B10AF70DE2</containerWithKeyObject>
+<deleteRule>CASCADE</deleteRule>
+<localFKIndex>7A8F0112-D720-CEE4-982B-6DBC211E6985</localFKIndex>
+<keyObject>D651044A-EC99-192A-58CB-52D2A2E49463</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

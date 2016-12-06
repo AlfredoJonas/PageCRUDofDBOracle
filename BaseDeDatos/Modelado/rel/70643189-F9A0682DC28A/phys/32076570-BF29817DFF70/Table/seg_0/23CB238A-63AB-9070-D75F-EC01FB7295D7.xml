@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CARGO" id="23CB238A-63AB-9070-D75F-EC01FB7295D7" directorySegmentName="seg_0">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:10 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>80BF425C-A94C-D615-8DF4-0DDC814FE55C</segment>
+<tableSpace>BED63EC5-6056-3BAB-338B-D67ED8937C91</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="NOMBRE" id="0F70AC85-BAFE-757D-AFE8-3255A8C057D9">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="DESCRIPCION" id="2CA967C8-8E46-28C6-7B4C-252418E1D293">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="ID" id="329E94E4-8E44-BB0F-1AAE-72875C98B419">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CARGO_PK" id="E55BBBB8-07E6-998A-D825-BC2F13994274">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<schemaObject>43A76133-4C16-87C8-8EE7-66BAB02AB089</schemaObject>
+<segment>E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F</segment>
+<tableSpace>BED63EC5-6056-3BAB-338B-D67ED8937C91</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CARGO_PK" id="CF6A2C01-0E13-40A3-A9F7-CB1C9E18A3A5">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:12 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<segment>E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F</segment>
+<tableSpace>BED63EC5-6056-3BAB-338B-D67ED8937C91</tableSpace>
+<existingIndex>E55BBBB8-07E6-998A-D825-BC2F13994274</existingIndex>
+<indexSegment>E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

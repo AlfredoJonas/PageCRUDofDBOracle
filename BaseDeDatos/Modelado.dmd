@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Modelado" id="7105E362-4663-64D1-05E2-D31EE4EDE969" version="3.5">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:07:58 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO BD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7105E362-4663-64D1-05E2-D31EE4EDE969</designId>
+</OSDM_Design>

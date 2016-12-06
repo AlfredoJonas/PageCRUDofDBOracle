@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="16E11D83-29C8-238D-AD72-FDA898AEBE15" directorySegmentName="seg_0" name="TRATAMIENTO_IMPLEMENTO_CITA_TRATAMIENTO_FK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>TRATAMIENTO_IMPLEMENTO_FK2</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<containerWithKeyObject>2FB1B895-3BAD-4121-4F9E-0CC6970FD891</containerWithKeyObject>
+<deleteRule>CASCADE</deleteRule>
+<localFKIndex>DF393CA3-E4ED-6340-E9A6-16F8AC8C03C0</localFKIndex>
+<keyObject>257FD50A-C2E8-A3C8-FC4D-128FFFECD616</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

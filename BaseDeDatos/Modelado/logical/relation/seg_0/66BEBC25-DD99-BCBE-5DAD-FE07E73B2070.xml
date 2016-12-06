@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CITA MEDICO FK" id="66BEBC25-DD99-BCBE-5DAD-FE07E73B2070" directorySegmentName="seg_0">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>8DBCA63E-542C-EFCC-4549-7CA62BA33F45</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EC7EEE75-8452-597E-42C4-E1D65FBCBDEA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BAE470C8-A08E-6417-1780-6407DE8B3EA7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

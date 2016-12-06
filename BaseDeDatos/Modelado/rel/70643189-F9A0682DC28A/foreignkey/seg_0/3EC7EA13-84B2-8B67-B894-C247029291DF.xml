@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="3EC7EA13-84B2-8B67-B894-C247029291DF" directorySegmentName="seg_0" name="ESPECIALIZACION_MED_EMP_EMPLEADO_FK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>ESPECIALIZACION_MED_EMP_FK3</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<containerWithKeyObject>A382416A-D221-7EED-22EF-B6F6FA4B150E</containerWithKeyObject>
+<deleteRule>CASCADE</deleteRule>
+<localFKIndex>D8FF1C6A-3032-1499-9FE8-6BA63422F5D9</localFKIndex>
+<keyObject>00C223BD-14E7-1529-7384-FF68C6B62BB1</keyObject>
+<mandatory>false</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

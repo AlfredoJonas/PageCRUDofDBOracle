@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>
+   <object objectType="TSpace" objectID="BED63EC5-6056-3BAB-338B-D67ED8937C91" name="USERS" seqName="seg_0"/>
+   <object objectType="User" objectID="57D0D68D-E30F-D4C7-25F7-1883DDF60CC3" name="BD12016USER24" seqName="seg_0"/>
+   <object objectType="User" objectID="MDSYS" name="MDSYS" seqName="seg_0"/>
+   <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0"/>
+   <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0"/>
+   <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0"/>
+   <object objectType="Table" objectID="0A5D6B2F-5ABA-5DC7-210C-607870F93882" name="DETALLE_HIS_MED" seqName="seg_0"/>
+   <object objectType="Table" objectID="103CE299-C604-4BA4-EA06-1FF084BB1279" name="ESPECIALIZACION" seqName="seg_0"/>
+   <object objectType="Table" objectID="1870C6A0-4850-1F3E-BDBE-46AF8203525A" name="MEDICO" seqName="seg_0"/>
+   <object objectType="Table" objectID="23CB238A-63AB-9070-D75F-EC01FB7295D7" name="CARGO" seqName="seg_0"/>
+   <object objectType="Table" objectID="2CC7FCA8-2E7A-1ACC-207A-9EC22E9E85CE" name="CITA" seqName="seg_0"/>
+   <object objectType="Table" objectID="2FB1B895-3BAD-4121-4F9E-0CC6970FD891" name="TRATAMIENTO_IMPLEMENTO" seqName="seg_0"/>
+   <object objectType="Table" objectID="466EDDBC-87DE-50D4-E880-E977FF492FAA" name="CARGO_EMPLEADO" seqName="seg_0"/>
+   <object objectType="Table" objectID="46FCDE35-8579-54EF-2C68-A606D1E70E46" name="CITA_TRATAMIENTO" seqName="seg_0"/>
+   <object objectType="Table" objectID="8F92D591-66FB-4209-EB6A-550692387451" name="RADIOGRAFIA" seqName="seg_0"/>
+   <object objectType="Table" objectID="A382416A-D221-7EED-22EF-B6F6FA4B150E" name="ESPECIALIZACION_MED_EMP" seqName="seg_0"/>
+   <object objectType="Table" objectID="AB67C49A-0FA4-C551-AB91-C9B10AF70DE2" name="PACIENTE_HIS_MED" seqName="seg_0"/>
+   <object objectType="Table" objectID="D876FCCB-49B3-BB10-D459-5BD5239FAC5B" name="EMPLEADO" seqName="seg_0"/>
+   <object objectType="Table" objectID="DDA73405-A827-B4A3-2B46-C0C3B10B5398" name="TRATAMIENTO" seqName="seg_0"/>
+   <object objectType="Table" objectID="E6274DD7-DD6C-131B-C241-92A55829699A" name="PACIENTE" seqName="seg_0"/>
+   <object objectType="Table" objectID="EBF5D72B-C36C-1ED9-9147-0FF62D4FC804" name="IMPLEMENTO" seqName="seg_0"/>
+   <object objectType="Segment" objectID="80BF425C-A94C-D615-8DF4-0DDC814FE55C" name="Storage1" seqName="seg_0"/>
+   <object objectType="Segment" objectID="E21EE2FD-FE3D-15E6-C3D3-6D45D5D9A42F" name="Storage16" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>

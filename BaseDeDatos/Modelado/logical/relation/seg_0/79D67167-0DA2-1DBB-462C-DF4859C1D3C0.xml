@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CARGO EMPLEADO CARGO FK" id="79D67167-0DA2-1DBB-462C-DF4859C1D3C0" directorySegmentName="seg_0">
+<createdBy>Jonas</createdBy>
+<createdTime>2016-12-02 15:30:47 UTC</createdTime>
+<generatorID>FDC99DF5-C9C8-189D-17DF-168C94C1639C</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<engineerTo>
+<item key="70643189-CB65-1418-B13A-F9A0682DC28A" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A06CCFFD-5541-997B-0C42-3502A220E281</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>820F4EA9-3F1A-832D-E0FA-263E3C0E067A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="0B46BDAA-ED16-19AC-CBDA-CE7447EB06AC" mainViewID="A8D663D9-0962-81D5-8834-C75BA66FC7A3">
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:07:58 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO BD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

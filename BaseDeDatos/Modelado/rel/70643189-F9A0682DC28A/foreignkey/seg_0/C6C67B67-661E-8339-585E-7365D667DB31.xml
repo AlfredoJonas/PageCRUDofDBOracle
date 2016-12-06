@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="C6C67B67-661E-8339-585E-7365D667DB31" directorySegmentName="seg_0" name="RADIOGRAFIA_CITA_FK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>BD12016USER24</sourceObjSchema>
+<sourceObjName>RADIOGRAFIA_FK1</sourceObjName>
+<createdBy>yosswan.vecino</createdBy>
+<createdTime>2016-11-25 21:23:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Modelado</ownerDesignName>
+<containerWithKeyObject>8F92D591-66FB-4209-EB6A-550692387451</containerWithKeyObject>
+<deleteRule>CASCADE</deleteRule>
+<localFKIndex>C107391E-D722-BAFB-415E-DEE609EC92E7</localFKIndex>
+<keyObject>1D759136-A33B-D9DD-6FCF-648A77CF92FC</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>
