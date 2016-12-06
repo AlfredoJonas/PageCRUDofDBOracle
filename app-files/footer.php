@@ -16,7 +16,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="row logo-container">
-					<img src="logo-unet.png" width="80px" height="100px">
+					<img src="app-files/../logo-unet.png" width="80px" height="100px">
 				</div>
 			</div>
 		</div>
