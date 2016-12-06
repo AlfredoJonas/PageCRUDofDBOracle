@@ -1,0 +1,17 @@
+.title-integrantes, .container-integrantes{
+	text-align: center;
+	font-size: 15px;
+}
+
+.container-integrantes {
+	margin-top: 20px;
+}
+
+.list-integrantes {
+	list-style-type: none;
+}
+
+.logo-container, .container-rights {
+	text-align: center;
+	margin-top: 20px;
+}
