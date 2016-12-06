@@ -17,7 +17,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="mfi" class="col-xs-2 col-form-label">Marca</label>
+								<label for="mfi" class="col-xs-2 col-form-label">Apellido</label>
 								<div class="col-xs-10">
 									<input type="text" class="form-control" name="marca" id="mfi" placeholder="Ingrese la marca del implemento">
 								</div>
