@@ -1,33 +1,33 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="A06CCFFD-5541-997B-0C42-3502A220E281" name="CARGO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="820F4EA9-3F1A-832D-E0FA-263E3C0E067A" name="CARGO EMPLEADO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="BAE470C8-A08E-6417-1780-6407DE8B3EA7" name="CITA" seqName="seg_0"/>
-   <object objectType="Entity" objectID="05B4EE0C-ABE1-5E2E-2C70-C24E68F89C6E" name="CITA TRATAMIENTO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="78788D92-8641-E2EF-5293-589831BE6435" name="DETALLE HIS MED" seqName="seg_0"/>
-   <object objectType="Entity" objectID="F7B374A0-9736-B644-BE42-954FC52FDFF6" name="EMPLEADO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="10E0E96C-6CF8-618B-507B-A027D4EDFE5E" name="ESPECIALIZACION" seqName="seg_0"/>
-   <object objectType="Entity" objectID="D6A5CC1A-65D8-DCC7-C7B0-2EB8B6237265" name="ESPECIALIZACION MED EMP" seqName="seg_0"/>
-   <object objectType="Entity" objectID="DDD29B52-6BBD-04FF-AAE6-88653728F51A" name="IMPLEMENTO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="EC7EEE75-8452-597E-42C4-E1D65FBCBDEA" name="MEDICO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="35206E7D-92BA-0737-2C90-310B8473807E" name="PACIENTE" seqName="seg_0"/>
-   <object objectType="Entity" objectID="3D63819A-D723-BC27-924A-965FB35270A7" name="PACIENTE HIS MED" seqName="seg_0"/>
-   <object objectType="Entity" objectID="23E8FF3B-97F6-A6A6-E854-1C2822F625BB" name="RADIOGRAFIA" seqName="seg_0"/>
-   <object objectType="Entity" objectID="C48D5975-C75B-B0F8-FDD6-C141F3D6CC55" name="TRATAMIENTO" seqName="seg_0"/>
-   <object objectType="Entity" objectID="B7FB347C-6F65-1DD9-3410-CCC3C1572146" name="TRATAMIENTO IMPLEMENTO" seqName="seg_0"/>
-   <object objectType="Relation" objectID="79D67167-0DA2-1DBB-462C-DF4859C1D3C0" name="CARGO EMPLEADO CARGO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="7C2E3963-62F5-E9A5-C744-74BD2252D9D3" name="CARGO EMPLEADO EMPLEADO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="66BEBC25-DD99-BCBE-5DAD-FE07E73B2070" name="CITA MEDICO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="459A33CE-3136-3DF3-CD51-DC05DA84C960" name="CITA PACIENTE FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="EA416AB7-8C4C-7804-1903-F1DB3BC0C9D9" name="CITA TRATAMIENTO CITA FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="F973D7AA-1066-478F-0698-003727036D2F" name="CITA TRATAMIENTO MEDICO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="0227F1D2-E886-837C-749E-1BC348BB0266" name="CITA TRATAMIENTO TRATAMIENTO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="317C31EB-7776-CA34-AA67-E706BA27EB12" name="ESPECIALIZACION MED EMP EMPLEADO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="B1273C6D-94F2-D4E6-822A-D21545FA8263" name="ESPECIALIZACION MED EMP ESPECIALIZACION FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="1E170CDE-3DBF-4150-DF1D-A72C52224316" name="ESPECIALIZACION MED EMP MEDICO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="C34C0D9B-B87B-E887-6BB5-E49C05117457" name="PACIENTE HIS MED DETALLE HIS MED FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="97F1CF12-460F-1183-AEA4-229BD9FAD1AD" name="PACIENTE HIS MED PACIENTE FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="DF333D93-BD80-5ED6-C354-F27471D2F2BF" name="RADIOGRAFIA CITA FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="0C13E30E-673D-2B6D-6F75-A4F4C44EA622" name="TRATAMIENTO IMPLEMENTO CITA TRATAMIENTO FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="500A099B-017C-1B79-DE14-360636ED59EC" name="TRATAMIENTO IMPLEMENTO IMPLEMENTO FK" seqName="seg_0"/>
+   <object objectType="Entity" objectID="05B4EE0C-ABE1-5E2E-2C70-C24E68F89C6E" name="CITA TRATAMIENTO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="10E0E96C-6CF8-618B-507B-A027D4EDFE5E" name="ESPECIALIZACION" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="23E8FF3B-97F6-A6A6-E854-1C2822F625BB" name="RADIOGRAFIA" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="35206E7D-92BA-0737-2C90-310B8473807E" name="PACIENTE" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="3D63819A-D723-BC27-924A-965FB35270A7" name="PACIENTE HIS MED" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="78788D92-8641-E2EF-5293-589831BE6435" name="DETALLE HIS MED" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="820F4EA9-3F1A-832D-E0FA-263E3C0E067A" name="CARGO EMPLEADO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="A06CCFFD-5541-997B-0C42-3502A220E281" name="CARGO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="B7FB347C-6F65-1DD9-3410-CCC3C1572146" name="TRATAMIENTO IMPLEMENTO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="BAE470C8-A08E-6417-1780-6407DE8B3EA7" name="CITA" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="C48D5975-C75B-B0F8-FDD6-C141F3D6CC55" name="TRATAMIENTO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="D6A5CC1A-65D8-DCC7-C7B0-2EB8B6237265" name="ESPECIALIZACION MED EMP" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="DDD29B52-6BBD-04FF-AAE6-88653728F51A" name="IMPLEMENTO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="EC7EEE75-8452-597E-42C4-E1D65FBCBDEA" name="MEDICO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="F7B374A0-9736-B644-BE42-954FC52FDFF6" name="EMPLEADO" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="0227F1D2-E886-837C-749E-1BC348BB0266" name="CITA TRATAMIENTO TRATAMIENTO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="0C13E30E-673D-2B6D-6F75-A4F4C44EA622" name="TRATAMIENTO IMPLEMENTO CITA TRATAMIENTO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="1E170CDE-3DBF-4150-DF1D-A72C52224316" name="ESPECIALIZACION MED EMP MEDICO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="317C31EB-7776-CA34-AA67-E706BA27EB12" name="ESPECIALIZACION MED EMP EMPLEADO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="459A33CE-3136-3DF3-CD51-DC05DA84C960" name="CITA PACIENTE FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="500A099B-017C-1B79-DE14-360636ED59EC" name="TRATAMIENTO IMPLEMENTO IMPLEMENTO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="66BEBC25-DD99-BCBE-5DAD-FE07E73B2070" name="CITA MEDICO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="79D67167-0DA2-1DBB-462C-DF4859C1D3C0" name="CARGO EMPLEADO CARGO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="7C2E3963-62F5-E9A5-C744-74BD2252D9D3" name="CARGO EMPLEADO EMPLEADO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="97F1CF12-460F-1183-AEA4-229BD9FAD1AD" name="PACIENTE HIS MED PACIENTE FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="B1273C6D-94F2-D4E6-822A-D21545FA8263" name="ESPECIALIZACION MED EMP ESPECIALIZACION FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="C34C0D9B-B87B-E887-6BB5-E49C05117457" name="PACIENTE HIS MED DETALLE HIS MED FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="DF333D93-BD80-5ED6-C354-F27471D2F2BF" name="RADIOGRAFIA CITA FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="EA416AB7-8C4C-7804-1903-F1DB3BC0C9D9" name="CITA TRATAMIENTO CITA FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="F973D7AA-1066-478F-0698-003727036D2F" name="CITA TRATAMIENTO MEDICO FK" seqName="seg_0" propertyClassName="" propertyParentId="" propertySourceId="" propertyTargetId=""/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>
