@@ -60,14 +60,19 @@ function agregarCamposSeleccionEspecializaciones() {
 		);*/
 	for (var i = 0; i < cantidad_especializaciones; i++) {
 		divEspecializaciones.append(' \
-				<div class="form-group row"> \
-					<label for="especializacion-' + i + '" class="col-md-2 col-form-label">Cantidad de especializaciones</label> \
-						<select class="form-control" id="especializacion-' + i + '" name="especializacion-' + i + '"> \
-							<option value="Ginecología">Ginecología</option> \
-							<option value="Doctor de las tetas">Doctor de las tetas</option> \
-							<option value="Doctor de las caderas">Doctor de las caderas</option> \
-							<option value="Doctor de las piernas">Doctor de las piernas</option> \
-						</select> \
+				<div class="form-group"> \
+					<div class="col-sm-2"> \
+						<label for="especializacion-' + i + '" class="col-sm-2 col-form-label">Seleccione la especialización</label> \
+					</div> \
+					<div class="clo-sm-10"> \
+							<select class="form-control" id="especializacion-' + i + '" name="especializacion-' + i + '"> \
+								<option value="Ginecología">Ginecología</option> \
+								<option value="Doctor de las tetas">Doctor de las tetas</option> \
+								<option value="Doctor de las caderas">Doctor de las caderas</option> \
+								<option value="Doctor de las piernas">Doctor de las piernas</option> \
+							</select> \
+					</div> \
+				</div> \
 			');
 	};
 }
