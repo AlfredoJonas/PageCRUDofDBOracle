@@ -11,25 +11,22 @@ $(document).ready(function() {
 		submitImplemento(event);
 	});
 
-  $('.especializaciones').on( "load", getEspecializaciones);
+  $('.especializaciones').focus(getEspecializaciones);
 
 });
 
 function getEspecializaciones() {
+  var ruta = $('.especializaciones').data("ruta");
+  var consulta = $('.especializaciones').data("consulta");
+  var formMessages = $('#form-messages');
+
   $.ajax({
 	    type: 'POST',
-	    url: 'ajax-handler.js',
-	    data: {type: 'solicitudListaEmpleados', from: 'empleados'}
+	    url: 'ajax-handler.php',
+	    data: {ruta: ruta, consulta: consulta}
 	}).done(function(response) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-success');
-
-    formMessages.text(response);
+    $('.especializacion').innerHTML(response);
 	}).fail(function(data) {
-
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
-
     if (data.responseText !== '')
       formMessages.text(data.responseText);
     else

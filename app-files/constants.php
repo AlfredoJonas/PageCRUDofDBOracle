@@ -1,10 +1,9 @@
 <?php
-
   //Credenciales
-  define('DB', '//localhost/XE');
-  define('$DB_USER', 'PROYECTODB20161');
-  define('$DB_PASS', '123');
-  define('$DB_CHAR', 'AL32UTF8');
+  define("DB", "//localhost/XE");
+  define("DB_USER", "PROYECTODB20161");
+  define("DB_PASS", "123");
+  define("DB_CHAR", "AL32UTF8");
 
   //Rutas
   define("RUTA_EMPLEADOS", "empleados");
@@ -25,7 +24,7 @@
    " aqui va la super consulta "
   , true);
   define("LISTA_ESPECIALIZACIONES_SQL",
-   " aqui va la super consulta "
+   " select * from user_tables "
   , true);
   define("LISTA_PACIENTES_SQL",
    " aqui va la super consulta "

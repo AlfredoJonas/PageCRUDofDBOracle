@@ -1,4 +1,7 @@
-<?php echo '
+<?php
+	require_once 'constants.php';
+
+	echo '
 	<header class="container-fluid">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">

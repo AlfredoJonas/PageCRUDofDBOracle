@@ -4,7 +4,7 @@
 		<?php include('head.php'); ?>
 	</head>
 	<body>
-		<?php include('header.php'); ?>
+		<?php include('header.php');?>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-6">
@@ -18,14 +18,14 @@
 									<div class="form-group row">
 										<label for="cifi" class="col-sm-2 col-form-label">C.I. o pasaporte</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control"name="cedula" id="cifi" placeholder="Ingrese la cedula de identidad o el pasaporte del empleado" required>
+											<input type="text" class="form-control" name="cedula" id="cifi" placeholder="Ingrese la cedula de identidad o el pasaporte del empleado" required>
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<label for="nfi" class="col-sm-2 col-form-label">Nombre Completo</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control"name="nombre" id="nfi" placeholder="Ingrese el nombre del empleado">
+											<input type="text" class="form-control" name="nombre" id="nfi" placeholder="Ingrese el nombre del empleado">
 										</div>
 									</div>
 
@@ -39,14 +39,14 @@
 									<div class="form-group row">
 										<label for="dfi" class="col-sm-2 col-form-label">Direccion</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control"name="direccion" id="dfi" placeholder="Ingrese la direccion del empleado">
+											<input type="text" class="form-control" name="direccion" id="dfi" placeholder="Ingrese la direccion del empleado">
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<label for="telffi" class="col-sm-2 col-form-label">Teléfono</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control"name="telefono" id="telffi" placeholder="Ingrese el teléfono del empleado">
+											<input type="text" class="form-control" name="telefono" id="telffi" placeholder="Ingrese el teléfono del empleado">
 										</div>
 									</div>
 
@@ -55,12 +55,12 @@
 										<div class="col-sm-8 col-sm-offset-2">
 											<div class="col-sm-6">
 												<label class"radio-inline">
-													<input type="radio" class="form-control"name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertarRestoDelFormulario(1)">Empleado
+													<input type="radio" class="form-control" name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertarRestoDelFormulario(1)">Empleado
 												</label>
 											</div>
 											<div class="col-sm-6">
 												<label class"radio-inline">
-													<input type="radio" class="form-control"name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertarRestoDelFormulario(2)">Doctor
+													<input type="radio" class="form-control" name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertarRestoDelFormulario(2)">Doctor
 												</label>
 											</div>
 										</div>
@@ -72,18 +72,18 @@
 										<label for="especializacion" class="col-sm-4 col-form-label">Especializaciones</label>
 										<small id="select-esp-help" class="form-text text-muted col-sm-8">Mantenga presionada la tecla Ctrl para seleccionar varias especializaciones</small>
 										<div class="col-sm-12">
-												<select multiple class="form-control especializaciones" id="especializacion" name="especializacion">
+												<select multiple class="form-control especializaciones" id="especializacion" name="especializacion" data-ruta="<?php echo RUTA_EMPLEADOS ?>" data-consulta="<?php echo LISTA_ESPECIALIZACIONES ?>">
 													<!-- aqui va lo que devuelva el ajax -->
 												</select>
 										</div>
 									</div>
 
 									<div class="form-group">
-										<input type="submit" class="form-control"name="guardar" value="Agregar">
+										<input type="submit" class="form-control" name="guardar" value="Agregar">
 									</div>
 
 									<div class="form-group">
-										<input type="submit" class="form-control"name="update" value="Actualizar datos">
+										<input type="submit" class="form-control" name="update" value="Actualizar datos">
 									</div>
 								</form>
 							</div>

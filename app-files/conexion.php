@@ -1,12 +1,9 @@
 <?php
-
-  include 'constants.php';
-
-  $conexion = null;
+  require 'constants.php';
 
   function get_conexion() {
 
-    if(!$GLOBALS['conexion']) {
+    if(!ISSET($GLOBALS['conexion'])) {
       $GLOBALS['conexion'] = oci_pconnect(DB_USER, DB_PASS, DB, DB_CHAR);
 
       if($GLOBALS['conexion'] == null)
