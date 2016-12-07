@@ -55,8 +55,7 @@
 									</div>
 								</div>
 
-								<div class="row" id="parteExpansible">
-								</div>
+								<div class="temp"></div>
 
 								<div class="form-group row">
 										<label for="numEspecializaciones" class="col-md-2 col-form-label">Cantidad de especializaciones</label>
