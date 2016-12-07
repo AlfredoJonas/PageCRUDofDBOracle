@@ -4,11 +4,25 @@
     $consulta = '';
     $ejecutar_consulta = 0;
     if(strcmp($tipo_query, 'solicitudListaEspecializaciones') == 0 && strcmp($from_page, 'empleados') == 0){
-
-
-    }else{
-      if(strcmp($tipo_query, 'solicitudListaPacientes') == 0 && strcmp($from_page, 'pacientes') == 0){
-
+      $consulta = $GLOBALS["solicitudListaEspecializaciones"];
+      $ejecutar_consulta = 1;
+    }
+    else{
+      if(strcmp($tipo_query, 'solicitudListaEmpleados') == 0 && strcmp($from_page, 'empleados') == 0){
+        $consulta = $GLOBALS["solicitudListaEmpleados"];
+        $ejecutar_consulta = 1;
+      }
+      else{
+        if(strcmp($tipo_query, 'solicitudListaPacientes') == 0 && strcmp($from_page, 'pacientes') == 0){
+          $consulta = $GLOBALS["solicitudListaPacientes"];
+          $ejecutar_consulta = 1;
+        }
+        else{
+          if(strcmp($tipo_query, 'solicitudListaInventario') == 0 && strcmp($from_page, 'inventario') == 0){
+            $consulta = $GLOBALS["solicitudListaInventario"];
+            $ejecutar_consulta = 1;
+          }
+        }
       }
     }
 
