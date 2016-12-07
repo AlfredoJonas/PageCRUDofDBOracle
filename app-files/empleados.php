@@ -13,9 +13,9 @@
 						  <div class="panel-body">
 								<form class="form-agregarEmpleado" action="" method="GET" role="form">
 									<div class="form-group row">
-										<label for="cifi" class="col-sm-2 col-form-label">Cédula de identidad o pasaporte</label>
+										<label for="cifi" class="col-sm-2 col-form-label">C.I. o pasaporte</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control"name="cedula" id="cifi" placeholder="Ingrese la cedula de identidad o el pasaporte  del empleado" required>
+											<input type="text" class="form-control"name="cedula" id="cifi" placeholder="Ingrese la cedula de identidad o el pasaporte del empleado" required>
 										</div>
 									</div>
 
