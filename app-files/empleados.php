@@ -66,18 +66,26 @@
 									<div class="temp"></div>
 
 									<div class="form-group row">
-										<label for="numEspecializaciones" class="col-sm-3 col-form-label">Cantidad de especializaciones</label>
-
-										<div class="col-sm-6">
-											<input type="text" class="form-control num-esp" name="numEspecializaciones" id="numEspecializaciones">
-										</div>
-
-										<div class="col-sm-3">
-											<input type="button" class="form-control num-esp-button" name="numEspecializacionesButton" onclick="agregarCamposSeleccionEspecializaciones()" value="OK">
+										<label for="especializacion" class="col-sm-4 col-form-label">Especializaciones</label>
+										<small id="select-esp-help" class="form-text text-muted col-sm-8">Mantenga presionada la tecla Ctrl para seleccionar varias especializaciones</small>
+										<div class="col-sm-12">
+												<select multiple class="form-control" id="especializacion" name="especializacion">
+													<option value="Ginecología">Ginecología</option> \
+													<option value="Doctor de las tetas">Doctor de las tetas</option>
+													<option value="Doctor de las caderas">Doctor de las caderas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<option value="Doctor de las piernas">Doctor de las piernas</option>
+												</select>
 										</div>
 									</div>
-
-									<div class="select-esp"></div>
 
 									<div class="form-group">
 										<input type="submit" class="form-control"name="guardar" value="Agregar">
