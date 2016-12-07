@@ -66,8 +66,8 @@
 											<input type="button" class="form-control" name="numEspecializacionesButton" id="numEspecializacionesButton" onclick="agregarCamposSeleccionEspecializaciones()" value="OK">
 										</div>
 									</div>
-								
-									<div class="row" id="especializacionesSeleccion"></div>
+
+								<div class="row" id="especializacionesSeleccion"></div>
 
 								<div class="form-group">
 									<input type="submit" class="form-control"name="guardar" value="Agregar">
@@ -87,5 +87,3 @@
 		</div>
 	</body>
 </html>
-
-
