@@ -1,0 +1,425 @@
+[33mcommit 4805cfaa53e02cf8bd1d8711af107edfc1d92ebd[m
+Author: Temet Nosce <temet.nosce95@protonmail.ch>
+Date:   Tue Dec 6 23:51:22 2016 -0400
+
+    Otras cosas que actualizaron
+
+[33mcommit bb998a017b4b89426bba4829686e38710943d659[m
+Author: Temet Nosce <temet.nosce95@protonmail.ch>
+Date:   Tue Dec 6 22:43:05 2016 -0400
+
+    Añado jQuery al header.php (ya era justo y necesario). Aparte modifiqué algo más por ahí
+
+[33mcommit 5ac0a61eb5b4d7ab80845d0a69a7b65aa97f7192[m
+Merge: 78fa492 ee0fe10
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Tue Dec 6 18:01:46 2016 -0400
+
+    Merge branch 'master' of https://www.github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit 78fa492a1078dc9f465f7c7da696705bcabae10d[m
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Tue Dec 6 18:01:04 2016 -0400
+
+    Base
+
+[33mcommit ee0fe1067a434238974f96dbebbe6fba9bf2cb8b[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 17:30:44 2016 -0430
+
+    Agregadas muchas cosas, incluyendo los requerimientos
+
+[33mcommit b9dc19019f04dd79df6c583eb857c157430e425b[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Tue Dec 6 16:58:48 2016 -0430
+
+    Terminé de front-endiar el formulario de los empleados/doctores. Ploploplo
+
+[33mcommit da9426a387587926c520653a8a9b2730cef13d2a[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:57:28 2016 -0430
+
+    You you
+
+[33mcommit 9560d31c6763f3ba21afdc19771c271570366f7b[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 17:15:37 2016 -0400
+
+    Rename requerimiendos.md to requerimientos.md
+
+[33mcommit 9c0d4b505a403ba74029aeeceaf042eb0434b75c[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 17:15:21 2016 -0400
+
+    Delete requerimientos.md
+
+[33mcommit deaf0ab84dd568e1ee5562b6193c77f818e90f9c[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:41:14 2016 -0430
+
+    Eliminando tropiezos en la ruta
+
+[33mcommit a3e93c0cdfeb1d04847a243c6dbfa38fb7800ce4[m
+Merge: dcc01a4 d7ce02b
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:40:02 2016 -0430
+
+    Merge branch 'master' of https://github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit dcc01a4b427cd89e7299ca87e241bbd00f35fcb1[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:39:43 2016 -0430
+
+    Otros cambios
+
+[33mcommit d7ce02b07ad4d23c9cf8741f70dcd41632470c1e[m
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Tue Dec 6 17:05:32 2016 -0400
+
+    Triger new y algunos cambios varios en bd
+
+[33mcommit 90d9742760b1e4c13f147c3619fdafcb1a29f65f[m
+Merge: 34b82dd 65d58fc
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Tue Dec 6 17:02:17 2016 -0400
+
+    Merge branch 'master' of https://www.github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit 34b82dd5bde3027477fff1c6f0b5c52fdf61215f[m
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Tue Dec 6 16:59:31 2016 -0400
+
+    Nuevo trigger y modificaciones varias en la base de datos
+
+[33mcommit 65d58fc564dd7e42ceee8ad66487966c12a54f2f[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Tue Dec 6 16:22:17 2016 -0430
+
+    Agrego el formulario para agregar/modificar empleados y doctores
+
+[33mcommit d7e68a86cf48617732f09a2bfb02d41884e95a19[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:17:36 2016 -0430
+
+    Hola hola
+
+[33mcommit ff8fb14b9d8df09103574673bf4a940aa8ff89a4[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:13:09 2016 -0430
+
+    Hola
+
+[33mcommit 8a0cd5ba5ebdb84391ab74a494e359bfabb4f6a8[m
+Merge: 67e10f7 427184d
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:11:39 2016 -0430
+
+    Merge branch 'master' of https://github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit 67e10f790ff0e1ab89b73833cbe13f0feb1b20b6[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:10:59 2016 -0430
+
+    Organizando unas cosas pero todavia no funcionando todo
+
+[33mcommit 427184d54c440b718701ded9196947bee2f8a92f[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:30:56 2016 -0400
+
+    Update requerimiendos.md
+
+[33mcommit cdb793710c23c1718e80a6c16a001ac00dedd966[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:29:51 2016 -0400
+
+    Update requerimiendos.md
+
+[33mcommit 19f268426453b2f15ff81ed1bad8f917f9832769[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 16:28:27 2016 -0400
+
+    Update requerimiendos.md
+
+[33mcommit a8d3a0f5402440d8051ed0a833d06b8591b5666f[m
+Merge: 6c8f444 43561ae
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 15:21:08 2016 -0430
+
+    Merge branch 'master' of https://github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit 43561ae8d382c7a9db1d536a7b6fc22b1696038e[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Tue Dec 6 15:20:22 2016 -0430
+
+    El Edwin puede llegar a ser canson con lo de que le cambie el nombre a los archivos :v
+
+[33mcommit 6c8f44461c1826b8ee64a845d8694e45dadda6ad[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 15:19:32 2016 -0430
+
+    Hola
+
+[33mcommit b4d7e654498d085a5e152c98984b072bd97b35f5[m
+Merge: d67adfb 24ad803
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Tue Dec 6 15:04:16 2016 -0430
+
+    Merge branch 'master' of https://github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit d67adfbf4a91d7f6af9350bf52685428fd73a663[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Tue Dec 6 15:03:17 2016 -0430
+
+    Agrego el formulario de inventario
+
+[33mcommit 24ad8030f9508af641abeac0efb835709a7fce84[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:51:36 2016 -0430
+
+    Todo bien, funcionando. Sigo sin buenos nombres para los commit
+
+[33mcommit 872898421467ed5ab0c0fb5ab0dfc82600bdc06d[m
+Merge: 94988a0 a94538b
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:43:31 2016 -0430
+
+    Todo fine
+
+[33mcommit 94988a0226aa562fdd5a36fe291862927f0a974d[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:41:21 2016 -0430
+
+    Ya funciona el php
+
+[33mcommit a94538b14b7feddab66dc274326d1073430c38a1[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Tue Dec 6 14:40:36 2016 -0430
+
+    Subo el archivo del footer y los estilos
+
+[33mcommit c256e6917c809425b6459e6f195254e2bee49936[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:23:35 2016 -0430
+
+    Header creado
+
+[33mcommit 81a9d6e9147e407454c2d27b0c24a68140b12e93[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:19:43 2016 -0430
+
+    Vamos progresando con la aplicacion web
+
+[33mcommit 0744746f5f31d2895b24c4bf93981dcf5a036f35[m
+Merge: d0590e5 c23de84
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:06:44 2016 -0430
+
+    Merge branch 'master' of https://github.com/TemetNosce95/ProyectoDB20161
+
+[33mcommit d0590e58872278ebad8456f979b1ea75465077d9[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Tue Dec 6 14:06:09 2016 -0430
+
+    README created
+
+[33mcommit c23de848d17836fe8001c3dea4ba3c25eca0a7d5[m
+Author: unknown <jesus.reyes@C10-EQUIPO06.labcomp.unet.edu.ve>
+Date:   Tue Dec 6 14:03:31 2016 -0430
+
+    Subo el index de la clinica dientes de sable
+
+[33mcommit acec7fc3b6999eebdd41d87d22eb359e52f2944b[m
+Author: unknown <edwin.vargash@C10-EQUIPO07.labcomp.unet.edu.ve>
+Date:   Tue Dec 6 14:02:16 2016 -0430
+
+    Organizado todo
+
+[33mcommit 5574e86a587e8b3713a49f3f12b0bab46cb0b95f[m
+Author: unknown <edwin.vargash@C10-EQUIPO07.labcomp.unet.edu.ve>
+Date:   Tue Dec 6 13:59:30 2016 -0430
+
+    Mi super commit
+
+[33mcommit b471a31bcf8d992588b149ac49912623c0dc4d31[m
+Author: Jonas Alfredo Gonzalez Uzcategui <jonas.gonzalez@labcomp.unet.edu.ve>
+Date:   Tue Dec 6 10:34:34 2016 -0430
+
+    Añadir imagen modelado .png .pdf .svg
+
+[33mcommit c4294731d4a5f6c423a35514485af8bc0ceb2f2f[m
+Author: Jonas Alfredo Gonzalez Uzcategui <jonas.gonzalez@labcomp.unet.edu.ve>
+Date:   Tue Dec 6 10:23:50 2016 -0430
+
+    update REQUERIMIENTOS.txt
+
+[33mcommit bf59ec7b0e2e1b469d0e94d50ff48878f8fcfb1c[m
+Author: Jonas Alfredo Gonzalez Uzcategui <jonas.gonzalez@labcomp.unet.edu.ve>
+Date:   Tue Dec 6 10:20:27 2016 -0430
+
+    Arreglo de trigger citas al dia/hora por doctor
+
+[33mcommit bf5cafaca23346fb5a877eecad4994e0984e0d05[m
+Author: Jonas Alfredo Gonzalez Uzcategui <jonas.gonzalez@labcomp.unet.edu.ve>
+Date:   Tue Dec 6 09:34:01 2016 -0430
+
+    Subi los requerimientos, cada quien agregue o haga lo que puedan
+
+[33mcommit b34269e0a12fd25d7670f8b55a7321ffbc9093ac[m
+Author: Jonas Alfredo Gonzalez Uzcategui <jonas.gonzalez@labcomp.unet.edu.ve>
+Date:   Tue Dec 6 09:27:39 2016 -0430
+
+    Se añadio el Modelado .dmd
+
+[33mcommit 8749103d3c5253bebf4361d86dae336a071a1def[m
+Author: Jonas Alfredo Gonzalez Uzcategui <jonas.gonzalez@labcomp.unet.edu.ve>
+Date:   Tue Dec 6 08:53:53 2016 -0430
+
+    Añadi set define off; para poder insertar datos desde .sql
+
+[33mcommit cb01e93bd41e5eb57475146217f8dba422625f1b[m
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Fri Dec 2 19:26:24 2016 -0400
+
+    Archivo .sql de la base de datos del proyecto
+
+[33mcommit aecf0fda772887de151586c73bc4f94769b3ec4d[m
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Fri Dec 2 19:04:22 2016 -0400
+
+    Se borro todo el repo para volver a iniciar el proyecto bien
+
+[33mcommit 70dcedc6933231fdffd71fbf1163ceacf9274707[m
+Author: AlfredoJonas <jonas.gonzalez@unet.edu.ve>
+Date:   Fri Dec 2 18:42:53 2016 -0400
+
+    cambie .gitignore y le puse holaa
+
+[33mcommit ac7bb43f113ece01af54c11603d2c064839975e5[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Mon Nov 28 00:09:57 2016 -0400
+
+    Resueltos conflictos en ciertos cambios
+
+[33mcommit 924c9285d5af89f70b78a8d947d3a5627e34fcd3[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sun Nov 27 23:58:33 2016 -0400
+
+    Hecho el layout principal (si quieren se cambia el nombre)
+
+[33mcommit 155c489a3dbf37cbfa1545dbf22cda88a225bf73[m
+Merge: 8d3ca78 f5de715
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sun Nov 27 23:41:04 2016 -0400
+
+    Añadida una ruta con su vista para probar
+
+[33mcommit 8d3ca784d5e717dedf00d5e5bbe9a4389dfef1cf[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sun Nov 27 23:38:31 2016 -0400
+
+    Añadida una ruta con su vista para probar
+
+[33mcommit f5de715504cd540a86713df6abce4353f03270e8[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@protonmail.ch>
+Date:   Sun Nov 27 21:06:59 2016 -0400
+
+    Voy creando parte de las views, luego empiezo con los controladores.
+
+[33mcommit 85cd325c5bc9bbb71c39ecdf7cf71f26c0b29f17[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:22:33 2016 -0400
+
+    Update README.md
+
+[33mcommit ad3807f322730076b40640f4516403a4223e344b[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:22:16 2016 -0400
+
+    Update README.md
+
+[33mcommit 35e89691393b15489a46dee2ddd80ec6d530bfe7[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:16:20 2016 -0400
+
+    Update README.md
+
+[33mcommit 417083afa58abd21fb50b7a7bc264565db3d187f[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:16:06 2016 -0400
+
+    Update README.md
+
+[33mcommit 6e176c7fc6d51228b65c7e19e8ebb7f894122551[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:15:28 2016 -0400
+
+    Update README.md
+
+[33mcommit 876b7b54efa4b3ca56b240f2b2ff26a839b7fb5e[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:15:16 2016 -0400
+
+    Update and rename readme.md to README.md
+
+[33mcommit bde1d22173bf420e38320098dcfbc03d5aefd051[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:14:21 2016 -0400
+
+    Update TASKS.md
+
+[33mcommit c665a96d121b1787aa496eb02a23192bdb1bad70[m
+Merge: 4b0fa59 8a02455
+Author: edwinvrgs <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:11:31 2016 -0400
+
+    Merge branch 'master' of github.com:TemetNosce95/ProyectoDB20161
+
+[33mcommit 4b0fa592558322135c4f1cabb16ed8328116797a[m
+Author: edwinvrgs <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 18:03:06 2016 -0400
+
+    La nueva creación
+
+[33mcommit 8a0245509e726849cef4e415f38cc4d04c78cd76[m
+Author: edwinvrgs <onix.edwin18@gmail.com>
+Date:   Sat Nov 26 17:44:45 2016 -0400
+
+    Otro diluvio
+
+[33mcommit a9db364aea38609344979e7722894b05d14ed36a[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Fri Nov 25 17:18:19 2016 -0430
+
+    Comienza la depuracion
+
+[33mcommit 59787a17b1981510b5c5d20fbd490891a1545f56[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Fri Nov 25 17:17:15 2016 -0430
+
+    El gran diluvio
+
+[33mcommit c0dbc8fa70424096f132fc8c6633e5842767a58b[m
+Author: Edwin Vargas <onix.edwin18@gmail.com>
+Date:   Mon Nov 21 22:14:59 2016 -0400
+
+    Update and rename porhacer.md to TASKS.md
+
+[33mcommit a4d4a8e1a6c5e922b60b6b5338fb8a7c2e2ca756[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@protonmail.ch>
+Date:   Mon Nov 14 23:46:09 2016 -0400
+
+    Subo un abreboca de los formularios xD :bug: :bug: Estos apestan pero no sé que otro hacer ni que rayos llevarán definitivamente hasta que se complete el modelo.
+
+[33mcommit e78861df1960848da47f22d4a46a0e92a3af3677[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@protonmail.ch>
+Date:   Mon Nov 14 23:11:33 2016 -0400
+
+    Agrego el .gitignore y el archivo de cosas por hacer
+
+[33mcommit de81b501fd78f1c7dd9e4b0c4529c2513ea8582e[m
+Author: Jesús Alfredo Reyes Vargas <jesus.reyes@unet.edu.ve>
+Date:   Mon Nov 14 17:32:15 2016 -0400
+
+    First commit
+    
+    Adding README.md
