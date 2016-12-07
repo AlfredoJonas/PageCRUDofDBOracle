@@ -11,7 +11,10 @@
 						<div class="panel panel-primary">
 							<div class="panel-heading">Registro del empleado</div>
 							<div class="panel-body">
-								<form class="form-add-implemento" action="" method="GET" role="form">
+							<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							</div>
+								<form class="formPaciente" action="" method="GET" role="form">
 									<div class="form-group row">
 										<label for="nfi" class="col-sm-2 col-form-label">Nombre</label>
 										<div class="col-sm-10">

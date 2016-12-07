@@ -11,6 +11,9 @@
 						<div class="panel panel-primary">
 						  <div class="panel-heading">Registro del empleado</div>
 						  <div class="panel-body">
+							<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							</div>
               </div>
             </div>
           </div>

@@ -10,8 +10,11 @@
 					<div class="col-sm-6">
 						<div class="panel panel-primary">
 						  <div class="panel-heading">Registro del empleado</div>
-						  <div class="panel-body">
-								<form class="form-agregarEmpleado" action="" method="GET" role="form">
+						  	<div class="panel-body">
+								<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								</div>
+								<form class="formEmpleado" action="" method="GET" role="form">
 									<div class="form-group row">
 										<label for="cifi" class="col-sm-2 col-form-label">C.I. o pasaporte</label>
 										<div class="col-sm-10">
