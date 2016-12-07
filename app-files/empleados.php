@@ -73,19 +73,7 @@
 										<small id="select-esp-help" class="form-text text-muted col-sm-8">Mantenga presionada la tecla Ctrl para seleccionar varias especializaciones</small>
 										<div class="col-sm-12">
 												<select multiple class="form-control" id="especializacion" name="especializacion">
-													<option value="Ginecología">Ginecología</option> \
-													<option value="Doctor de las tetas">Doctor de las tetas</option>
-													<option value="Doctor de las caderas">Doctor de las caderas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
-													<option value="Doctor de las piernas">Doctor de las piernas</option>
+													<!-- aqui va lo que devuelva el ajax -->
 												</select>
 										</div>
 									</div>
