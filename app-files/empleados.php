@@ -7,7 +7,7 @@
 		<?php include('header.php'); ?>
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						<div class="panel panel-primary">
 						  <div class="panel-heading">Registro del empleado</div>
 						  <div class="panel-body">
@@ -49,11 +49,17 @@
 
 									<div class="form-group row">
 										<label for="tipoEmpleado" class="col-sm-2 col-form-label">Tipo de empleado</label>
-										<div class="col-sm-5">
-											<input type="radio" class="form-control"name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertarRestoDelFormulario(1)">Empleado</input>
-										</div>
-										<div class="col-sm-5">
-											<input type="radio" class="form-control"name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertarRestoDelFormulario(2)">Doctor</input>
+										<div class="col-sm-8 col-sm-offset-2">
+											<div class="col-sm-6">
+												<label class"radio-inline">
+													<input type="radio" class="form-control"name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertarRestoDelFormulario(1)">Empleado
+												</label>
+											</div>
+											<div class="col-sm-6">
+												<label class"radio-inline">
+													<input type="radio" class="form-control"name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertarRestoDelFormulario(2)">Doctor
+												</label>
+											</div>
 										</div>
 									</div>
 
