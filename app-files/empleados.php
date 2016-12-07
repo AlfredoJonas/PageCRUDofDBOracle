@@ -60,14 +60,11 @@
 									<div class="temp"></div>
 
 									<div class="form-group row">
-										<label for="numEspecializaciones" class="col-sm-2 col-form-label">Cantidad de especializaciones</label>
-										<div class="col-sm-8">
+										<label for="numEspecializaciones" class="col-sm-3 col-form-label">Cantidad de especializaciones</label>
+										<div class="col-sm-9">
 											<input type="text" class="form-control" name="numEspecializaciones" id="numEspecializaciones">
 										</div>
 										<div class="row" id="especializacionesSeleccion"></div>
-										<div class="col-sm-2">
-											<input type="button" class="form-control" name="numEspecializacionesButton" id="numEspecializacionesButton" onclick="agregarCamposSeleccionEspecializaciones()" value="OK">
-										</div>
 									</div>
 
 									<div class="form-group">
