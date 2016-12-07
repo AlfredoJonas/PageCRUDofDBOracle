@@ -14,7 +14,7 @@
 							<div id="form-messages" class="alert .alert-dismissible fade in hidden">
 								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 							</div>
-								<form class="formImplemento" action="" method="GET" role="form">
+								<form class="formImplemento" action="ajax-handler.php" role="form">
 									<div class="form-group row">
 										<label for="nfi" class="col-sm-2 col-form-label">Nombre</label>
 										<div class="col-sm-10">
