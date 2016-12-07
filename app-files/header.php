@@ -17,6 +17,7 @@
 						<li class=""><a href="pacientes.php">Pacientes</a></li>
 						<li class=""><a href="inventario.php">Inventario</a></li>
 						<li class=""><a href="empleados.php">Empleados</a></li>
+						<li class=""><a href="citas.php">Citas</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 							<ul class="dropdown-menu">
