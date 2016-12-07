@@ -1,5 +1,5 @@
 <?php echo '
-	<header class="container">
+	<header class="container-fluid">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -33,5 +33,5 @@
 				</div>
 			</div>
 		</nav>
-	</div> 
+	</header>
 '; ?>
