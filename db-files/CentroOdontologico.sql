@@ -4,7 +4,11 @@
 
 SELECT 'DROP TABLE "' || table_name || '" CASCADE CONSTRAINTS;' FROM user_tables
 UNION
-SELECT 'DROP SEQUENCE "' || sequence_name || '";' FROM user_sequences;
+SELECT 'DROP SEQUENCE "' || sequence_name || '";' FROM user_sequences
+UNION
+SELECT 'DROP TRIGGER "' || TRIGGER_name || '";' FROM user_TRIGGERS
+UNION
+SELECT 'DROP PROCEDURE "' || PROCEDURE_name || '";' FROM user_PROCEDURES;
 
 DBMS_OUTPUT.PUT_LINE ();
 RAISE_APPLICATION_ERROR(-20505, 'NO SE PUEDE MODIFICAR LA VERSION');
