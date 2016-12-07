@@ -37,8 +37,8 @@ function insertarRestoDelFormulario(tipo) {
 }
 
 function agregarCamposSeleccionEspecializaciones() {
-	var cantidad_especializaciones = parseInt($("#numEspecializaciones").val());
-	var divEspecializaciones = $("#especializacionesSeleccion");
+	var cantidad_especializaciones = parseInt($(".num-esp").val());
+	var divEspecializaciones = $(".select-esp");
 
 	divEspecializaciones.html('');
 
@@ -60,11 +60,11 @@ function agregarCamposSeleccionEspecializaciones() {
 		);*/
 	for (var i = 0; i < cantidad_especializaciones; i++) {
 		divEspecializaciones.append(' \
-				<div class="form-group"> \
-					<div class="col-sm-2"> \
-						<label for="especializacion-' + i + '" class="col-sm-2 col-form-label">Seleccione la especialización</label> \
+				<div class="form-group row"> \
+					<div class="col-sm-14"> \
+						<label for="especializacion-' + i + '" class="col-sm-6 col-form-label">Especialización '+ (i+1) +'</label> \
 					</div> \
-					<div class="clo-sm-10"> \
+					<div class="col-sm-6"> \
 							<select class="form-control" id="especializacion-' + i + '" name="especializacion-' + i + '"> \
 								<option value="Ginecología">Ginecología</option> \
 								<option value="Doctor de las tetas">Doctor de las tetas</option> \

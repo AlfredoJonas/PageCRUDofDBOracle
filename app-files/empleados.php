@@ -67,15 +67,17 @@
 
 									<div class="form-group row">
 										<label for="numEspecializaciones" class="col-sm-3 col-form-label">Cantidad de especializaciones</label>
+
 										<div class="col-sm-6">
-											<input type="text" class="form-control" name="numEspecializaciones" id="numEspecializaciones">
+											<input type="text" class="form-control num-esp" name="numEspecializaciones" id="numEspecializaciones">
 										</div>
 
 										<div class="col-sm-3">
-											<input type="button" class="form-control" name="numEspecializacionesButton" id="numEspecializacionesButton" onclick="agregarCamposSeleccionEspecializaciones()" value="OK">
+											<input type="button" class="form-control num-esp-button" name="numEspecializacionesButton" onclick="agregarCamposSeleccionEspecializaciones()" value="OK">
 										</div>
-										<div class="container-fluid" id="especializacionesSeleccion"></div>
 									</div>
+
+									<div class="select-esp"></div>
 
 									<div class="form-group">
 										<input type="submit" class="form-control"name="guardar" value="Agregar">
