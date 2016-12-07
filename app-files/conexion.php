@@ -1,17 +1,13 @@
 <?php
 
-  //Datos a modificar dependiendo de la configuracion del sqldeveloper
-  $DB = '//localhost/XE';
-  $DB_USER = 'PROYECTODB20161';
-  $DB_PASS = '123';
-  $DB_CHAR = 'AL32UTF8';
+  include 'constants.php';
 
   $conexion = null;
 
   function get_conexion() {
 
     if(!$GLOBALS['conexion']) {
-      $GLOBALS['conexion'] = oci_pconnect($GLOBALS['DB_USER'], $GLOBALS['DB_PASS'], $GLOBALS['DB'], $GLOBALS['DB_CHAR']);
+      $GLOBALS['conexion'] = oci_pconnect(DB_USER, DB_PASS, DB, DB_CHAR);
 
       if($GLOBALS['conexion'] == null)
         throw_error("Error en la conexión con la BD");

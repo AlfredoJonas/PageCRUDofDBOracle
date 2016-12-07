@@ -11,7 +11,31 @@ $(document).ready(function() {
 		submitImplemento(event);
 	});
 
+  $('.especializaciones').on( "load", getEspecializaciones);
+
 });
+
+function getEspecializaciones() {
+  $.ajax({
+	    type: 'POST',
+	    url: 'ajax-handler.js',
+	    data: {type: 'solicitudListaEmpleados', from: 'empleados'}
+	}).done(function(response) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-success');
+
+    formMessages.text(response);
+	}).fail(function(data) {
+
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+      formMessages.text(data.responseText);
+    else
+      formMessages.text('Oops! An error occured.');
+	});
+}
 
 function submitEmpleado(event) {
   event.preventDefault();

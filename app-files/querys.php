@@ -1,4 +1,8 @@
 <?php
+
+  include 'constants.php';
+  include 'conexion.php';
+
   function preprocesar_cosultas($tipo_query, $from_page, $data_adicional){
 
     $response = array();
@@ -17,40 +21,40 @@
 
 
     switch ($from_page) {
-      case 'empleados':
+      case RUTA_EMPLEADOS:
         switch ($tipo_query) {
-          case 'solicitudListaEmpleados':
-            $consulta = $GLOBALS["solicitudListaEmpleados"];
+          case LISTA_EMPLEADOS:
+            $consulta = LISTA_EMPLEADOS_SQL;
             $ejecutar_consulta = 1;
           break;
-          case 'solicitudListaEspecializaciones':
-            $consulta = $GLOBALS["solicitudListaEmpleados"];
-            $ejecutar_consulta = 1;
-          break;
-        }
-      break;
-
-      case 'pacientes':
-        switch ($tipo_query) {
-          case 'solicitudListaPacientes':
-            $consulta = $GLOBALS["solicitudListaPacientes"];
+          case LISTA_ESPECIALIZACIONES:
+            $consulta = LISTA_ESPECIALIZACIONES_SQL;
             $ejecutar_consulta = 1;
           break;
         }
       break;
 
-      case 'inventario':
+      case RUTA_PACIENTES:
         switch ($tipo_query) {
-          case 'solicitudListaInventario':
-            $consulta = $GLOBALS["solicitudListaInventario"];
+          case LISTA_PACIENTES:
+            $consulta = LISTA_PACIENTES_SQL;
             $ejecutar_consulta = 1;
           break;
         }
       break;
 
-      case 'horarios':
+      case RUTA_INVENTARIO:
         switch ($tipo_query) {
-          case 'solicitudHorarioDoctorRangoDeFechas':
+          case LISTA_INVENTARIO:
+            $consulta = LISTA_INVENTARIO_SQL;
+            $ejecutar_consulta = 1;
+          break;
+        }
+      break;
+
+      case RUTA_HORARIOS:
+        switch ($tipo_query) {
+          case HORARIO_DOCTOR_FECHA:
             if($data_es_arreglo != 0)
               if(isset($data["fechaInicio"]) && isset($data["fechaFin"])) {
                 $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
@@ -61,7 +65,7 @@
               }
           break;
 
-          case 'solicitudHorarioDoctorDia':
+          case HORARIO_DOCTOR_DIA:
             if($data_es_arreglo != 0)
               if(isset($data["fecha"])){
                 $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
@@ -77,7 +81,7 @@
 
     if($ejecutar_consulta != 0){
       $response = exec_query($consulta);
-      return json_convert($response);
+      return json_encode($response);
     }
 
     return $error_message;

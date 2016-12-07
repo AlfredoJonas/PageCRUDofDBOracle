@@ -72,7 +72,7 @@
 										<label for="especializacion" class="col-sm-4 col-form-label">Especializaciones</label>
 										<small id="select-esp-help" class="form-text text-muted col-sm-8">Mantenga presionada la tecla Ctrl para seleccionar varias especializaciones</small>
 										<div class="col-sm-12">
-												<select multiple class="form-control" id="especializacion" name="especializacion">
+												<select multiple class="form-control especializaciones" id="especializacion" name="especializacion">
 													<!-- aqui va lo que devuelva el ajax -->
 												</select>
 										</div>
