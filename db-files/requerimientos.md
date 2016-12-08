@@ -1,4 +1,4 @@
-﻿## Requerimientos de la base de datos
+# REQUERIMIENTOS
 
 ### TRIGGERS
 - [x]	NO PERMITIR MAS DE 8 CONSULTAS AL DIA POR DOCTOR
