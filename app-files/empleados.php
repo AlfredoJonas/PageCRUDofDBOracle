@@ -23,9 +23,16 @@
 									</div>
 
 									<div class="form-group row">
-										<label for="nfi" class="col-sm-2 col-form-label">Nombre Completo</label>
+										<label for="nfi" class="col-sm-2 col-form-label">Nombre</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" name="nombre" id="nfi" placeholder="Ingrese el nombre del empleado">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="afi" class="col-sm-2 col-form-label">Apellido</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="apellido" id="afi" placeholder="Ingrese el apellido del empleado">
 										</div>
 									</div>
 
