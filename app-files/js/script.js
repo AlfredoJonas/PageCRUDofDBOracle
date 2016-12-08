@@ -67,7 +67,7 @@ function diarioRangoRequest(option){
 		switch(option){
 			case 1:
 				$(".fechasDiv").append(
-					'<label for="fechaespecificadiv" class="col-sm-2">Día específico</label>\
+					'<label for="fechaespecificadiv" class="col-sm-2 col-sm-offset-1">Día específico</label>\
 					<div id="fechaespecificadiv form-group" class="col-sm-3">\
 						<input type="date" class="diaInput" id="diaInput" name="diaInput">\
 					</div>'
