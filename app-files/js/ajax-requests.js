@@ -47,6 +47,11 @@ function parse_data(data, tipo) {
     //pero ustedes me entienden
     return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
   }
+  else{
+    if (tipo === 'single_select'){
+        //Edwin adaptelo por favor para que agarre las consultas de los <select> que no son multiples
+    }
+  }
 }
 
 function submitEmpleado(event) {
