@@ -1,3 +1,8 @@
+/* Atributos globales */
+agenda_DoctorOGlobal = 0;
+agenda_DiarioRango = 0;
+
+
 function insertHTML(tipo) {
 	var contenedor = $(".temp");
 
@@ -43,4 +48,36 @@ function parseData(data, tipo) {
   else if (tipo === 'single_select'){
     return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
   }
+}
+function doctorGlobalRequest(option){
+	switch(option){
+		case 1: 
+			//cosas globales
+		break;
+		case 2:
+			//requestDoctores();
+			$(".divDoctores").removeClass("hidden");
+			$(".doctorSeleccion").removeAttr("disabled");
+		break;
+	}
+
+	agenda_DoctorOGlobal = option;
+}
+
+function diarioRangoRequest(option){
+	$(".fechasDiv").html("");
+	$(".fechasDiv").append('<label for="fechaSeleccion"class="col-sm-4 col-form-label">Fecha</label>\
+										<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione la(s) fecha(s) de su consulta.</small>');
+		switch(option){
+				case 1: 
+					$(".fechasDiv").append('<label for="fechaespecificadiv" class="col-sm-6 col-form-label" >Día específico</label><div id="fechaespecificadiv form-group" class="col-sm-6"><input type="date" class="diaInput" id="diaInput" name="diaInput"></div>');
+				break;
+				case 2:
+					$(".fechasDiv").append(' \<label for="fechaespecificadiv1 conjunto" class="col-sm-3 col-form-label" >Fecha inicio</label><div id="fechaespecificadiv1 form-group" class="col-sm-3"><input type="date" class="dia1Input" id="dia1Input" name="dia1Input"></div><label for="fechaespecificadiv2 conjunto" class="col-sm-3 col-form-label" >Fecha fin</label><div id="fechaespecificadiv2 form-group" class="col-sm-3"><input type="date" class="dia2Input" id="dia2Input" name="dia2Input"></div>');
+				break;
+		}
+
+	agenda_DiarioRango = option;
+	$(".fechasDiv").removeClass("hidden");
+
 }

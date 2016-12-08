@@ -95,6 +95,10 @@ function requestDoctores(){
 				});
 			}
 
+fucntion requestDoctorGlobalSchedule(){
+
+}
+
 function requestInformacionCita(){
   var id_cita = parseInt($(".identificadorInput").text());
   var ruta = $('.doctorSeleccion').data("ruta");
