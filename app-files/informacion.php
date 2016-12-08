@@ -14,11 +14,11 @@
 		<?php include('header.php'); ?>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-5 col-sm-offset-1">
 					<div class="panel panel-primary">
 						<div class="panel-heading">Selección de consultas</div>
 						<div class="panel-body">
-							<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+							<div id="form-messages" class="alert alert-dismissible fade in hidden">
 								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 							</div>
 
@@ -46,7 +46,22 @@
 									<input type="submit" class="form-control" name="buscar" value="Buscar" hidden>
 								</div>
 							</form>
+						</div>
+					</div>
+				</div>
 
+				<div class="col-sm-5">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Resultado de la consulta</div>
+						<div class="panel-body consulta-body">
+							<table class="table table-hover">
+						    <thead>
+
+						    </thead>
+						    <tbody class="table-body">
+
+						    </tbody>
+						  </table>
 						</div>
 					</div>
 				</div>

@@ -46,6 +46,7 @@
 
       case 'RUTA_CONSULTAS': {
         $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+
           break;
       }
 

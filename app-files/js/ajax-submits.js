@@ -34,7 +34,11 @@ function submitConsultas(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.html(response);
+    formMessages.text('Consulta procesada con éxito');
+
+		for(var key in response) {
+			$('.table-body').append(parseData(response[key]));
+		}
 	})
 
   .fail(function(data) {
