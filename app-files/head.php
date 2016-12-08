@@ -18,4 +18,5 @@
 
 	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/ajax-submits.js"></script>
+	<script type="text/javascript" src="js/ajax-requests.js"></script>
 '; ?>

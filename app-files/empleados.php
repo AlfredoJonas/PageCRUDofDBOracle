@@ -6,34 +6,6 @@
 			$(document).ready(function() {
 				requestEspecializaciones();
 			});
-
-			function requestEspecializaciones() {
-				var ruta = $('.especializaciones').data("ruta");
-				var consulta = $('.especializaciones').data("consulta");
-				var formMessages = $('#form-messages');
-
-				$.ajax({
-					type: 'POST',
-					url: 'ajax-handler.php',
-					data: {ruta: ruta, consulta: consulta}
-				})
-
-				.done(function(response) {
-					for(var key in response) {
-						document.querySelector('.especializaciones').options.add(parseData(response[key], 'multiple_select'));
-					}
-				})
-
-				.fail(function(data) {
-					formMessages.removeClass('hidden');
-					formMessages.addClass('alert-danger');
-
-					if (data.responseText !== '')
-						formMessages.innerHtml = data.responseText;
-					else
-						formMessages.text('Oops! An error occured.');
-				});
-			}
 		</script>
 	</head>
 	<body>

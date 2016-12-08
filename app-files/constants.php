@@ -10,14 +10,16 @@
   define("RUTA_PACIENTES", "pacientes");
   define("RUTA_INVENTARIO", "inventario");
   define("RUTA_HORARIOS", "horarios");
-  define("RUTA_DOCTORES", "doctores");
+  define("RUTA_CITAS", "citas");
 
   //Indicadores
   define("LISTA_EMPLEADOS", "solicitudListaEmpleados");
   define("LISTA_ESPECIALIZACIONES", "solicitudListaEspecializaciones");
   define("LISTA_PACIENTES", "solicitudListaPacientes");
   define("LISTA_INVENTARIO", "solicitudListaInventario");
-  define("LISTA_DOCTORES", "solicitudListaDoctores");
+  define("LISTA_NOMBRES_DOCTORES", "solicitudListaNombresDoctores");
+  define("LISTA_NOMBRES_PACIENTES", "solicitudListaNombresPacientes");
+  define("LISTA_ATRIBUTOS_CITA", "solicitudListaAtributosCita");
 
   //Estas son dinamicas por ende no tienen su respectivo SQL
   define("HORARIO_DOCTOR_FECHA", "solicitudHorarioDoctorRangoDeFechas");
@@ -25,19 +27,27 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  " select * from tablita "
-  , true);
+  " select * from tablita ",
+  true);
+
   define("LISTA_ESPECIALIZACIONES_SQL",
-   " select * from tablita "
-  , true);
-  define("LISTA_PACIENTES_SQL",
-  " select * from tablita "
-  , true);
+  " select * from tablita ",
+  true);
+
   define("LISTA_INVENTARIO_SQL",
-  " select * from tablita "
-  , true);
-  define("LISTA_DOCTORES_SQL",
-  " select * from tablita "
-  , true
-  );
+  " select * from tablita ",
+  true);
+
+  define("LISTA_NOMBRES_DOCTORES_SQL",
+  " select * from medico",
+  true);
+
+  define("LISTA_NOMBRES_PACIENTES_SQL",
+  " select * from paciente",
+  true);
+
+  define("LISTA_ATRIBUTOS_CITA_SQL",
+  //Esto es dinamico
+  " select * from paciente",
+  true);
  ?>
