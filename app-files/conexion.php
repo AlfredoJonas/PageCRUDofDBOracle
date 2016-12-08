@@ -14,9 +14,10 @@
   }
 
   function exec_query($query) {
-
     $statement = oci_parse(get_conexion(), $query);
-    oci_execute($statement);
+
+    if(!oci_execute($statement))
+      throw_error(oci_error($statement)['message']);
 
     return $statement;
   }
@@ -24,6 +25,6 @@
   function throw_error($mensaje, $code = 0) {
     header('HTTP/1.1 500 Pailas chamo');
     header('Content-Type: application/json; charset=UTF-8');
-    die(json_encode(array('message' => $mensaje, 'code' => $code)));
+    die(trim($mensaje));
   }
  ?>

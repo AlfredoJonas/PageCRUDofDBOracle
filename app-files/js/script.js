@@ -39,6 +39,7 @@ function insertHTML(tipo) {
 	}
 }
 
+
 function parseData(data, tipo) {
   if (tipo === 'multiple_select') {
     //Esto es porque yo tengo en mi BD una tabla con una columna usuario
