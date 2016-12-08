@@ -19,42 +19,42 @@
 
     switch ($from_page) {
 
-      case RUTA_EMPLEADOS:
+      case 'RUTA_EMPLEADOS':
         switch ($tipo_query) {
-          case LISTA_EMPLEADOS:
+          case 'LISTA_EMPLEADOS':
             $consulta = LISTA_EMPLEADOS_SQL;
           break;
-          case LISTA_ESPECIALIZACIONES:
+          case 'LISTA_ESPECIALIZACIONES':
             $consulta = LISTA_ESPECIALIZACIONES_SQL;
           break;
         }
       break;
 
-      case RUTA_CITAS:
+      case 'RUTA_CITAS':
         switch ($tipo_query) {
-          case LISTA_NOMBRES_DOCTORES:
+          case 'LISTA_NOMBRES_DOCTORES':
             $consulta = LISTA_NOMBRES_DOCTORES_SQL;
           break;
-          case LISTA_NOMBRES_PACIENTES:
+          case 'LISTA_NOMBRES_PACIENTES':
             $consulta = LISTA_NOMBRES_PACIENTES_SQL;
           break;
-          case LISTA_ATRIBUTOS_CITA:
+          case 'LISTA_ATRIBUTOS_CITA':
             $consulta = LISTA_ATRIBUTOS_CITA_SQL;
           break;
         }
       break;
 
-      case RUTA_INVENTARIO:
+      case 'RUTA_INVENTARIO':
         switch ($tipo_query) {
-          case LISTA_INVENTARIO:
+          case 'LISTA_INVENTARIO':
             $consulta = LISTA_INVENTARIO_SQL;
           break;
         }
       break;
 
-      case RUTA_HORARIOS:
+      case 'RUTA_HORARIOS':
         switch ($tipo_query) {
-          case HORARIO_DOCTOR_FECHA:
+          case 'HORARIO_DOCTOR_FECHA':
             if($data_es_arreglo != 0)
               if(isset($data["fechaInicio"]) && isset($data["fechaFin"])) {
                 $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
@@ -63,7 +63,7 @@
                              ORDER BY FECHA;";
               }
           break;
-          case HORARIO_DOCTOR_DIA:
+          case 'HORARIO_DOCTOR_DIA':
             if($data_es_arreglo != 0)
               if(isset($data["fecha"])){
                 $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
