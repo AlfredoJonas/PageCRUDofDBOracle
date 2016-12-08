@@ -11,8 +11,7 @@ $(document).ready(function() {
 		submitImplemento(event);
 	});
 
-  $('.especializaciones').focus(getEspecializaciones);
-
+  getEspecializaciones();
 });
 
 function getEspecializaciones() {
@@ -24,14 +23,30 @@ function getEspecializaciones() {
 	    type: 'POST',
 	    url: 'ajax-handler.php',
 	    data: {ruta: ruta, consulta: consulta}
-	}).done(function(response) {
-    $('.especializacion').innerHTML(response);
-	}).fail(function(data) {
+	})
+
+  .done(function(response) {
+    $('.especializaciones').addClass('filled');
+
+    for(var key in response) {
+      document.querySelector('.especializaciones').options.add(parse_data(response[key], 'multiple_select'));
+    }
+	})
+
+  .fail(function(data) {
     if (data.responseText !== '')
       formMessages.text(data.responseText);
     else
       formMessages.text('Oops! An error occured.');
 	});
+}
+
+function parse_data(data, tipo) {
+  if (tipo === 'multiple_select') {+
+    //Esto es porque yo tengo en mi BD una tabla con una columna usuario
+    //pero ustedes me entienden
+    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
+  }
 }
 
 function submitEmpleado(event) {

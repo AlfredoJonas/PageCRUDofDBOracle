@@ -13,7 +13,6 @@
     return $GLOBALS['conexion'];
   }
 
-
   function exec_query($query) {
 
     $statement = oci_parse(get_conexion(), $query);
@@ -27,5 +26,4 @@
     header('Content-Type: application/json; charset=UTF-8');
     die(json_encode(array('message' => $mensaje, 'code' => $code)));
   }
-
  ?>
