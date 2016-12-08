@@ -16,6 +16,8 @@
   define("LISTA_ESPECIALIZACIONES", "solicitudListaEspecializaciones");
   define("LISTA_PACIENTES", "solicitudListaPacientes");
   define("LISTA_INVENTARIO", "solicitudListaInventario");
+
+  //Estas son dinamicas por ende no tienen su respectivo SQL
   define("HORARIO_DOCTOR_FECHA", "solicitudHorarioDoctorRangoDeFechas");
   define("HORARIO_DOCTOR_DIA", "solicitudHorarioDoctorDia");
 

@@ -1,7 +1,10 @@
 <?php
   require 'querys.php';
 
-  $consulta = preprocesar_cosultas($_POST['consulta'], $_POST['ruta']);
+  if(!ISSET($_POST['data_extra']))
+    $consulta = preprocesar_cosultas($_POST['consulta'], $_POST['ruta']);
+  else
+    $consulta = preprocesar_cosultas($_POST['consulta'], $_POST['ruta'], $_POST['data_extra']);
 
   $statement = exec_query($consulta);
 

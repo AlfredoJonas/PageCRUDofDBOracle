@@ -15,22 +15,21 @@
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 								</div>
 
-
 									<form class="formCitas" action="ajax-handler.php" role="form">
 										<div class="form-group row">
 											<label for="identificadorInput"class="col-sm-4 col-form-label">Identificador</label>
-											<small id="select-esp-help" class="form-text text-muted col-sm-8">Éste es el identificador de la cita.</small>
+											<small id="select-esp-help" class="form-text text-muted col-sm-8">Éste es el identificador de la cita</small>
 											<div class="col-sm-9">
 												<input type="text" id="identificadorInput" name="identificadorInput" class="form-control">
 											</div>
 											<div class="col-sm-3">
-												<input type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="form-control" value="Buscar cita">
+												<input type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="form-control" value="Buscar">
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label for="pacienteSeleccion"class="col-sm-4 col-form-label">Pacientes</label>
-											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un paciente para la cita (debe estar registrado).</small>
+											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un paciente para la cita (debe estar registrado)</small>
 											<div class="col-sm-12">
 												<select id="pacienteSeleccion" name="pacienteSeleccion" class="form-control">
 													<option value="Leonardo da Vinci">Leonardo da Vinci</option>
@@ -41,7 +40,7 @@
 
 										<div class="form-group row">
 											<label for="doctorSeleccion"class="col-sm-4 col-form-label">Doctores</label>
-											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para la cita (debe estar registrado).</small>
+											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para la cita (debe estar registrado)</small>
 											<div class="col-sm-12">
 												<select id="doctorSeleccion" name="doctorSeleccion" class="form-control">
 													<option value="Isaac Newton">Isaac Newton</option>
@@ -85,7 +84,7 @@
 
 										<div class="form-group row">
 											<label for="odontogramaInput"class="col-sm-4 col-form-label">Odontograma</label>
-											<small id="select-esp-help" class="form-text text-muted col-sm-8">Inserte el URL de la imagen.</small>
+											<small id="select-esp-help" class="form-text text-muted col-sm-8">Inserte el URL de la imagen</small>
 											<div class="col-sm-12">
 												<input type="text" id="odontogramaInput" name="odontogramaInput" class="form-control">
 											</div>
