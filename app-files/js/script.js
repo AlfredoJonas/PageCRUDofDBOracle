@@ -43,6 +43,7 @@ function insertHTML(tipo) {
 function parseData(data, tipo) {
   return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
 }
+
 function doctorGlobalRequest(option){
 	switch(option){
 		case 1:

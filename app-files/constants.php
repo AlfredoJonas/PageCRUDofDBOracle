@@ -52,7 +52,7 @@
   true);
 
   //Las super consultas
-  define("CONSULTAS", serialize(array(
+  const CONSULTAS = array(
     "TRATAMIENTOS REALIZADOS",
     "HORARIOS DISPONIBLES",
     "CITAS DISPONIBLES",
@@ -62,6 +62,6 @@
     "MOROSOS",
     "HISTORIAL DE CITAS",
     "HISTORIAL DE TRATAMIENTOS"
-  )));
+  );
 
  ?>

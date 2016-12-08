@@ -16,9 +16,8 @@
 						   <select class="form-control" id="sel">
 								 <!-- Aqui las consultas disponibles -->
 								 	<?php
-										$consultas = unserialize(CONSULTAS);
-										foreach ($consultas as $consulta) {
-											echo '<option value="'+strtolower($consulta)+'">'+$consulta+'</option>';
+										foreach (CONSULTAS as $consulta) {
+											echo '<option value="'.strtolower($consulta).'">'.$consulta.'</option>';
 										}
 									 ?>
 						   </select>
