@@ -2,8 +2,6 @@
 <html lang="en">
 	<head>
 		<?php include('head.php'); ?>
-
-		<script type="text/javascript" src="js/requests-formulario-citas.js"></script>
 	</head>
 	<body>
 		<?php include('header.php'); ?>
