@@ -41,18 +41,11 @@ function insertHTML(tipo) {
 
 
 function parseData(data, tipo) {
-  if (tipo === 'multiple_select') {
-    //Esto es porque yo tengo en mi BD una tabla con una columna usuario
-    //pero ustedes me entienden
-    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-  }
-  else if (tipo === 'single_select'){
-    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-  }
+  return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
 }
 function doctorGlobalRequest(option){
 	switch(option){
-		case 1: 
+		case 1:
 			//cosas globales
 		break;
 		case 2:
@@ -70,7 +63,7 @@ function diarioRangoRequest(option){
 	$(".fechasDiv").append('<label for="fechaSeleccion"class="col-sm-4 col-form-label">Fecha</label>\
 										<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione la(s) fecha(s) de su consulta.</small>');
 		switch(option){
-				case 1: 
+				case 1:
 					$(".fechasDiv").append('<label for="fechaespecificadiv" class="col-sm-6 col-form-label" >Día específico</label><div id="fechaespecificadiv form-group" class="col-sm-6"><input type="date" class="diaInput" id="diaInput" name="diaInput"></div>');
 				break;
 				case 2:

@@ -50,4 +50,18 @@
   //Esto es dinamico
   "select * from paciente",
   true);
+
+  //Las super consultas
+  define("CONSULTAS", serialize(array(
+    "TRATAMIENTOS REALIZADOS",
+    "HORARIOS DISPONIBLES",
+    "CITAS DISPONIBLES",
+    "GANANCIAS GENERALES",
+    "GANANCIAS POR MES",
+    "EL DOCTOR DERROCHADOR",
+    "MOROSOS",
+    "HISTORIAL DE CITAS",
+    "HISTORIAL DE TRATAMIENTOS"
+  )));
+
  ?>

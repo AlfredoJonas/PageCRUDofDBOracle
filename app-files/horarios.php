@@ -12,15 +12,15 @@
 		<?php include('header.php');?>
 			<div class="container-fluid">
 				<div class="row containerFormHorarios">
-                    <div class="panel panel-primary">
+          <div class="panel panel-primary">
 						<div class="panel-heading">Registro del empleado</div>
 						  	<div class="panel-body">
 								<div id="form-messages" class="alert .alert-dismissible fade in hidden">
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 								</div>
 								<form class="formEmpleado" action="ajax-handler.php" role="form">
-                                    
-                                    <div class="form-group row">
+									
+                  <div class="form-group row">
 										<label for="doctorGlobal" class="col-sm-2 col-form-label">Tipo de agenda</label>
 										<div class="col-sm-8 col-sm-offset-2">
 											<div class="col-sm-6">
@@ -36,7 +36,7 @@
 										</div>
 									</div>
 
-                                   <div class="divDoctores form-group row hidden">
+									<div class="divDoctores form-group row hidden">
 										<label for="doctorSeleccion"class="col-sm-4 col-form-label">Doctores</label>
 										<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para consultar su horario (debe estar registrado)</small>
 										<div id="doctorSeleccionDiv" class="doctorSeleccionDiv col-sm-12">
@@ -45,7 +45,7 @@
 										</div>
 									</div>
 
-                                    <div class="form-group row">
+									<div class="form-group row">
 										<label for="diaRango" class="col-sm-2 col-form-label">Periodo de tiempo</label>
 										<div class="col-sm-8 col-sm-offset-2">
 											<div class="col-sm-6">
@@ -61,19 +61,18 @@
 										</div>
 									</div>
 
-                                    <div class="fechasDiv form-group row hidden">
-										
+									<div class="fechasDiv form-group row hidden">
 									</div>
 
-                                    <div class="form-group">
-											<input type="submit" class="form-control" name="buscar" value="Buscar">
+ 									<div class="form-group">
+										<input type="submit" class="form-control" name="buscar" value="Buscar">
 									</div>
 
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 			</div>
 		<?php include('footer.php'); ?>
 	</body>

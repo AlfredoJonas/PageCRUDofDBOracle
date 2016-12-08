@@ -1,7 +1,3 @@
-function parseData(data, tipo) {
-  return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
-}
-
 function requestEspecializaciones() {
 	var ruta = $('.especializaciones').data("ruta");
 	var consulta = $('.especializaciones').data("consulta");
