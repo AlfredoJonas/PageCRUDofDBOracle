@@ -66,7 +66,7 @@
 										</div>
 
 	 									<div class="form-group">
-											<input type="submit" class="form-control" name="buscar" value="Buscar">
+											<input type="submit" class="form-control buttonSubmit" name="buscar" value="Buscar">
 										</div>
 
 		              </form>
