@@ -11,37 +11,38 @@ $(document).ready(function() {
 		submitImplemento(event);
 	});
 
-	$('.selectConsultas').change(function(event) {
-		requestConsultas(event);
+	$('.formConsultas').submit(function(event) {
+		submitConsultas(event);
 	});
 });
 
-function requestConsultas(event) {
+function submitConsultas(event) {
 	event.preventDefault();
+
 	var form = $('.formConsultas');
-	var data = $('.selectConsultas option:selected').val();
+	var ruta = $('.selectConsultas').data("ruta");
+	var data = form.serialize();
   var formMessages = $('#form-messages');
 
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {datadata}
+	    data: {ruta: ruta, consulta: 'NADA', data_extra: data}
 	})
 
   .done(function(response) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.text(response);
+    formMessages.html(response);
 	})
 
   .fail(function(data) {
-
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.innerHtml = data.responseText;
+      formMessages.html(data.responseText);
     else
       formMessages.text('Oops! An error occured.');
 	});
@@ -64,7 +65,7 @@ function submitEmpleado(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.text(response);
+    formMessages.html(response);
 	})
 
   .fail(function(data) {
@@ -73,7 +74,7 @@ function submitEmpleado(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.innerHtml = data.responseText;
+      formMessages.html(data.responseText);
     else
       formMessages.text('Oops! An error occured.');
 	});
@@ -95,7 +96,7 @@ function submitCita(event){
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.text(response);
+    formMessages.html(response);
 	})
 
   .fail(function(data) {
@@ -104,7 +105,7 @@ function submitCita(event){
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.innerHtml = data.responseText;
+      formMessages.html(data.responseText);
     else
       formMessages.text('Oops! An error occured.');
 	});
@@ -126,7 +127,7 @@ function submitImplemento(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.text(response);
+    formMessages.html(response);
 	})
 
   .fail(function(data) {
@@ -135,7 +136,7 @@ function submitImplemento(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.innerHtml = data.responseText;
+      formMessages.html(data.responseText);
     else
       formMessages.text('Oops! An error occured.');
 	});
