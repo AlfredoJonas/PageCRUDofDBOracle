@@ -11,17 +11,26 @@
 					<div class="panel panel-primary">
 						<div class="panel-heading">Selección de consultas</div>
 						<div class="panel-body">
-							<div class="form-group">
-						   <label for="sel">Consulta a realizar</label>
-						   <select class="form-control" id="sel">
-								 <!-- Aqui las consultas disponibles -->
-								 	<?php
-										foreach (CONSULTAS as $consulta) {
-											echo '<option value="'.strtolower($consulta).'">'.$consulta.'</option>';
-										}
-									 ?>
-						   </select>
-						 </div>
+							<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							</div>
+							<form class="formConsultas" action="ajax-handler.php">
+								<div class="form-group">
+							   <label for="sel">Consulta a realizar</label>
+							   <select class="form-control selectConsultas" id="sel">
+									 <!-- Aqui las consultas disponibles -->
+									 	<?php
+											foreach (CONSULTAS as $consulta => $sql) {
+												echo '<option value="'.strtolower($sql).'">'.$consulta.'</option>';
+											}
+										 ?>
+							   </select>
+							 	</div>
+							<!--	<div class="form-group">
+									<input type="submit" class="form-control" name="buscar" value="Buscar">
+								</div>-->
+							</form>
+
 						</div>
 					</div>
 				</div>
