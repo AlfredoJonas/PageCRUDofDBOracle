@@ -34,6 +34,9 @@ function getEspecializaciones() {
 	})
 
   .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
     if (data.responseText !== '')
       formMessages.text(data.responseText);
     else
