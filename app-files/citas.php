@@ -2,6 +2,8 @@
 <html lang="en">
 	<head>
 		<?php include('head.php'); ?>
+
+		<script type="text/javascript" src="js/requests-formulario-citas.js"></script>
 	</head>
 	<body>
 		<?php include('header.php'); ?>
@@ -31,9 +33,7 @@
 											<label for="pacienteSeleccion"class="col-sm-4 col-form-label">Pacientes</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un paciente para la cita (debe estar registrado)</small>
 											<div class="col-sm-12">
-												<select id="pacienteSeleccion" name="pacienteSeleccion" class="form-control">
-													<option value="Leonardo da Vinci">Leonardo da Vinci</option>
-													<option value="Albert Einstein">Albert Einstein</option>
+												<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="<?php echo RUTA_PACIENTES ?>" data-consulta="<?php echo LISTA_PACIENTES ?>">
 												</select>
 											</div>
 										</div>
@@ -42,9 +42,7 @@
 											<label for="doctorSeleccion"class="col-sm-4 col-form-label">Doctores</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para la cita (debe estar registrado)</small>
 											<div class="col-sm-12">
-												<select id="doctorSeleccion" name="doctorSeleccion" class="form-control">
-													<option value="Isaac Newton">Isaac Newton</option>
-													<option value="Marie Curie">Marie Curie</option>
+												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="<?php echo RUTA_DOCTORES ?>" data-consulta="<?php echo LISTA_DOCTORES ?>">
 												</select>
 											</div>
 										</div>
