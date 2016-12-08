@@ -33,14 +33,3 @@ function insertHTML(tipo) {
 		break;
 	}
 }
-
-function parseData(data, tipo) {
-  if (tipo === 'multiple_select') {
-    //Esto es porque yo tengo en mi BD una tabla con una columna usuario
-    //pero ustedes me entienden
-    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-  }
-  else if (tipo === 'single_select'){
-    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-  }
-}

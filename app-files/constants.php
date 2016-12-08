@@ -27,27 +27,27 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  " select * from tablita ",
+  "select * from empleado",
   true);
 
   define("LISTA_ESPECIALIZACIONES_SQL",
-  " select * from tablita ",
+  "select * from especializacion",
   true);
 
   define("LISTA_INVENTARIO_SQL",
-  " select * from tablita ",
+  "select * from implemento",
   true);
 
   define("LISTA_NOMBRES_DOCTORES_SQL",
-  " select * from medico",
+  "select * from medico",
   true);
 
   define("LISTA_NOMBRES_PACIENTES_SQL",
-  " select * from paciente",
+  "select * from paciente",
   true);
 
   define("LISTA_ATRIBUTOS_CITA_SQL",
   //Esto es dinamico
-  " select * from paciente",
+  "select * from paciente",
   true);
  ?>

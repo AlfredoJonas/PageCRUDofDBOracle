@@ -1,14 +1,5 @@
-function parse_data(data, tipo) {
-  if (tipo === 'multiple_select') {
-    //Esto es porque yo tengo en mi BD una tabla con una columna usuario
-    //pero ustedes me entienden
-    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-  }
-  else{
-    if (tipo === 'single_select'){
-    	return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-    }
-  }
+function parseData(data, tipo) {
+  return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
 }
 
 function requestEspecializaciones() {
@@ -24,6 +15,7 @@ function requestEspecializaciones() {
 
 	.done(function(response) {
 		for(var key in response) {
+      console.log(response[key]);
 			document.querySelector('.especializaciones').options.add(parseData(response[key], 'multiple_select'));
 		}
 	})
@@ -107,38 +99,40 @@ function requestInformacionCita(){
     url: 'ajax-handler.php',
     data: {ruta: ruta, consulta: consulta}
   })
+
   .done(function(response){
-      if(response.paciente){
-        $('.doctorSeleccion').remove();
+    if(response.paciente){
+      $('.doctorSeleccion').remove();
 
-        $('.doctorSeleccionDiv').append('<input type="text" id="doctorInput" name="doctorInput" class="form-control doctorInput" readonly text="'+ response.doctor +'">');
-      }
+      $('.doctorSeleccionDiv').append('<input type="text" id="doctorInput" name="doctorInput" class="form-control doctorInput" readonly text="'+ response.doctor +'">');
+    }
 
-      if(response.doctor){
-        $('.pacienteSeleccion').remove();
+    if(response.doctor){
+      $('.pacienteSeleccion').remove();
 
-        $('.pacienteSeleccionDiv').append('<input type="text" id="pacienteInput" name="pacienteInput" class="form-control pacienteInput" readonly text="'+ response.paciente +'">');
-      }
+      $('.pacienteSeleccionDiv').append('<input type="text" id="pacienteInput" name="pacienteInput" class="form-control pacienteInput" readonly text="'+ response.paciente +'">');
+    }
 
-      if(response.fecha){
-        $('.fechaInput').remove();
-        $('.horaInput').remove();
+    if(response.fecha){
+      $('.fechaInput').remove();
+      $('.horaInput').remove();
 
-        $('.fechaHoraDiv').append('<input type="text" id="fechaHoraInput" name="fechaHoraInput" class="form-control fechaHoraInput" readonly text="'+ response.fecha +'">');
-      }
+      $('.fechaHoraDiv').append('<input type="text" id="fechaHoraInput" name="fechaHoraInput" class="form-control fechaHoraInput" readonly text="'+ response.fecha +'">');
+    }
 
-      if(response.odontograma){
-        $('.odontogramaInput').remove();
-        $('.presupuestoInput').attr("text",response.odontograma + "")
-        $('.odontogramaInput').attr("readonly","readonly");
-      }
+    if(response.odontograma){
+      $('.odontogramaInput').remove();
+      $('.presupuestoInput').attr("text",response.odontograma + "")
+      $('.odontogramaInput').attr("readonly","readonly");
+    }
 
-      if(response.presupuesto){
-        $('.presupuestoInput').remove();
-        $('.presupuestoInput').attr("text",response.presupuesto + "")
-        $('.presupuestoInput').attr("readonly","readonly");
-      }
+    if(response.presupuesto){
+      $('.presupuestoInput').remove();
+      $('.presupuestoInput').attr("text",response.presupuesto + "")
+      $('.presupuestoInput').attr("readonly","readonly");
+    }
   })
+
   .fail(function(data) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-danger');

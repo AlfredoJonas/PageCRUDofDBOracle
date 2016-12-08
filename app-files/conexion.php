@@ -14,7 +14,6 @@
   }
 
   function exec_query($query) {
-
     $statement = oci_parse(get_conexion(), $query);
 
     if(!oci_execute($statement))
