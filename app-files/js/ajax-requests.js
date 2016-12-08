@@ -1,9 +1,3 @@
-$(document).ready(function() {
-    requestPacientes();
-    requestDoctores();
-	  requestEspecializaciones();
-});
-
 function parse_data(data, tipo) {
   if (tipo === 'multiple_select') {
     //Esto es porque yo tengo en mi BD una tabla con una columna usuario
@@ -18,92 +12,88 @@ function parse_data(data, tipo) {
 }
 
 function requestEspecializaciones() {
-  var ruta = $('.especializaciones').data("ruta");
-  var consulta = $('.especializaciones').data("consulta");
-  var formMessages = $('#form-messages');
+				var ruta = $('.especializaciones').data("ruta");
+				var consulta = $('.especializaciones').data("consulta");
+				var formMessages = $('#form-messages');
 
-  $.ajax({
-	  type: 'POST',
-	  url: 'ajax-handler.php',
-	  data: {ruta: ruta, consulta: consulta}
-	})
+				$.ajax({
+					type: 'POST',
+					url: 'ajax-handler.php',
+					data: {ruta: ruta, consulta: consulta}
+				})
 
-  .done(function(response) {
-    $('.especializaciones').addClass('filled');
+				.done(function(response) {
+					for(var key in response) {
+						document.querySelector('.especializaciones').options.add(parseData(response[key], 'multiple_select'));
+					}
+				})
 
-    for(var key in response) {
-      document.querySelector('.especializaciones').options.add(parse_data(response[key], 'multiple_select'));
-    }
-	})
+				.fail(function(data) {
+					formMessages.removeClass('hidden');
+					formMessages.addClass('alert-danger');
 
-  .fail(function(data) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
-
-    if (data.responseText !== '')
-      formMessages.text(data.responseText);
-    else
-      formMessages.text('Oops! An error occured.');
-	});
+					if (data.responseText !== '')
+						formMessages.innerHtml = data.responseText;
+					else
+						formMessages.text('Oops! An error occured.');
+				});
 }
 
 function requestPacientes(){
-	var ruta = $('.pacienteSeleccion').data("ruta");
-	var consulta = $('.pacienteSeleccion').data("consulta");
-  var formMessages = $('#form-messages');
+				var ruta = $('.pacienteSeleccion').data("ruta");
+				var consulta = $('.pacienteSeleccion').data("consulta");
+				var formMessages = $('#form-messages');
 
-  $.ajax({
-    type: 'POST',
-    url: 'ajax-handler.php',
-    data: {ruta: ruta, consulta: consulta}
-  })
+				$.ajax({
+					type: 'POST',
+					url: 'ajax-handler.php',
+					data: {ruta: ruta, consulta: consulta}
+				})
 
-  .done(function(response) {
-      $('.pacienteSeleccion').addClass('filled');
+				.done(function(response) {
+						for(var key in response) {
+							document.querySelector('.pacienteSeleccion').options.add(parseData(response[key], 'single_select'));
+						}
+				})
 
-      for(var key in response) {
-        document.querySelector('.pacienteSeleccion').options.add(parse_data(response[key], 'single_select'));
-      }
-  })
+				.fail(function(data) {
+					formMessages.removeClass('hidden');
+					formMessages.addClass('alert-danger');
 
-  .fail(function(data) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
-
-    if (data.responseText !== '')
-      formMessages.text(data.responseText);
-    else
-      formMessages.text('Oops! An error occured.');
-  });
+					if (data.responseText !== '')
+						formMessages.innerHtml = data.responseText;
+					else
+						formMessages.text('Oops! An error occured.');
+				});
 }
 
 function requestDoctores(){
-	var ruta = $('.doctorSeleccion').data("ruta");
-	var consulta = $('.doctorSeleccion').data("consulta");
-  var formMessages = $('#form-messages');
+				var ruta = $('.doctorSeleccion').data("ruta");
+				var consulta = $('.doctorSeleccion').data("consulta");
+				var formMessages = $('#form-messages');
 
-  $.ajax({
-    type: 'POST',
-    url: 'ajax-handler.php',
-    data: {ruta: ruta, consulta: consulta}
-  })
-  .done(function(response){
-    $('.doctorSeleccion').addClass('filled');
+				$.ajax({
+					type: 'POST',
+					url: 'ajax-handler.php',
+					data: {ruta: ruta, consulta: consulta}
+				})
 
-    for(var key in response) {
-      document.querySelector('.doctorSeleccion').options.add(parse_data(response[key], 'single_select'));
-    }
-  })
-  .fail(function(data) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
+				.done(function(response){
+					for(var key in response) {
+						document.querySelector('.doctorSeleccion').options.add(parseData(response[key], 'single_select'));
+					}
+				})
 
-    if (data.responseText !== '')
-      formMessages.text(data.responseText);
-    else
-      formMessages.text('Oops! An error occured.');
-  });
-}
+				.fail(function(data) {
+					formMessages.removeClass('hidden');
+					formMessages.addClass('alert-danger');
+
+					if (data.responseText !== '')
+						formMessages.innerHtml = data.responseText;
+					else
+						formMessages.text('Oops! An error occured.');
+				});
+			}
 
 function requestInformacionCita(){
   var id_cita = parseInt($(".identificadorInput").text());

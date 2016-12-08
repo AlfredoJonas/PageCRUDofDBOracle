@@ -7,62 +7,6 @@
 				requestPacientes();
 				requestDoctores();
 			});
-
-			function requestPacientes(){
-				var ruta = $('.pacienteSeleccion').data("ruta");
-				var consulta = $('.pacienteSeleccion').data("consulta");
-				var formMessages = $('#form-messages');
-
-				$.ajax({
-					type: 'POST',
-					url: 'ajax-handler.php',
-					data: {ruta: ruta, consulta: consulta}
-				})
-
-				.done(function(response) {
-						for(var key in response) {
-							document.querySelector('.pacienteSeleccion').options.add(parseData(response[key], 'single_select'));
-						}
-				})
-
-				.fail(function(data) {
-					formMessages.removeClass('hidden');
-					formMessages.addClass('alert-danger');
-
-					if (data.responseText !== '')
-						formMessages.innerHtml = data.responseText;
-					else
-						formMessages.text('Oops! An error occured.');
-				});
-			}
-
-			function requestDoctores(){
-				var ruta = $('.doctorSeleccion').data("ruta");
-				var consulta = $('.doctorSeleccion').data("consulta");
-				var formMessages = $('#form-messages');
-
-				$.ajax({
-					type: 'POST',
-					url: 'ajax-handler.php',
-					data: {ruta: ruta, consulta: consulta}
-				})
-
-				.done(function(response){
-					for(var key in response) {
-						document.querySelector('.doctorSeleccion').options.add(parseData(response[key], 'single_select'));
-					}
-				})
-
-				.fail(function(data) {
-					formMessages.removeClass('hidden');
-					formMessages.addClass('alert-danger');
-
-					if (data.responseText !== '')
-						formMessages.innerHtml = data.responseText;
-					else
-						formMessages.text('Oops! An error occured.');
-				});
-			}
 		</script>
 	</head>
 	<body>
