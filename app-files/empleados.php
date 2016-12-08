@@ -2,6 +2,39 @@
 <html lang="en">
 	<head>
 		<?php include('head.php'); ?>
+		<script type="text/javascript">
+			document.ready(function() {
+				requestEspecializaciones();
+			});
+
+			function requestEspecializaciones() {
+				var ruta = $('.especializaciones').data("ruta");
+				var consulta = $('.especializaciones').data("consulta");
+				var formMessages = $('#form-messages');
+
+				$.ajax({
+					type: 'POST',
+					url: 'ajax-handler.php',
+					data: {ruta: ruta, consulta: consulta}
+				})
+
+				.done(function(response) {
+					for(var key in response) {
+						document.querySelector('.especializaciones').options.add(parseData(response[key], 'multiple_select'));
+					}
+				})
+
+				.fail(function(data) {
+					formMessages.removeClass('hidden');
+					formMessages.addClass('alert-danger');
+
+					if (data.responseText !== '')
+						formMessages.innerHtml = data.responseText;
+					else
+						formMessages.text('Oops! An error occured.');
+				});
+			}
+		</script>
 	</head>
 	<body>
 		<?php include('header.php');?>
@@ -62,12 +95,12 @@
 										<div class="col-sm-8 col-sm-offset-2">
 											<div class="col-sm-6">
 												<label class"radio-inline">
-													<input type="radio" class="form-control" name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertarRestoDelFormulario(1)">Empleado
+													<input type="radio" class="form-control" name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertHTML(1)">Empleado
 												</label>
 											</div>
 											<div class="col-sm-6">
 												<label class"radio-inline">
-													<input type="radio" class="form-control" name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertarRestoDelFormulario(2)">Doctor
+													<input type="radio" class="form-control" name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertHTML(2)">Doctor
 												</label>
 											</div>
 										</div>

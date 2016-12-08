@@ -11,7 +11,6 @@
   define("RUTA_INVENTARIO", "inventario");
   define("RUTA_HORARIOS", "horarios");
   define("RUTA_DOCTORES", "doctores");
-  define("RUTA_PACIENTES", "pacientes");
 
   //Indicadores
   define("LISTA_EMPLEADOS", "solicitudListaEmpleados");
@@ -19,7 +18,6 @@
   define("LISTA_PACIENTES", "solicitudListaPacientes");
   define("LISTA_INVENTARIO", "solicitudListaInventario");
   define("LISTA_DOCTORES", "solicitudListaDoctores");
-  define("LISTA_PACIENTES", "solicitudListaPacientes");
 
   //Estas son dinamicas por ende no tienen su respectivo SQL
   define("HORARIO_DOCTOR_FECHA", "solicitudHorarioDoctorRangoDeFechas");
@@ -27,26 +25,20 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-   " aqui va la super consulta "
+  " select * from tablita "
   , true);
   define("LISTA_ESPECIALIZACIONES_SQL",
     //Esto con propositos de prueba
    " select * from tablita "
   , true);
   define("LISTA_PACIENTES_SQL",
-   " aqui va la super consulta "
+  " select * from tablita "
   , true);
   define("LISTA_INVENTARIO_SQL",
-   " aqui va la super consulta "
+  " select * from tablita "
   , true);
-
   define("LISTA_DOCTORES_SQL",
-      "CONSULTA DE LOS DOCTORES",
-      true
+  " select * from tablita "
+  , true
   );
-
-  define("LISTA_PACIENTES_SQL",
-    "CONSULTA DE LOS PACIENTES",
-    true
-  )
  ?>

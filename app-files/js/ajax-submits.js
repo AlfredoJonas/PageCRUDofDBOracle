@@ -39,7 +39,7 @@ function submitEmpleado(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.text(data.responseText);
+      formMessages.innerHtml = data.responseText;
     else
       formMessages.text('Oops! An error occured.');
 	});
@@ -70,7 +70,7 @@ function submitCita(event){
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.text(data.responseText);
+      formMessages.innerHtml = data.responseText;
     else
       formMessages.text('Oops! An error occured.');
 	});
@@ -101,7 +101,7 @@ function submitImplemento(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.text(data.responseText);
+      formMessages.innerHtml = data.responseText;
     else
       formMessages.text('Oops! An error occured.');
 	});
