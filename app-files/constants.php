@@ -28,7 +28,6 @@
   " select * from tablita "
   , true);
   define("LISTA_ESPECIALIZACIONES_SQL",
-    //Esto con propositos de prueba
    " select * from tablita "
   , true);
   define("LISTA_PACIENTES_SQL",

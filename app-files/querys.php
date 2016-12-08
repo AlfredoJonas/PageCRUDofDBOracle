@@ -18,6 +18,7 @@
     }
 
     switch ($from_page) {
+
       case RUTA_EMPLEADOS:
         switch ($tipo_query) {
           case LISTA_EMPLEADOS:
@@ -33,6 +34,14 @@
         switch ($tipo_query) {
           case LISTA_PACIENTES:
             $consulta = LISTA_PACIENTES_SQL;
+          break;
+        }
+      break;
+
+      case RUTA_DOCTORES:
+        switch ($tipo_query) {
+          case LISTA_DOCTORES:
+            $consulta = LISTA_DOCTORES_SQL;
           break;
         }
       break;
@@ -56,7 +65,6 @@
                              ORDER BY FECHA;";
               }
           break;
-
           case HORARIO_DOCTOR_DIA:
             if($data_es_arreglo != 0)
               if(isset($data["fecha"])){
@@ -69,7 +77,7 @@
         }
       break;
     }
-    
+
     return $consulta;
   }
 ?>
