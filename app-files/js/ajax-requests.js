@@ -1,28 +1,31 @@
 $(document).ready(function() {
-	$('.formEmpleado').submit(function(event) {
-		submitEmpleado(event);
-	});
-
-	$('.formCita').submit(function(event) {
-		submitCita(event);
-	});
-
-	$('.formImplemento').submit(function(event) {
-		submitImplemento(event);
-	});
-
-  getEspecializaciones();
+    requestPacientes();
+    requestDoctores();
+	  requestEspecializaciones();
 });
 
-function getEspecializaciones() {
+function parse_data(data, tipo) {
+  if (tipo === 'multiple_select') {
+    //Esto es porque yo tengo en mi BD una tabla con una columna usuario
+    //pero ustedes me entienden
+    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
+  }
+  else{
+    if (tipo === 'single_select'){
+    	return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
+    }
+  }
+}
+
+function requestEspecializaciones() {
   var ruta = $('.especializaciones').data("ruta");
   var consulta = $('.especializaciones').data("consulta");
   var formMessages = $('#form-messages');
 
   $.ajax({
-	    type: 'POST',
-	    url: 'ajax-handler.php',
-	    data: {ruta: ruta, consulta: consulta}
+	  type: 'POST',
+	  url: 'ajax-handler.php',
+	  data: {ruta: ruta, consulta: consulta}
 	})
 
   .done(function(response) {
@@ -44,36 +47,54 @@ function getEspecializaciones() {
 	});
 }
 
-function parse_data(data, tipo) {
-  if (tipo === 'multiple_select') {
-    //Esto es porque yo tengo en mi BD una tabla con una columna usuario
-    //pero ustedes me entienden
-    return new Option(data.USUARIO.toLowerCase(), data.USUARIO);
-  }
-  else{
-    if (tipo === 'single_select'){
-        //Edwin adaptelo por favor para que agarre las consultas de los <select> que no son multiples
+function requestPacientes(){
+	var ruta = $('.pacienteSeleccion').data("ruta");
+	var consulta = $('.pacienteSeleccion').data("consulta");
+  var formMessages = $('#form-messages');
+
+  $.ajax({
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta}
+  })
+
+  .done(function(response) {
+      $('.pacienteSeleccion').addClass('filled');
+
+      for(var key in response) {
+        document.querySelector('.pacienteSeleccion').options.add(parse_data(response[key], 'single_select'));
+      }
+  })
+
+  .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+      formMessages.text(data.responseText);
+    else
+      formMessages.text('Oops! An error occured.');
+  });
+}
+
+function requestDoctores(){
+	var ruta = $('.doctorSeleccion').data("ruta");
+	var consulta = $('.doctorSeleccion').data("consulta");
+  var formMessages = $('#form-messages');
+
+  $.ajax({
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta}
+  })
+  .done(function(response){
+    $('.doctorSeleccion').addClass('filled');
+
+    for(var key in response) {
+      document.querySelector('.doctorSeleccion').options.add(parse_data(response[key], 'single_select'));
     }
-  }
-}
-
-function submitEmpleado(event) {
-  event.preventDefault();
-	var form = $('.formEmpleado');
-	var data = form.serialize();
-  var formMessages = $('#form-messages');
-
-	$.ajax({
-	    type: 'POST',
-	    url: form.attr('action'),
-	    data: data
-	}).done(function(response) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-success');
-
-    formMessages.text(response);
-	}).fail(function(data) {
-
+  })
+  .fail(function(data) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-danger');
 
@@ -81,59 +102,5 @@ function submitEmpleado(event) {
       formMessages.text(data.responseText);
     else
       formMessages.text('Oops! An error occured.');
-	});
-}
-
-function submitCita(event){
-  event.preventDefault();
-	var form = $('.formCita');
-	var data = form.serialize();
-  var formMessages = $('#form-messages');
-
-	$.ajax({
-	    type: 'POST',
-	    url: form.attr('action'),
-	    data: data
-	}).done(function(response) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-success');
-
-    formMessages.text(response);
-	}).fail(function(data) {
-
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
-
-    if (data.responseText !== '')
-      formMessages.text(data.responseText);
-    else
-      formMessages.text('Oops! An error occured.');
-	});
-}
-
-function submitImplemento(event){
-  event.preventDefault();
-	var form = $('.formImplemento');
-	var data = form.serialize();
-  var formMessages = $('#form-messages');
-
-	$.ajax({
-			type: 'POST',
-			url: form.attr('action'),
-			data: data
-	}).done(function(response) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-success');
-
-    formMessages.text(response);
-	}).fail(function(data) {
-
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
-
-    if (data.responseText !== '')
-      formMessages.text(data.responseText);
-    else
-      formMessages.text('Oops! An error occured.');
-	});
+  });
 }
