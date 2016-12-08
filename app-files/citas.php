@@ -26,7 +26,7 @@
 											<label for="identificadorInput"class="col-sm-4 col-form-label">Identificador</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Éste es el identificador de la cita</small>
 											<div class="col-sm-9">
-												<input type="text" id="identificadorInput" name="identificadorInput" class="identificadorInput form-control" data-ruta="<?php echo RUTA_CITAS ?>" data-consulta="<?php echo LISTA_ATRIBUTOS_CITA ?>">
+												<input type="text" id="identificadorInput" name="identificadorInput" class="identificadorInput form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_ATRIBUTOS_CITA">
 											</div>
 											<div class="col-sm-3">
 												<input type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="form-control" value="Buscar" onclick="requestInformacionCita()">
@@ -37,7 +37,7 @@
 											<label for="pacienteSeleccion"class="col-sm-4 col-form-label">Pacientes</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un paciente para la cita (debe estar registrado)</small>
 											<div id="pacienteSeleccionDiv" class="pacienteSeleccionDiv col-sm-12">
-												<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="<?php echo RUTA_CITAS ?>" data-consulta="<?php echo LISTA_NOMBRES_PACIENTES ?>">
+												<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_PACIENTES">
 												</select>
 											</div>
 										</div>
@@ -46,7 +46,7 @@
 											<label for="doctorSeleccion"class="col-sm-4 col-form-label">Doctores</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para la cita (debe estar registrado)</small>
 											<div id="doctorSeleccionDiv" class="doctorSeleccionDiv col-sm-12">
-												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="<?php echo RUTA_CITAS ?>" data-consulta="<?php echo LISTA_NOMBRES_DOCTORES ?>">
+												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_DOCTORES">
 												</select>
 											</div>
 										</div>

@@ -41,7 +41,7 @@
 											<label for="doctorSeleccionDiv" class="col-sm-2 col-form-label">Doctores</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para consultar su horario (debe estar registrado)</small>
 											<div id="doctorSeleccionDiv" class="doctorSeleccionDiv col-sm-12">
-												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="<?php echo RUTA_NOMBRES_DOCTORES ?>" data-consulta="<?php echo LISTA_NOMBRES_DOCTORES ?>" disabled required>
+												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_DOCTORES" disabled required>
 												</select>
 											</div>
 										</div>
