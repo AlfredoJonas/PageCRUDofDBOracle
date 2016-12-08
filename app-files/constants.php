@@ -10,9 +10,7 @@
   define("RUTA_PACIENTES", "pacientes");
   define("RUTA_INVENTARIO", "inventario");
   define("RUTA_HORARIOS", "horarios");
-  define("RUTA_NOMBRES_DOCTORES", "citas");
-  define("RUTA_NOMBRES_PACIENTES", "citas");
-  define("RUTA_LISTA_ATRIBUTOS_CITA", "citas");
+  define("RUTA_CITAS", "citas");
 
   //Indicadores
   define("LISTA_EMPLEADOS", "solicitudListaEmpleados");
@@ -29,30 +27,27 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  " select * from tablita "
-  , true);
+  " select * from tablita ",
+  true);
+
   define("LISTA_ESPECIALIZACIONES_SQL",
-   " select * from tablita "
-  , true);
-  define("LISTA_PACIENTES_SQL",
-  " select * from tablita "
-  , true);
+  " select * from tablita ",
+  true);
+
   define("LISTA_INVENTARIO_SQL",
-  " select * from tablita "
-  , true);
+  " select * from tablita ",
+  true);
 
   define("LISTA_NOMBRES_DOCTORES_SQL",
-      "CONSULTA los nombres DE LOS DOCTORES",
-      true
-  );
+  " select * from medico",
+  true);
 
   define("LISTA_NOMBRES_PACIENTES_SQL",
-    "CONSULTA los nombres DE LOS PACIENTES",
-    true
-  );
+  " select * from paciente",
+  true);
 
   define("LISTA_ATRIBUTOS_CITA_SQL",
-    "De acuerdo a un id numerico devuelve los campos de la cita que han de colocarse en el formulario para actualziar",
-    true
-  );
+  //Esto es dinamico
+  " select * from paciente",
+  true);
  ?>

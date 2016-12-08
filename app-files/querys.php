@@ -30,18 +30,16 @@
         }
       break;
 
-      case RUTA_PACIENTES:
+      case RUTA_CITAS:
         switch ($tipo_query) {
-          case LISTA_PACIENTES:
-            $consulta = LISTA_PACIENTES_SQL;
+          case LISTA_NOMBRES_DOCTORES:
+            $consulta = LISTA_NOMBRES_DOCTORES_SQL;
           break;
-        }
-      break;
-
-      case RUTA_DOCTORES:
-        switch ($tipo_query) {
-          case LISTA_DOCTORES:
-            $consulta = LISTA_DOCTORES_SQL;
+          case LISTA_NOMBRES_PACIENTES:
+            $consulta = LISTA_NOMBRES_PACIENTES_SQL;
+          break;
+          case LISTA_ATRIBUTOS_CITA:
+            $consulta = LISTA_ATRIBUTOS_CITA_SQL;
           break;
         }
       break;
