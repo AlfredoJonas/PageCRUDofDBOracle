@@ -82,18 +82,18 @@
 											<label for="identificadorInput"class="col-sm-4 col-form-label">Identificador</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Éste es el identificador de la cita</small>
 											<div class="col-sm-9">
-												<input type="text" id="identificadorInput" name="identificadorInput" class="form-control">
+												<input type="text" id="identificadorInput" name="identificadorInput" class="identificadorInput form-control" data-ruta="<?php echo RUTA_LISTA_ATRIBUTOS_CITA ?>" data-consulta="<?php echo LISTA_ATRIBUTOS_CITA ?>">
 											</div>
 											<div class="col-sm-3">
-												<input type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="form-control" value="Buscar">
+												<input type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="form-control" value="Buscar" onclick="requestInformacionCita()">
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label for="pacienteSeleccion"class="col-sm-4 col-form-label">Pacientes</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un paciente para la cita (debe estar registrado)</small>
-											<div class="col-sm-12">
-												<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="<?php echo RUTA_PACIENTES ?>" data-consulta="<?php echo LISTA_PACIENTES ?>">
+											<div id="pacienteSeleccionDiv" class="pacienteSeleccionDiv col-sm-12">
+												<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="<?php echo RUTA_NOMBRES_PACIENTES ?>" data-consulta="<?php echo LISTA_NOMBRES_PACIENTES ?>">
 												</select>
 											</div>
 										</div>
@@ -101,18 +101,18 @@
 										<div class="form-group row">
 											<label for="doctorSeleccion"class="col-sm-4 col-form-label">Doctores</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione un doctor para la cita (debe estar registrado)</small>
-											<div class="col-sm-12">
-												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="<?php echo RUTA_DOCTORES ?>" data-consulta="<?php echo LISTA_DOCTORES ?>">
+											<div id="doctorSeleccionDiv" class="doctorSeleccionDiv col-sm-12">
+												<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="<?php echo RUTA_NOMBRES_DOCTORES ?>" data-consulta="<?php echo LISTA_NOMBRES_DOCTORES ?>">
 												</select>
 											</div>
 										</div>
 
-										<div class="form-group row">
+										<div class="fechaHoraDiv form-group row">
 											<label for="fechaInput"class="col-sm-4 col-form-label">Fecha y hora de la cita</label>
-												<div class="col-sm-4">
+												<div class="fechaInputDiv col-sm-4">
 													<input type="date" id="fechaInput" name="fechaInput" class="form-control">
 												</div>
-												<div class="col-sm-4">
+												<div class="horaInputDiv col-sm-4">
 													<select id="horaInput" name="horaInput" class="form-control">
 														<option value="8:00">8:00</option>
 														<option value="8:30">8:30</option>
@@ -140,7 +140,7 @@
 												</div>
 										</div>
 
-										<div class="form-group row">
+										<div class="odontogramaInputDiv form-group row">
 											<label for="odontogramaInput"class="col-sm-4 col-form-label">Odontograma</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">Inserte el URL de la imagen</small>
 											<div class="col-sm-12">
@@ -148,7 +148,7 @@
 											</div>
 										</div>
 
-										<div class="form-group row">
+										<div class="presupuestoInputDiv form-group row">
 											<label for="presupuestoInput"class="col-sm-4 col-form-label">Presupuesto</label>
 											<small id="select-esp-help" class="form-text text-muted col-sm-8">En $</small>
 											<div class="col-sm-12">

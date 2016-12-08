@@ -10,14 +10,18 @@
   define("RUTA_PACIENTES", "pacientes");
   define("RUTA_INVENTARIO", "inventario");
   define("RUTA_HORARIOS", "horarios");
-  define("RUTA_DOCTORES", "doctores");
+  define("RUTA_NOMBRES_DOCTORES", "citas");
+  define("RUTA_NOMBRES_PACIENTES", "citas");
+  define("RUTA_LISTA_ATRIBUTOS_CITA", "citas");
 
   //Indicadores
   define("LISTA_EMPLEADOS", "solicitudListaEmpleados");
   define("LISTA_ESPECIALIZACIONES", "solicitudListaEspecializaciones");
   define("LISTA_PACIENTES", "solicitudListaPacientes");
   define("LISTA_INVENTARIO", "solicitudListaInventario");
-  define("LISTA_DOCTORES", "solicitudListaDoctores");
+  define("LISTA_NOMBRES_DOCTORES", "solicitudListaNombresDoctores");
+  define("LISTA_NOMBRES_PACIENTES", "solicitudListaNombresPacientes");
+  define("LISTA_ATRIBUTOS_CITA", "solicitudListaAtributosCita");
 
   //Estas son dinamicas por ende no tienen su respectivo SQL
   define("HORARIO_DOCTOR_FECHA", "solicitudHorarioDoctorRangoDeFechas");
@@ -36,8 +40,19 @@
   define("LISTA_INVENTARIO_SQL",
   " select * from tablita "
   , true);
-  define("LISTA_DOCTORES_SQL",
-  " select * from tablita "
-  , true
+
+  define("LISTA_NOMBRES_DOCTORES_SQL",
+      "CONSULTA los nombres DE LOS DOCTORES",
+      true
+  );
+
+  define("LISTA_NOMBRES_PACIENTES_SQL",
+    "CONSULTA los nombres DE LOS PACIENTES",
+    true
+  );
+
+  define("LISTA_ATRIBUTOS_CITA_SQL",
+    "De acuerdo a un id numerico devuelve los campos de la cita que han de colocarse en el formulario para actualziar",
+    true
   );
  ?>
