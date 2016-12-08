@@ -71,10 +71,22 @@ function diarioRangoRequest(option){
 										<small id="select-esp-help" class="form-text text-muted col-sm-8">Seleccione la(s) fecha(s) de su consulta.</small>');
 		switch(option){
 				case 1: 
-					$(".fechasDiv").append('<label for="fechaespecificadiv" class="col-sm-6 col-form-label" >Día específico</label><div id="fechaespecificadiv form-group" class="col-sm-6"><input type="date" class="diaInput" id="diaInput" name="diaInput"></div>');
+					$(".fechasDiv").append('\
+					<label for="fechaespecificadiv" class="col-sm-6 col-form-label" >Día específico</label>\
+					<div id="fechaespecificadiv form-group" class="col-sm-6">\
+					<input type="date" class="diaInput" id="diaInput" name="diaInput" required>\
+					</div>');
 				break;
 				case 2:
-					$(".fechasDiv").append(' \<label for="fechaespecificadiv1 conjunto" class="col-sm-3 col-form-label" >Fecha inicio</label><div id="fechaespecificadiv1 form-group" class="col-sm-3"><input type="date" class="dia1Input" id="dia1Input" name="dia1Input"></div><label for="fechaespecificadiv2 conjunto" class="col-sm-3 col-form-label" >Fecha fin</label><div id="fechaespecificadiv2 form-group" class="col-sm-3"><input type="date" class="dia2Input" id="dia2Input" name="dia2Input"></div>');
+					$(".fechasDiv").append('\
+					<label for="fechaespecificadiv1 conjunto" class="col-sm-3 col-form-label" >Fecha inicio</label>\
+					<div id="fechaespecificadiv1 form-group" class="col-sm-3">\
+					<input type="date" class="dia1Input" id="dia1Input" name="dia1Input" required>\
+					</div>\
+					<label for="fechaespecificadiv2 conjunto" class="col-sm-3 col-form-label" >Fecha fin</label>\
+					<div id="fechaespecificadiv2 form-group" class="col-sm-3">\
+					<input type="date" class="dia2Input" id="dia2Input" name="dia2Input" required>\
+					</div>');
 				break;
 		}
 
