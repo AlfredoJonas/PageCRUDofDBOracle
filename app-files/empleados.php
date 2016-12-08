@@ -20,7 +20,7 @@
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 								</div>
 								<form class="formEmpleado" action="ajax-handler.php" role="form">
-									
+
 									<div class="form-group row">
 										<label for="cifi" class="col-sm-2 col-form-label">C.I. o pasaporte</label>
 										<div class="col-sm-10">
