@@ -143,3 +143,11 @@ function requestInformacionCita(){
       formMessages.text('Oops! An error occured.');
   });
 }
+
+function requestCitasDia(){
+
+}
+
+function requestCitasPeriodo(){
+	
+}
