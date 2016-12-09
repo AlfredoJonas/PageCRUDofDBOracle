@@ -9,10 +9,13 @@ function insertHTML(tipo) {
 	switch(tipo){
 		case 1:
 			contenedor.html(' \
-				<div class="form-group row"> \
-					<label for="cargo_empleado" class="col-sm-2 col-form-label">Cargo</label> \
-					<div class="col-sm-10"> \
-						<input type="text" class="form-control" name="cargo" id="cargo_empleado"> \
+				<div class="form-group"> \
+					<label for="cargo_empleado" class="col-sm-3 control-label">Cargo</label> \
+					<div class="col-sm-9 inputGroupContainer">\
+						<div class="input-group">\
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
+							<input type="text" class="form-control" name="cargo" id="cargo_empleado"> \
+						</div> \
 					</div> \
 				</div> \
 			');
@@ -21,17 +24,23 @@ function insertHTML(tipo) {
 
 		case 2:
 			contenedor.html(' \
-				<div class="form-group row"> \
-					<label for="rif" class="col-sm-2 col-form-label">RIF</label> \
-					<div class="col-sm-10"> \
-						<input type="text" class="form-control" name="rif" id="rif"> \
+				<div class="form-group"> \
+					<label for="rif" class="col-sm-3 control-label">RIF</label> \
+					<div class="col-sm-9 inputGroupContainer">\
+						<div class="input-group">\
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
+							<input type="text" class="form-control" name="rif" id="rif"> \
+						</div> \
 					</div> \
 				</div> \
 				 \
-				<div class="form-group row"> \
-					<label for="numColegio" class="col-sm-2 col-form-label">Número del colegio</label> \
-					<div class="col-sm-10"> \
-						<input type="text" class="form-control" name="numColegio" id="numColegio"> \
+				<div class="form-group"> \
+					<label for="numColegio" class="col-sm-3 control-label">Número del colegio</label> \
+					<div class="col-sm-9 inputGroupContainer">\
+						<div class="input-group">\
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
+							<input type="text" class="form-control" name="numColegio" id="numColegio"> \
+						</div> \
 					</div> \
 				</div> \
 			');
