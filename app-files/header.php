@@ -2,7 +2,7 @@
 	require_once 'constants.php';
 
 	echo '
-	<header class="container-fluid">
+	<header class="container">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">

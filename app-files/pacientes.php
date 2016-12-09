@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<?php include('header.php'); ?>
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="panel panel-primary">

@@ -1,5 +1,5 @@
 <?php echo '
-	<footer class="container-fluid bg-default">
+	<footer class="container bg-default">
 		<div class="row">
 			<div class="col-sm-1 col-sm-offset-1 col-xs-1 col-xs-offset-1">
 				<div class="row logo-container">
