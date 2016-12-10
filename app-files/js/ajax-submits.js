@@ -40,6 +40,8 @@ function submitConsultas(event) {
 		for(var key in response) {
 			$('.table-body').append(parseData(response[key]));
 		}
+
+		form.trigger("reset");
 	})
 
   .fail(function(data) {
@@ -47,9 +49,9 @@ function submitConsultas(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.html(data.responseText);
+      formMessages.prepend(data.responseText);
     else
-      formMessages.text('Oops! An error occured.');
+      formMessages.prepend('Oops! An error occured.');
 	});
 
 }

@@ -4,8 +4,9 @@
 		<?php include('head.php'); ?>
 		<script type="text/javascript">
 			$(document).ready(function() {
+				requestConsultas();
 				$('.selectConsultas').change(function(event) {
-					requestConsultas(event);
+					requestConsultas();
 				});
 			});
 		</script>
@@ -30,7 +31,7 @@
 							 <!-- Aqui las consultas disponibles -->
 							 	<?php
 									foreach (CONSULTAS as $key => $value) {
-										echo '<option data-consulta="'.$key.'" value="'.$value.'">'.$key.'</option>';
+										echo '<option data-consulta="'.$value.'" value="'.$value.'">'.$key.'</option>';
 									}
 								 ?>
 					   </select>
@@ -43,7 +44,7 @@
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar">
 								</div>
 							</div>
 						</div>
@@ -55,7 +56,7 @@
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+									<input type="text" class="form-control" name="ci" id="imp-consulta" placeholder="Ingrese el CI del paciente">
 								</div>
 							</div>
 						</div>
@@ -67,7 +68,7 @@
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+									<input type="text" class="form-control" name="ci" id="imp-consulta" placeholder="Ingrese el CI del paciente">
 								</div>
 							</div>
 						</div>

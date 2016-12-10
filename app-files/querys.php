@@ -8,7 +8,7 @@
     if(!is_null($data_adicional)){
       parse_str($data_adicional, $data);
     }
-
+    
     switch ($from_page) {
 
       case 'RUTA_EMPLEADOS':
@@ -71,7 +71,7 @@
           case CONSULTAS['Historial de citas']:
             $consulta = str_replace('&CIPACIENTE', $data['ci'], HISTORIAL_CITAS_SQL);
             break;
-          case CONSULTAS['Historial de tratamientoss']:
+          case CONSULTAS['Historial de tratamientos']:
             $consulta = str_replace('&CIPACIENTE', $data['ci'], HISTORIAL_TRATAMIENTOS_SQL);
             break;
         }
