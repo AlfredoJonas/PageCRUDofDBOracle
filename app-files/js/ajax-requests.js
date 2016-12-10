@@ -114,32 +114,32 @@ function requestInformacionCita(){
   })
 
   .done(function(response){
-    if(response.paciente){
+    if(response.PACIENTE){
       $('.doctorSeleccion').remove();
 
       $('.doctorSeleccionDiv').append('<input type="text" id="doctorInput" name="doctorInput" class="form-control doctorInput" readonly text="'+ response.doctor +'">');
     }
 
-    if(response.doctor){
+    if(response.DOCTOR){
       $('.pacienteSeleccion').remove();
 
       $('.pacienteSeleccionDiv').append('<input type="text" id="pacienteInput" name="pacienteInput" class="form-control pacienteInput" readonly text="'+ response.paciente +'">');
     }
 
-    if(response.fecha){
+    if(response.FECHA){
       $('.fechaInput').remove();
       $('.horaInput').remove();
 
       $('.fechaHoraDiv').append('<input type="text" id="fechaHoraInput" name="fechaHoraInput" class="form-control fechaHoraInput" readonly text="'+ response.fecha +'">');
     }
 
-    if(response.odontograma){
+    if(response.ODONTOGRAMA){
       $('.odontogramaInput').remove();
       $('.presupuestoInput').attr("text",response.odontograma + "")
       $('.odontogramaInput').attr("readonly","readonly");
     }
 
-    if(response.presupuesto){
+    if(response.PRESUPUESTO){
       $('.presupuestoInput').remove();
       $('.presupuestoInput').attr("text",response.presupuesto + "")
       $('.presupuestoInput').attr("readonly","readonly");

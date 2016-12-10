@@ -19,15 +19,23 @@
   true);
 
   define("LISTA_NOMBRES_DOCTORES_SQL",
-  "select * from medico",
+  'SELECT NUM_COLEGIO || \'       -       \' || NOMBRE AS NOMBRE FROM MEDICO ORDER BY NUM_COLEGIO',
   true);
 
   define("LISTA_NOMBRES_PACIENTES_SQL",
-  "select * from paciente",
+  'SELECT CI || \'       -       \' || NOMBRE AS NOMBRE FROM PACIENTE ORDER BY CI ASC',
   true);
   
   define("LISTA_ATRIBUTOS_CITA_SQL",
-  "select * from paciente",
+  'SELECT p.CI || \'       -        \' || p.NOMBRE AS PACIENTE,
+       m.NUM_COLEGIO || '       -       ' || m.NOMBRE AS DOCTOR,
+       TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA,
+       c.URL_IMAGEN_ODONTOGRAMA AS ODONTOGRAMA,
+       c.COSTO AS PRESUPUESTO
+  FROM CITA c
+  JOIN MEDICO m ON c.CI_MEDICO = m.CI
+  JOIN PACIENTE p ON c.CI_PACIENTE = p.CI
+  WHERE c.ID = ',
   true);
 
   define("HISTORIAL_CITAS_SQL",

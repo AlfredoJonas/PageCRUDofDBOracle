@@ -50,7 +50,10 @@ function insertHTML(tipo) {
 
 
 function parseData(data, tipo) {
-  return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
+	if(tipo === "multiple_select" || tipo == "single_select")
+  		return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
+	else
+		return null;
 }
 
 function doctorGlobalRequest(option){
