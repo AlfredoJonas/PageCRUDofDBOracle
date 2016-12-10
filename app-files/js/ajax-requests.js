@@ -1,12 +1,12 @@
 function requestConsultas(event) {
-	var data = $('.selectConsultas option:selected').val();
-	$('.buscar').removeClass('hidden');
 
-	switch (data) {
-		case 'EL DOCTOR DERROCHADOR':
-			$('.implemento').removeClass('hidden');
-			break;
+	var options = $('.selectConsultas option:not(:selected)');
+	for (var option in options) {
+		$('.'+options[option].value).addClass('hidden');
 	}
+
+	var option = $('.selectConsultas option:selected').val();
+	$('.'+option).removeClass('hidden');
 }
 
 function requestEspecializaciones() {

@@ -40,15 +40,15 @@
 
   //Las super consultas
   const CONSULTAS = array(
-    "TRATAMIENTOS REALIZADOS",
-    "HORARIOS DISPONIBLES",
-    "CITAS DISPONIBLES",
-    "GANANCIAS GENERALES",
-    "GANANCIAS POR MES",
-    "EL DOCTOR DERROCHADOR",
-    "MOROSOS",
-    "HISTORIAL DE CITAS",
-    "HISTORIAL DE TRATAMIENTOS"
+    "Tratamientos realizados" => "t-realizados",
+    "Horarios disponibles" => "h-disponibles",
+    "Citas disponibles" => "c-disponibles",
+    "Ganancias generales" => "g-generales",
+    "Ganancias por mes" => "g-por-mes",
+    "El doctor derrochador" => "d-derrochador",
+    "Morosos" => "morosos",
+    "Historial de citas" => "c-historial",
+    "Historial de tratamientos" => "t-historial"
   );
 
  ?>

@@ -29,20 +29,22 @@
 					   <select name="consulta" class="form-control selectConsultas" data-ruta="RUTA_CONSULTAS" id="sel">
 							 <!-- Aqui las consultas disponibles -->
 							 	<?php
-									foreach (CONSULTAS as $consulta) {
-										echo '<option value="'.$consulta.'">'.$consulta.'</option>';
+									foreach (CONSULTAS as $key => $value) {
+										echo '<option value="'.$value.'">'.$key.'</option>';
 									}
 								 ?>
 					   </select>
 				 		</div>
 			 		</div>
 
-					<div class="form-group hidden implemento">
-						<label for="imp-consulta" class="col-sm-3 control-label">ID Implemento</label>
-						<div class="col-sm-9 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+					<div class="<?php echo CONSULTAS['El doctor derrochador']?> hidden">
+						<div class="form-group implemento">
+							<label for="imp-consulta" class="col-sm-3 control-label">ID Implemento</label>
+							<div class="col-sm-9 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+								</div>
 							</div>
 						</div>
 					</div>
