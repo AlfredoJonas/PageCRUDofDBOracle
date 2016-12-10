@@ -53,7 +53,7 @@
 							</div>
 
 							<div class="fechaHoraDiv form-group">
-								<label for="fechaInput"class="col-sm-3 control-label">Cita</label>
+								<label for="fechaInput" class="col-sm-3 control-label">Cita</label>
 								<div class="col-sm-9 input-group">
 									<div class="fechaInputDiv col-sm-7">
 										<input type="date" id="fechaInput" name="fechaInput" class="form-control">
@@ -88,7 +88,7 @@
 							</div>
 
 							<div class="odontogramaInputDiv form-group">
-								<label for="odontogramaInput"class="col-sm-3 control-label">Odontograma</label>
+								<label for="odontogramaInput" class="col-sm-3 control-label">Odontograma</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -99,7 +99,7 @@
 							</div>
 
 							<div class="presupuestoInputDiv form-group">
-								<label for="presupuestoInput"class="col-sm-3 control-label">Presupuesto</label>
+								<label for="presupuestoInput" class="col-sm-3 control-label">Presupuesto</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
