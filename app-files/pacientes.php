@@ -8,7 +8,7 @@
 			<div class="container">
 				<div class="container col-sm-5">
 
-					<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+					<div id="form-messages" class="alert alert-dismissable fade in hidden">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
@@ -72,7 +72,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="telefono" id="tel-paciente" placeholder="Ingrese el teléfono del paciente">
+										<input type="tel" class="form-control" name="telefono" id="tel-paciente" placeholder="Ingrese el teléfono del paciente">
 									</div>
 								</div>
 							</div>

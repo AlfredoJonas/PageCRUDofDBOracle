@@ -14,8 +14,8 @@
 		<?php include('header.php'); ?>
 		<div class="container">
 			<div class="container col-sm-5">
-				<div id="form-messages" class="alert alert-dismissible fade in hidden">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<div id="form-messages" class="alert alert-dismissable fade in hidden">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
 				</div>
 
 				<form class="formConsultas well form-horizontal" action="ajax-handler.php">

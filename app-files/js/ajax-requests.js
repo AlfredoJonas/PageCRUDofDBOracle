@@ -33,9 +33,9 @@ function requestEspecializaciones() {
 		formMessages.addClass('alert-danger');
 
 		if (data.responseText !== '')
-			formMessages.html(data.responseText);
+			formMessages.prepend(data.responseText);
 		else
-			formMessages.text('Oops! An error occured.');
+			formMessages.prepend('Oops! An error occured.');
 	});
 }
 
@@ -61,9 +61,9 @@ function requestPacientes(){
 		formMessages.addClass('alert-danger');
 
 		if (data.responseText !== '')
-			formMessages.html(data.responseText);
+			formMessages.prepend(data.responseText);
 		else
-			formMessages.text('Oops! An error occured.');
+			formMessages.prepend('Oops! An error occured.');
 	});
 }
 
@@ -89,9 +89,9 @@ function requestDoctores(){
 		formMessages.addClass('alert-danger');
 
 		if (data.responseText !== '')
-			formMessages.html(data.responseText);
+			formMessages.prepend(data.responseText);
 		else
-			formMessages.text('Oops! An error occured.');
+			formMessages.prepend('Oops! An error occured.');
 	});
 }
 
@@ -149,8 +149,8 @@ function requestInformacionCita(){
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-			formMessages.html(data.responseText);
+			formMessages.prepend(data.responseText);
     else
-      formMessages.text('Oops! An error occured.');
+      formMessages.prepend('Oops! An error occured.');
   });
 }

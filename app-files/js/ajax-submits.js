@@ -34,7 +34,7 @@ function submitConsultas(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.text('Consulta procesada con éxito');
+    formMessages.prepend('Consulta procesada con éxito');
 
 		for(var key in response) {
 			$('.table-body').append(parseData(response[key]));
@@ -69,7 +69,7 @@ function submitEmpleado(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.html(response);
+    formMessages.prepend(response);
 	})
 
   .fail(function(data) {
@@ -78,9 +78,9 @@ function submitEmpleado(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.html(data.responseText);
+      formMessages.prepend(data.responseText);
     else
-      formMessages.text('Oops! An error occured.');
+      formMessages.prepend('Oops! An error occured.');
 	});
 }
 
@@ -100,7 +100,7 @@ function submitCita(event){
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.html(response);
+    formMessages.prepend(response);
 	})
 
   .fail(function(data) {
@@ -109,9 +109,9 @@ function submitCita(event){
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.html(data.responseText);
+      formMessages.prepend(data.responseText);
     else
-      formMessages.text('Oops! An error occured.');
+      formMessages.prepend('Oops! An error occured.');
 	});
 }
 
@@ -131,7 +131,7 @@ function submitImplemento(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.html(response);
+    formMessages.prepend(response);
 	})
 
   .fail(function(data) {
@@ -140,8 +140,8 @@ function submitImplemento(event) {
     formMessages.addClass('alert-danger');
 
     if (data.responseText !== '')
-      formMessages.html(data.responseText);
+      formMessages.prepend(data.responseText);
     else
-      formMessages.text('Oops! An error occured.');
+      formMessages.prepend('Oops! An error occured.');
 	});
 }

@@ -13,7 +13,7 @@
 		<?php include('header.php'); ?>
 			<div class="container">
 				<div class="container col-sm-5">
-					<div id="form-messages" class="alert .alert-dismissible fade in hidden">
+					<div id="form-messages" class="alert alert-dismissable fade in hidden">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
@@ -26,7 +26,7 @@
 								<label for="identificadorInput" class="col-sm-3 control-label">Identificador</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
-										<input type="text" id="identificadorInput" name="identificadorInput" class="identificadorInput form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_ATRIBUTOS_CITA" placeholder="Buscar">
+										<input type="search" id="identificadorInput" name="identificadorInput" class="identificadorInput form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_ATRIBUTOS_CITA" placeholder="Buscar">
 										<span class="input-group-btn">
 											<button type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="btn btn-info btn-md" value="buscar" onclick="requestInformacionCita()">
 												<i class="glyphicon glyphicon-search"></i>
@@ -92,7 +92,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" id="odontogramaInput" name="odontogramaInput" class="form-control">
+										<input type="url" id="odontogramaInput" name="odontogramaInput" class="form-control">
 									</div>
 									<small id="select-esp-help" class="form-text text-muted">Inserte el URL de la imagen</small>
 								</div>
