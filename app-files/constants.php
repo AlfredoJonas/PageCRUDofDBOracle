@@ -7,15 +7,27 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  "SELECT * FROM empleado",
+  "select * from empleado",
   true);
 
   define("LISTA_ESPECIALIZACIONES_SQL",
-  "SELECT * FROM especializacion",
+  "select * from especializacion",
   true);
 
   define("LISTA_INVENTARIO_SQL",
-  "SELECT * FROM implemento",
+  "select * from implemento",
+  true);
+
+  define("LISTA_NOMBRES_DOCTORES_SQL",
+  "select * from medico",
+  true);
+
+  define("LISTA_NOMBRES_PACIENTES_SQL",
+  "select * from paciente",
+  true);
+  
+  define("LISTA_ATRIBUTOS_CITA_SQL",
+  "select * from paciente",
   true);
 
   define("HISTORIAL_CITAS_SQL",
