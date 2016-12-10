@@ -53,7 +53,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="ffi" class="col-sm-3 control-label">Nacimiento</label>
+								<label for="ffi" class="col-sm-3 control-label">Fecha de nacimiento</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -100,12 +100,15 @@
 
 							<div class="temp"></div>
 
-							<div class="form-group row">
+							<div class="form-group">
 								<label for="especializacion" class="col-sm-3 control-label">Especializacion</label>
-								<div class="col-sm-9 inputGroupContainer">
-										<select multiple class="form-control especializaciones" id="especializacion" name="especializacion" data-ruta="RUTA_EMPLEADOS" data-consulta="LISTA_ESPECIALIZACIONES">
-											<!-- aqui va lo que devuelva el ajax -->
-										</select>
+								<div class="col-sm-8 pull-right inputGroupContainer">
+									<select multiple class="form-control especializaciones" id="especializacion" name="especializacion" data-ruta="RUTA_EMPLEADOS" data-consulta="LISTA_ESPECIALIZACIONES">
+										<!-- aqui va lo que devuelva el ajax -->
+									</select>
+								</div>
+								<div class="col-sm-4">
+									<small class="form-text text-muted">Puede seleccionar mas de una</small>
 								</div>
 							</div>
 
