@@ -30,7 +30,7 @@
 							 <!-- Aqui las consultas disponibles -->
 							 	<?php
 									foreach (CONSULTAS as $key => $value) {
-										echo '<option value="'.$value.'">'.$key.'</option>';
+										echo '<option data-consulta="'.$key.'" value="'.$value.'">'.$key.'</option>';
 									}
 								 ?>
 					   </select>
@@ -49,9 +49,33 @@
 						</div>
 					</div>
 
+					<div class="<?php echo CONSULTAS['Historial de citas']?> hidden">
+						<div class="form-group implemento">
+							<label for="imp-consulta" class="col-sm-3 control-label">CI Paciente</label>
+							<div class="col-sm-9 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="<?php echo CONSULTAS['Historial de tratamientos']?> hidden">
+						<div class="form-group implemento">
+							<label for="imp-consulta" class="col-sm-3 control-label">CI Paciente</label>
+							<div class="col-sm-9 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar" required>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="form-group">
 						<div class="col-sm-12">
-							<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-plus"></span></button>
+							<button type="submit" class="btn btn-primary">Buscar <span class="glyphicon glyphicon-plus"></span></button>
 						</div>
 					</div>
 				</form>

@@ -44,11 +44,38 @@
         }
         break;
 
-      case 'RUTA_CONSULTAS': {
-        $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
-
-          break;
-      }
+      case 'RUTA_CONSULTAS':
+        switch ($tipo_query) {
+          case CONSULTAS['Tratamientos realizados']:
+            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            break;
+          case CONSULTAS['Horarios disponibles']:
+            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            break;
+          case CONSULTAS['Citas disponibles']:
+            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            break;
+          case CONSULTAS['Ganancias generales']:
+            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            break;
+          case CONSULTAS['Ganancias por mes']:
+            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            break;
+          //Las que estan ready
+          case CONSULTAS['El doctor derrochador']:
+            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            break;
+          case CONSULTAS['Morosos']:
+            $consulta = MOROSOS_SQL;
+            break;
+          case CONSULTAS['Historial de citas']:
+            $consulta = str_replace('&CIPACIENTE', $data['ci'], HISTORIAL_CITAS_SQL);
+            break;
+          case CONSULTAS['Historial de tratamientoss']:
+            $consulta = str_replace('&CIPACIENTE', $data['ci'], HISTORIAL_TRATAMIENTOS_SQL);
+            break;
+        }
+        break;
 
       case 'RUTA_HORARIOS':
         switch ($tipo_query) {

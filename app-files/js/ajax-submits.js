@@ -21,13 +21,14 @@ function submitConsultas(event) {
 
 	var form = $('.formConsultas');
 	var ruta = $('.selectConsultas').data("ruta");
+	var consulta = $('.selectConsultas option:selected').data("consulta");
 	var data = form.serialize();
   var formMessages = $('#form-messages');
 
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {ruta: ruta, consulta: 'NADA', data_extra: data}
+	    data: {ruta: ruta, consulta: consulta, data_extra: data}
 	})
 
   .done(function(response) {
