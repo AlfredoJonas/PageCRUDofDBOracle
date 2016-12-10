@@ -5,6 +5,12 @@
 	</head>
 	<body>
 		<?php include('header.php'); ?>
+		<div class="container">
+			<div class="jumbotron">
+  			<h1>Dientes de sable<small> DB project</small></h1>
+				<p>Bienvenidos señores, esto todavía esta en prueba</p>
+			</div>
+		</div>
 		<?php include('footer.php'); ?>
 	</body>
 </html>
