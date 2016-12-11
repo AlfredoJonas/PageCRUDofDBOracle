@@ -50,7 +50,8 @@
       case 'RUTA_CONSULTAS':
         switch ($tipo_query) {
           case CONSULTAS['Tratamientos realizados']:
-            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            die($data['fecha']);
+            $consulta = str_replace('&FECHA', $data['fecha'], EL_DERROCHADOR_SQL);
             break;
           case CONSULTAS['Ganancias generales']:
             $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
@@ -86,7 +87,7 @@
               var_dump($data);
               $stringosa = ob_get_clean();
               fwrite($myfile, $consulta);
-              fclose($myfile);  
+              fclose($myfile);
               }
           break;
           case 'HORARIO_DOCTOR_DIA':
@@ -98,7 +99,7 @@
                 var_dump($data);
                 $stringosa = ob_get_clean();
                 fwrite($myfile, $consulta);
-                fclose($myfile);*/ 
+                fclose($myfile);*/
               }
               break;
           case 'HORARIO_GLOBAL_DIA':
