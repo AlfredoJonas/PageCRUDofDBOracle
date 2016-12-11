@@ -38,7 +38,7 @@
 
 							<div class="form-group">
 								<label for="pacienteSeleccion" class="col-sm-3 control-label">Pacientes</label>
-								<div class="col-sm-9 inputGroupContainer">
+								<div class="col-sm-9 inputGroupContainer pacienteSeleccionDiv">
 									<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_PACIENTES">
 									</select>
 								</div>
@@ -56,10 +56,10 @@
 								<label for="fechaInput" class="col-sm-3 control-label">Cita</label>
 								<div class="col-sm-9 input-group">
 									<div class="fechaInputDiv col-sm-7">
-										<input type="date" id="fechaInput" name="fechaInput" class="form-control">
+										<input type="date" id="fechaInput" name="fechaInput" class="form-control fechaInput">
 									</div>
 									<div class="horaInputDiv col-sm-5">
-										<select id="horaInput" name="horaInput" class="form-control">
+										<select id="horaInput" name="horaInput" class="form-control horaInput">
 											<option value="8:00">8:00</option>
 											<option value="8:30">8:30</option>
 											<option value="9:00">9:00</option>
@@ -92,7 +92,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="url" id="odontogramaInput" name="odontogramaInput" class="form-control">
+										<input type="url" id="odontogramaInput" name="odontogramaInput" class="form-control odontogramaInput">
 									</div>
 									<small id="select-esp-help" class="form-text text-muted">Inserte el URL de la imagen</small>
 								</div>
@@ -103,7 +103,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" id="presupuestoInput" name="presupuestoInput" class="form-control">
+										<input type="text" id="presupuestoInput" name="presupuestoInput" class="form-control presupuestoInput">
 									</div>
 									<small id="select-esp-help" class="form-text text-muted">En USD</small>
 								</div>

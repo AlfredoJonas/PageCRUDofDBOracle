@@ -116,34 +116,39 @@ function requestInformacionCita(){
   })
 
   .done(function(response){
-    if(typeof response.PACIENTE !== 'undefined'){
+		data_response = response[0]; 
+		console.log(data_response);
+    if(typeof data_response.DOCTOR !== 'undefined'){
       $('.doctorSeleccion').remove();
+			$('.doctorInput').remove();
 
-      $('.doctorSeleccionDiv').append('<input type="text" id="doctorInput" name="doctorInput" class="form-control doctorInput" readonly text="'+ response.doctor +'">');
+      $('.doctorSeleccionDiv').append('<input type="text" id="doctorInput" name="doctorInput" class="form-control doctorInput" readonly value="'+ data_response.DOCTOR +'">');
     }
 
-    if(response.DOCTOR){
+    if(typeof data_response.PACIENTE !== 'undefined'){
       $('.pacienteSeleccion').remove();
+			$('.pacienteInput').remove();
 
-      $('.pacienteSeleccionDiv').append('<input type="text" id="pacienteInput" name="pacienteInput" class="form-control pacienteInput" readonly text="'+ response.paciente +'">');
+      $('.pacienteSeleccionDiv').append('<input type="text" id="pacienteInput" name="pacienteInput" class="form-control pacienteInput" readonly value="'+ data_response.PACIENTE +'">');
     }
 
-    if(response.FECHA){
+    if(typeof data_response.FECHA !== 'undefined'){
       $('.fechaInput').remove();
       $('.horaInput').remove();
+			$('.fechaHoraInput').remove();
 
-      $('.fechaHoraDiv').append('<input type="text" id="fechaHoraInput" name="fechaHoraInput" class="form-control fechaHoraInput" readonly text="'+ response.fecha +'">');
+      $('.fechaHoraDiv').append('<input type="text" id="fechaHoraInput" name="fechaHoraInput" class="form-control fechaHoraInput" readonly value="'+ data_response.FECHA +'">');
     }
 
-    if(response.ODONTOGRAMA){
-      $('.odontogramaInput').remove();
-      $('.presupuestoInput').attr("text",response.odontograma + "")
+    if(typeof data_response.ODONTOGRAMA !== 'undefined'){
+      //$('.odontogramaInput').remove();
+      $('.odontogramaInput').attr("value",data_response.ODONTOGRAMA + "")
       $('.odontogramaInput').attr("readonly","readonly");
     }
 
-    if(response.PRESUPUESTO){
-      $('.presupuestoInput').remove();
-      $('.presupuestoInput').attr("text",response.presupuesto + "")
+    if(typeof data_response.PRESUPUESTO !== 'undefined'){
+      //$('.presupuestoInput').remove();
+      $('.presupuestoInput').attr("value",data_response.PRESUPUESTO + "")
       $('.presupuestoInput').attr("readonly","readonly");
     }
   })
