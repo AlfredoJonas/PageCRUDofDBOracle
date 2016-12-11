@@ -11,7 +11,8 @@
 		<input type="submit" name="s" value="Enviar">
 	</form>
 
-	<?php
+<?php
+	require_once 'constants.php';
 
 	if(isset($_GET["ruta"]) && isset($_GET["operacion"]) && isset($_GET["data_extra"])){
 		$data = array();
@@ -23,11 +24,11 @@
     			//echo 'recibido';
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':
-    					onInsertingDevolverParametros(array('ID','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+    					$array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
     				break;
     				case 'update':
     					//echo 'recibido';
-    					echo onUpdatingDevolverParametros(array('ID','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+    					$clave_valor = onUpdatingDevolverParametros(array('ID','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
     				break;
     				case 'delete':break;
     			}
@@ -35,10 +36,19 @@
     		case 'RUTA_CITAS':
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':
-    					onInsertingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+    					$array_suplantable = onInsertingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['CITA']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+
     				break;
     				case 'update':
-    					echo onUpdatingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+    					$clave_valor = onUpdatingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+
+    					$sentencia_dml = str_replace(':columna_valore', $clave_valor, DML_SENTENCES['CITA']['update']);
+    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
+
+    					echo $sentencia_dml;
     				break;
     				case 'delete':break;
     			}
@@ -104,7 +114,7 @@
     		$parametros_presentes = $parametros_presentes.')';
     		$valores_presentes = $valores_presentes.')';
 
-    		$output = array('params' => $parametros_presentes, 'values' => $valores_presentes.')');
+    		$output = array('params' => $parametros_presentes, 'values' => $valores_presentes);
 
     		return $output;
     	}
