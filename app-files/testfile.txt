@@ -1,7 +1,15 @@
-SELECT TO_CHAR(c.FECHA,'DD/MM/YYYY') AS FECHA, m.NOMBRE AS DOCTOR, 'CITA' as TIPO FROM CITA c
-                            JOIN MEDICO m ON c.CI_MEDICO = m.CI
-                            WHERE TO_CHAR(c.FECHA,'YYYY-MM-DD') = '2016-12-05'
-                            UNION
-                            SELECT TO_CHAR(ct.FECHA,'DD/MM/YYYY') AS FECHA, ms.NOMBRE AS DOCTOR, 'TRATAMIENTO' as TIPO FROM CITA_TRATAMIENTO ct
-                            JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
-                            WHERE TO_CHAR(ct.FECHA,'YYYY-MM-DD') = '2016-12-05'
+SELECT TO_CHAR(c.FECHA,'DD/MM/YYYY') AS FECHA,
+      m.NOMBRE AS DOCTOR,
+      (SELECT NOMBRE FROM PACIENTE WHERE CI=c.CI_PACIENTE) AS PACIENTE,
+      'CITA' as TIPO FROM CITA c
+      JOIN MEDICO m ON c.CI_MEDICO = m.CI
+      WHERE TO_CHAR(c.FECHA,'YYYY-MM-DD') BETWEEN '2010-01-01' AND '2020-01-01'
+      AND (m.NUM_COLEGIO || '       -       ' || m.NOMBRE) = '2045       -       Samuel'
+      UNION
+      SELECT TO_CHAR(ct.FECHA,'DD/MM/YYYY') AS FECHA, 
+              ms.NOMBRE AS DOCTOR, 
+              (SELECT p.NOMBRE FROM PACIENTE p WHERE p.CI=(SELECT cit.CI_PACIENTE FROM CITA cit WHERE cit.ID=ct.CITA_ID)) AS PACIENTE,
+              'TRATAMIENTO' as TIPO FROM CITA_TRATAMIENTO ct
+      JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+      WHERE TO_CHAR(ct.FECHA,'YYYY-MM-DD') BETWEEN '2010-01-01' AND '2020-01-01'
+      AND (ms.NUM_COLEGIO || '       -       ' || ms.NOMBRE) = '2045       -       Samuel'

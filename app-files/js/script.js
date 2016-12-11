@@ -77,7 +77,7 @@ function insertHTML(from = '', tipo = 0) {
 
 function parseData(data, tipo) {
 	if(tipo === "multiple_select" || tipo == "single_select")
-  	return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
+  	return new Option(data.NOMBRE, data.NOMBRE.toLowerCase());
 	else {
 		var resp = "<tr>";
 		for(var key in data) {

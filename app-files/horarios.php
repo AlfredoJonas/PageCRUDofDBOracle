@@ -6,7 +6,6 @@
 			$(document).ready(function() {
 					$('.formHorario').submit(function(event) {
 						event.preventDefault();
-						console.log("HOLA");
 
 						var formMessages = $("#form-messages");
 						var form = $(".formHorario");
@@ -23,15 +22,13 @@
 						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
 							consulta = "HORARIO_DOCTOR_RANGO";
 
-
-						console.log(consulta);
 						ruta = "RUTA_HORARIOS";
 						data_e = $(".formHorario").serialize();
 
 						$.ajax({
 							type: 'POST',
 							url: form.attr('action'),
-							data: {consulta:consulta,ruta:ruta, data_extra: data_e}
+							data: {consulta:consulta, ruta:ruta, data_extra: data_e}
 						})
 
 						.done(function(response) {
@@ -58,7 +55,7 @@
 	<body>
 		<?php include('header.php');?>
 			<div class="container">
-				<div class="container col-sm-5">
+				<div class="container col-sm-6">
 
 					<div id="form-messages" class="alert alert-dismissable fade in hidden">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -119,7 +116,6 @@
 										<input type="date" class="diaInput form-control" id="diaInput" name="diaInput" placeholder="Día específico">
 									</div>
 								</div>
-
 								<div class="input-group rango hidden">
 									<div class="col-sm-6">
 										<input type="date" class="dia1Input form-control" id="dia1Input" name="dia1Input">
@@ -135,8 +131,22 @@
 									<button type="submit" class="btn btn-primary">Buscar <span class="glyphicon glyphicon-plus"></span></button>
 							</div>
 						</fieldset>
-          </form>
-        </div>
+    			</form>
+  			</div>
+
+    		<div class="container col-sm-6 hidden">
+	    		<table>
+	    			<thead>
+	    				<tr>
+	    					<th>Fecha y Hora</th>
+	    					<th>Nombre del doctor</th>
+	    					<th>Paciente</th>
+	    					<th>Tipo de </th>
+	    				</tr>
+	    			</thead>
+	    			<tbody></tbody>
+	    		</table>
+    		</div>
 			</div>
 		<?php include('footer.php'); ?>
 	</body>

@@ -42,10 +42,76 @@
   WHERE c.ID = ',
   true);
 
-  /*define("HORARIO_GLOBAL_DIA",,);
-  define("HORARIO_GLOBAL_RANGO",,);
-  define("HORARIO_DOCTOR_DIA",,);
-  define("HORARIO_DOCTOR_RANGO",,);*/
+  define("HORARIO_GLOBAL_DIA_SQL",
+      'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, 
+              m.NOMBRE AS DOCTOR, 
+              (SELECT NOMBRE FROM PACIENTE WHERE CI=c.CI_PACIENTE) AS PACIENTE,
+              \'CITA\' as TIPO FROM CITA c
+        JOIN MEDICO m ON c.CI_MEDICO = m.CI
+        WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') = \':fecha_input\'
+        UNION
+        SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, 
+                ms.NOMBRE AS DOCTOR, 
+                (SELECT p.NOMBRE FROM PACIENTE p WHERE p.CI=(SELECT cit.CI_PACIENTE FROM CITA cit WHERE cit.ID=ct.CITA_ID)) AS PACIENTE,
+                \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
+        JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+        WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = \':fecha_input\''
+    ,true);
+
+
+  define("HORARIO_GLOBAL_RANGO_SQL",
+      'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, 
+              m.NOMBRE AS DOCTOR, 
+              (SELECT NOMBRE FROM PACIENTE WHERE CI=c.CI_PACIENTE) AS PACIENTE,
+              \'CITA\' as TIPO FROM CITA c
+      JOIN MEDICO m ON c.CI_MEDICO = m.CI
+      WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') BETWEEN \':fecha_input1\' AND \':fecha_input2\'
+      UNION
+      SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, 
+              ms.NOMBRE AS DOCTOR, 
+              (SELECT p.NOMBRE FROM PACIENTE p WHERE p.CI=(SELECT cit.CI_PACIENTE FROM CITA cit WHERE cit.ID=ct.CITA_ID)) AS PACIENTE,
+              \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
+      JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+      WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') BETWEEN \':fecha_input1\' AND \':fecha_input2\''
+    ,true);
+
+
+  define("HORARIO_DOCTOR_DIA_SQL",
+    'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA,
+            m.NOMBRE AS DOCTOR,
+            (SELECT NOMBRE FROM PACIENTE WHERE CI=c.CI_PACIENTE) AS PACIENTE,
+            \'CITA\' as TIPO FROM CITA c
+      JOIN MEDICO m ON c.CI_MEDICO = m.CI
+      WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') = \':fecha_input\'
+      AND (m.NUM_COLEGIO || \'       -       \' || m.NOMBRE) = \':doctor_cadena\'
+      UNION
+      SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, 
+              ms.NOMBRE AS DOCTOR, 
+              (SELECT p.NOMBRE FROM PACIENTE p WHERE p.CI=(SELECT cit.CI_PACIENTE FROM CITA cit WHERE cit.ID=ct.CITA_ID)) AS PACIENTE,
+              \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
+      JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+      WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = :fecha_input
+      AND (ms.NUM_COLEGIO || \'       -       \' || ms.NOMBRE) = \':doctor_cadena\''
+    ,true);
+
+
+  define("HORARIO_DOCTOR_RANGO_SQL",
+    'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA,
+      m.NOMBRE AS DOCTOR,
+      (SELECT NOMBRE FROM PACIENTE WHERE CI=c.CI_PACIENTE) AS PACIENTE,
+      \'CITA\' as TIPO FROM CITA c
+      JOIN MEDICO m ON c.CI_MEDICO = m.CI
+      WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') BETWEEN \':fecha_input1\' AND \':fecha_input2\'
+      AND (m.NUM_COLEGIO || \'       -       \' || m.NOMBRE) = \':doctor_cadena\'
+      UNION
+      SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, 
+              ms.NOMBRE AS DOCTOR, 
+              (SELECT p.NOMBRE FROM PACIENTE p WHERE p.CI=(SELECT cit.CI_PACIENTE FROM CITA cit WHERE cit.ID=ct.CITA_ID)) AS PACIENTE,
+              \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
+      JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+      WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') BETWEEN \':fecha_input1\' AND \':fecha_input2\'
+      AND (ms.NUM_COLEGIO || \'       -       \' || ms.NOMBRE) = \':doctor_cadena\''
+    ,true);
 
   define("HISTORIAL_CITAS_SQL",
   "SELECT NOMBRE, FECHA, MOTIVO
