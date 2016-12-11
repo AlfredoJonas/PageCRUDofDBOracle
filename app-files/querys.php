@@ -8,7 +8,6 @@
 
     if(!is_null($data_adicional)){
       parse_str($data_adicional, $data);
-      //$data =  $data_adicional;
     }
 
     switch ($from_page) {

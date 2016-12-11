@@ -1,8 +1,6 @@
 <?php
   require 'querys.php';
 
-  echo $_POST;
-
   if(!ISSET($_POST['data_extra']))
     $consulta = preprocesar_cosultas($_POST['consulta'], $_POST['ruta']);
   else
@@ -14,7 +12,7 @@
 
   while($data = oci_fetch_array($statement, OCI_ASSOC + OCI_FETCHSTATEMENT_BY_ROW)) {
     if(!$data)
-      throw_error(oci_error($statement)['message']); 
+      throw_error(oci_error($statement)['message']);
 
     $json[] = $data;
   }
