@@ -188,4 +188,36 @@
     "Historial de tratamientos" => "t-historial"
   );
 
+
+  const DML_SENTENCES = (
+    'CITA' => array(
+
+              ),
+    'EMPLEADO' => array(
+                    'insert' => 'INSERT INTO EMPLEADO :campos VALUES :valores;',
+                    'update' => 'UPDATE EMPLEADO SET :columna_valores WHERE CI = :ci',
+                    'delete' => 'no se como'
+                  ),
+    'MEDICO' => array(
+                  'insert' => 'INSERT INTO MEDICO :campos VALUES :valores;',
+                    'update' => 'UPDATE MEDICO SET :columna_valores WHERE CI = :ci OR NUM_COLEGIO = :num_cole',
+                    'delete' => 'no se como'
+                ),
+    'PACIENTE' => array(
+                    'insert' => 'INSERT INTO PACIENTE :campos VALUES :valores;',
+                    'update' => 'UPDATE PACIENTE SET :columna_valores WHERE CI = :ci',
+                    'delete' => 'no se como'
+                  ),
+    'IMPLEMENTO' => array(
+                      'insert' => 'INSERT INTO IMPLEMENTO :campos VALUES :valores;',
+                      'update' => 'UPDATE IMPLEMENTO SET :columna_valores WHERE ID = :id',
+                      'delete' => 'no se como'
+                    ),
+    'CITA_TRATAMIENTO' => array(
+                            'insert' => 'INSERT INTO CITA_TRATAMIENTO :campos VALUES :valores;',
+                            'update' => 'UPDATE CITA_TRATAMIENTO SET :columna_valores WHERE CITA_ID = :ci AND TRATAMIENTO_ID = :ti',
+                            'delete' => 'no se como'
+                          ),
+  );
+
  ?>
