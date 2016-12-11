@@ -10,7 +10,7 @@
       parse_str($data_adicional, $data);
       //$data =  $data_adicional;
     }
-    
+
     switch ($from_page) {
 
       case 'RUTA_EMPLEADOS':
@@ -54,12 +54,6 @@
       case 'RUTA_CONSULTAS':
         switch ($tipo_query) {
           case CONSULTAS['Tratamientos realizados']:
-            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
-            break;
-          case CONSULTAS['Horarios disponibles']:
-            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
-            break;
-          case CONSULTAS['Citas disponibles']:
             $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
             break;
           case CONSULTAS['Ganancias generales']:

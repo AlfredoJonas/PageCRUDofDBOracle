@@ -1,5 +1,4 @@
 function requestConsultas(event) {
-
 	var options = $('.selectConsultas option:not(:selected)');
 	for (var option in options) {
 		$('.'+options[option].value).addClass('hidden');
@@ -24,7 +23,6 @@ function requestEspecializaciones() {
 
 	.done(function(response) {
 		for(var key in response) {
-      console.log(response[key]);
 			document.querySelector('.especializaciones').options.add(parseData(response[key], 'multiple_select'));
 		}
 	})
@@ -114,7 +112,7 @@ function requestInformacionCita(){
   })
 
   .done(function(response){
-		data_response = response[0]; 
+		data_response = response[0];
 		console.log(data_response);
     if(typeof data_response.DOCTOR !== 'undefined'){
       $('.doctorSeleccion').remove();
