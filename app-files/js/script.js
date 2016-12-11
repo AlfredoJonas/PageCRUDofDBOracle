@@ -25,7 +25,7 @@ function insertHTML(from = '', tipo = 0) {
 					$(".doctorSeleccion").prop("disabled", true);
 				break;
 				case 2:
-					requestDoctores();
+					requestNombreDoctores();
 					$(".divDoctores").removeClass("hidden");
 					$(".doctorSeleccion").prop("disabled", false);
 				break;
@@ -76,11 +76,16 @@ function insertHTML(from = '', tipo = 0) {
 		case 'CRUD':
 			switch(tipo) {
 				case 1:
+					$(".fields input").prop("disabled", false);
 					$(".fields").removeClass("hidden");
 					break;
 				case 2:
+					$(".fields input").prop("disabled", false);
+					$(".fields").removeClass("hidden");
 					break;
 				case 3:
+					$(".fields input").prop("disabled", true);
+					$(".fields").removeClass("hidden");
 					break;
 				}
 	}
@@ -98,4 +103,21 @@ function parseData(data, tipo) {
 
 		return resp;
 	}
+}
+
+function fillTable(response) {
+	var table_head = ""
+	var table_body = ""
+
+	var keys = Object.keys(response[0]);
+
+	for(var key in keys)
+		table_head += '<th>'+keys[key]+'</th>';
+
+	$('.table-head').html(table_head);
+
+	for(var key in response)
+		table_body += parseData(response[key]);
+
+	$('.table-body').html(table_body);
 }

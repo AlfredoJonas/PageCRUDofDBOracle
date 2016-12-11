@@ -82,26 +82,18 @@
 					</form>
 				</div>
 
-				<div class="container col-sm-7 divTablaInventario">
-	        		<div class="panel panel-primary">
+				<div class="container col-sm-7">
+					<div class="panel panel-primary">
 						<div class="panel-heading">Inventario</div>
 						<div class="panel-body consulta-body">
-			        		<table class="table table-hover table-striped">
-			        			<thead class="table-head">
-			        				<tr>
-			        					<th>ID</th>
-			        					<th>Nombre del producto</th>
-			        					<th>Marca</th>
-			        					<th>Descripción</th>
-			        					<th>Costo</th>
-			        					<th>Cantidad actual</th>
-			        				</tr>
-			        			</thead>
-			        			<tbody class="cuerpoTablaInventario table-body"></tbody>
-			        		</table>
-			        	</div>
-			        </div>
-        		</div>
+							<table class="table table-hover table-striped">
+								<thead class="table-head">
+								</thead>
+								<tbody class="table-body"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
 		<?php include('footer.php'); ?>
 	</body>

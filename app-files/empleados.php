@@ -5,6 +5,7 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				requestEspecializaciones();
+				requestEmpleados();
 			});
 		</script>
 	</head>
@@ -149,6 +150,19 @@
 							</div>
 						</fieldset>
 					</form>
+				</div>
+
+				<div class="container col-sm-7">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Empleados</div>
+						<div class="panel-body consulta-body">
+							<table class="table table-hover table-striped">
+								<thead class="table-head">
+								</thead>
+								<tbody class="table-body"></tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		<?php include('footer.php'); ?>

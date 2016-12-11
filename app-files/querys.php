@@ -36,6 +36,9 @@
               $consulta = LISTA_ATRIBUTOS_CITA_SQL.$data["id_cita"];
               }
             break;
+          case 'LISTA_CITAS':
+            $consulta = LISTA_CITAS_SQL;
+            break;
         }
         break;
 
@@ -43,6 +46,14 @@
         switch ($tipo_query) {
           case 'LISTA_INVENTARIO':
             $consulta = LISTA_INVENTARIO_SQL;
+            break;
+        }
+        break;
+
+      case 'RUTA_PACIENTES':
+        switch ($tipo_query) {
+          case 'LISTA_PACIENTES':
+            $consulta = LISTA_PACIENTES_SQL;
             break;
         }
         break;

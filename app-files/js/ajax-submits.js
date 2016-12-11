@@ -22,20 +22,7 @@ function submitConsultas(event) {
 
 		formMessages.prepend(mensaje_exito);
 
-		var table_head = ""
-		var table_body = ""
-
-		var keys = Object.keys(response[0]);
-
-		for(var key in keys)
-			table_head += '<th>'+keys[key]+'</th>';
-
-		$('.table-head').html(table_head);
-
-		for(var key in response)
-			table_body += parseData(response[key]);
-
-		$('.table-body').html(table_body);
+		fillTable(response);
 	})
 
   .fail(function(data) {
@@ -176,13 +163,8 @@ function submitHorario(event) {
 
 		formMessages.prepend(mensaje_exito);
 
-		campoInsercion = $(".cuerpoTablaResultados");
-		$(".cuerpoTablaResultados").empty();
+		fillTable(response);
 
-		for(var key in response)
-			$(".cuerpoTablaResultados").append(parseData(response[key]));
-
-		$(".divTablaResultados").removeClass("hidden");
 	})
 
 	.fail(function(data) {

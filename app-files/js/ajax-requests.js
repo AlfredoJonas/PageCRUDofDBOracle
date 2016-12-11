@@ -27,7 +27,7 @@ function requestEspecializaciones() {
 	});
 }
 
-function requestPacientes(){
+function requestNombrePacientes(){
 	var ruta = $('.pacienteSeleccion').data("ruta");
 	var consulta = $('.pacienteSeleccion').data("consulta");
 	var formMessages = $('#form-messages');
@@ -55,7 +55,7 @@ function requestPacientes(){
 	});
 }
 
-function requestDoctores(){
+function requestNombreDoctores(){
 	var ruta = $('.doctorSeleccion').data("ruta");
 	var consulta = $('.doctorSeleccion').data("consulta");
 	var formMessages = $('#form-messages');
@@ -152,27 +152,106 @@ function requestInventario(){
 	var consulta = 'LISTA_INVENTARIO';
 	var ruta = 'RUTA_INVENTARIO';
 
+  var formMessages = $('#form-messages');
+
 	$.ajax({
-	    type: 'POST',
-	    url: 'ajax-handler.php',
-	    data: {ruta: ruta, consulta: consulta}
-	  })
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta}
+  })
 
-	  .done(function(response){
-	  		$(".cuerpoTablaInventario").empty();
+  .done(function(response){
+		fillTable(response);
+  })
 
-			for(var key in response){
-				$(".cuerpoTablaInventario").append(parseData(response[key]));
-			}
-	  })
+  .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
 
-	  .fail(function(data) {
-	    formMessages.removeClass('hidden');
-	    formMessages.addClass('alert-danger');
+    if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend('Oops! An error occured.');
+  });
+}
 
-	    if (data.responseText !== '')
-				formMessages.prepend(data.responseText);
-	    else
-	      formMessages.prepend('Oops! An error occured.');
-	  });
+function requestEmpleados(){
+	var consulta = 'LISTA_EMPLEADOS';
+	var ruta = 'RUTA_EMPLEADOS';
+
+  var formMessages = $('#form-messages');
+
+	$.ajax({
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta}
+  })
+
+  .done(function(response){
+		fillTable(response);
+  })
+
+  .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend('Oops! An error occured.');
+  });
+}
+
+function requestCitas(){
+	var consulta = 'LISTA_CITAS';
+	var ruta = 'RUTA_CITAS';
+
+  var formMessages = $('#form-messages');
+
+	$.ajax({
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta}
+  })
+
+  .done(function(response){
+		fillTable(response);
+  })
+
+  .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend('Oops! An error occured.');
+  });
+}
+
+function requestPacientes(){
+	var consulta = 'LISTA_PACIENTES';
+	var ruta = 'RUTA_PACIENTES';
+
+  var formMessages = $('#form-messages');
+
+	$.ajax({
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta}
+  })
+
+  .done(function(response){
+		fillTable(response);
+  })
+
+  .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend('Oops! An error occured.');
+  });
 }

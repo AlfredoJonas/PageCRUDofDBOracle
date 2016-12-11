@@ -6,7 +6,7 @@
 			$(document).ready(function() {
 				$('.formHorario').submit(function(event) {
 					submitHorario(event);
-				});	
+				});
 			});
 		</script>
 	</head>
@@ -89,28 +89,21 @@
 									<button type="submit" class="btn btn-primary">Buscar <span class="glyphicon glyphicon-plus"></span></button>
 							</div>
 						</fieldset>
-          			</form>
-        		</div>
+          </form>
+        </div>
 
-
-        		<div class="container col-sm-6 hidden divTablaResultados">
-	        		<div class="panel panel-primary">
+    		<div class="container col-sm-6">
+      		<div class="panel panel-primary">
 						<div class="panel-heading">Resultado de la consulta</div>
 						<div class="panel-body consulta-body">
-			        		<table class="table table-hover table-striped">
-			        			<thead class="table-head">
-			        				<tr>
-			        					<th>Fecha y Hora</th>
-			        					<th>Nombre del doctor</th>
-			        					<th>Paciente</th>
-			        					<th>Tipo de actividad</th>
-			        				</tr>
-			        			</thead>
-			        			<tbody class="cuerpoTablaResultados table-body"></tbody>
-			        		</table>
-			        	</div>
-			        </div>
-        		</div>
+	        		<table class="table table-hover table-striped">
+	        			<thead class="table-head">
+	        			</thead>
+	        			<tbody class="table-body"></tbody>
+	        		</table>
+	        	</div>
+	        </div>
+	  		</div>
 			</div>
 		<?php include('footer.php'); ?>
 	</body>

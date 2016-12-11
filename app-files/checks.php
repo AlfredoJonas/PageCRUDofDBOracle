@@ -14,7 +14,7 @@
       </div>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="2" onclick="insertHTML('CRUD', 2)">Eliminar
+          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="3" onclick="insertHTML('CRUD', 2)">Eliminar
         </label>
       </div>
     </div>
