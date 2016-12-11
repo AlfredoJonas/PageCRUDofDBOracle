@@ -50,7 +50,8 @@
       case 'RUTA_CONSULTAS':
         switch ($tipo_query) {
           case CONSULTAS['Tratamientos realizados']:
-            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            die($data['fecha']);
+            $consulta = str_replace('&FECHA', $data['fecha'], EL_DERROCHADOR_SQL);
             break;
           case CONSULTAS['Ganancias generales']:
             $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
@@ -81,7 +82,6 @@
                 $consulta = str_replace(':fecha_input1', $data['dia1Input'], HORARIO_DOCTOR_RANGO_SQL);
                 $consulta = str_replace(':fecha_input2', $data['dia2Input'], $consulta);
                 $consulta = str_replace(':doctor_cadena', $data['doctorSeleccion'], $consulta);
-                            $myfile = fopen("testfile.txt","w");
               }
           break;
           case 'HORARIO_DOCTOR_DIA':
@@ -94,12 +94,6 @@
               if(isset($data["diaInput"])){
                 $consulta = str_replace(':fecha_input', $data['diaInput'], HORARIO_GLOBAL_DIA_SQL);
               }
-              /*$myfile = fopen("testfile.txt","w");
-              ob_start();
-              var_dump($data);
-              $stringosa = ob_get_clean();
-              fwrite($myfile, $consulta);
-              fclose($myfile);*/
               break;
           case 'HORARIO_GLOBAL_RANGO':
               if(isset($data["dia1Input"]) && isset($data["dia2Input"])){

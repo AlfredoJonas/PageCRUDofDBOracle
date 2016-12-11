@@ -4,11 +4,17 @@
 		<?php include('head.php'); ?>
 		<script type="text/javascript">
 			$(document).ready(function() {
+
 				insertHTML('consultas');
 				var clone = $("#form-messages").clone();
+
 				$('.selectConsultas').change(function(event) {
 					insertHTML('consultas');
 					$("#form-messages").replaceWith(clone.clone());
+				});
+
+				$('.formConsultas').submit(function(event) {
+					submitConsultas(event);
 				});
 			});
 		</script>
