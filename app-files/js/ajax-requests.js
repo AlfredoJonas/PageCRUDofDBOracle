@@ -147,3 +147,32 @@ function requestInformacionCita(){
       formMessages.prepend('Oops! An error occured.');
   });
 }
+
+function requestInventario(){
+	var consulta = 'LISTA_INVENTARIO';
+	var ruta = 'RUTA_INVENTARIO';
+
+	$.ajax({
+	    type: 'POST',
+	    url: 'ajax-handler.php',
+	    data: {ruta: ruta, consulta: consulta}
+	  })
+
+	  .done(function(response){
+	  		$(".cuerpoTablaInventario").empty();
+
+			for(var key in response){
+				$(".cuerpoTablaInventario").append(parseData(response[key]));
+			}
+	  })
+
+	  .fail(function(data) {
+	    formMessages.removeClass('hidden');
+	    formMessages.addClass('alert-danger');
+
+	    if (data.responseText !== '')
+				formMessages.prepend(data.responseText);
+	    else
+	      formMessages.prepend('Oops! An error occured.');
+	  });
+}
