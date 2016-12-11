@@ -41,9 +41,10 @@
     			}
     		break;
     	}
+    }
 
 
-    	function onUpdatingDevolverParametros($parameters,$values){
+    function onUpdatingDevolverParametros($parameters,$values){
     		$output = '';
     		for($parameters as $name_attribute){
     			if(array_key_exists(strtolower($name_attribute), $values)){
