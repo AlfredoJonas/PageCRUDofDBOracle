@@ -109,10 +109,15 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<div class="col-sm-12">
+							<div class="form-group row">
+								<div class="col-sm-4">
 									<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-plus"></span></button>
+								</div>
+								<div class="col-sm-4">
 									<button type="submit" class="btn btn-primary" >Actualizar <span class="glyphicon glyphicon-refresh"></span></button>
+								</div>
+								<div class="col-sm-4">
+									<button type="submit" class="btn btn-primary" >Eliminar <span class="glyphicon glyphicon-floppy-remove"></span></button>
 								</div>
 							</div>
 						</fieldset>
