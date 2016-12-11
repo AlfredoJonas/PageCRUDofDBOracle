@@ -161,41 +161,64 @@ function submitImplemento(event) {
 function submitHorario(event) {
 	event.preventDefault();
 
-	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
-		$(".consulta").attr("value","HORARIO_DOCTOR_DIA")
+						var formMessages = $("#form-messages");
+						var form = $(".formHorario");
 
-	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
-		$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
+						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
+							consulta = "HORARIO_GLOBAL_DIA";
 
-	var form = $('.formImplemento');
-	var data = form.serialize();
-	var formMessages = $('#form-messages');
+						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
+							consulta = "HORARIO_GLOBAL_RANGO";
 
-	console.log($(".consulta").val());
-	console.log("YOLO");
+						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
+							consulta = "HORARIO_DOCTOR_DIA";
 
-	$.ajax({
-			type: 'POST',
-			url: form.attr('action'),
-			data: data
-	})
+						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
+							consulta = "HORARIO_DOCTOR_RANGO";
 
-  .done(function(response) {
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-success');
+						console.log("DG: " + agenda_DoctorOGlobal + "     DR: " + agenda_DiarioRango);
 
-    //formMessages.prepend(response);
-		//console.log(response);
-	})
+						ruta = "RUTA_HORARIOS";
+						data_e = $(".formHorario").serialize();
 
-  .fail(function(data) {
+						$.ajax({
+							type: 'POST',
+							url: form.attr('action'),
+							data: {consulta:consulta, ruta:ruta, data_extra: data_e}
+						})
 
-    formMessages.removeClass('hidden');
-    formMessages.addClass('alert-danger');
+						.done(function(response) {
+							formMessages.removeClass('hidden');
+							formMessages.addClass('alert-success');
 
-    if (data.responseText !== '')
-      formMessages.prepend(data.responseText);
-    else
-      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
-	});
+							formMessages.prepend(response);
+
+							/*console.log(response);*/
+							campoInsercion= $(".cuerpoTablaResultados");
+							$(".cuerpoTablaResultados").empty();
+							for(var key in response){
+								fila_resultado = response[key];
+								//console.log(fila_resultado);
+								$(".cuerpoTablaResultados").append(
+									"<tr>\
+										<td>" + fila_resultado.FECHA + "</td>\
+										<td>" + fila_resultado.DOCTOR + "</td>\
+										<td>" + fila_resultado.PACIENTE + "</td>\
+										<td>" + fila_resultado.TIPO + "</td>\
+									</tr>");
+							}
+
+							$(".divTablaResultados").removeClass("hidden");
+						})
+
+						.fail(function(data) {
+						console.log(data.responseText);
+							formMessages.removeClass('hidden');
+							formMessages.addClass('alert-danger');
+
+							if (data.responseText !== '')
+								formMessages.prepend(data.responseText);
+							else
+								formMessages.prepend('Oops! An error occured.');
+						});
 }

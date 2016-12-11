@@ -4,68 +4,9 @@
 		<?php include('head.php'); ?>
 		<script type="text/javascript">
 			$(document).ready(function() {
-					$('.formHorario').submit(function(event) {
-						event.preventDefault();
-
-						var formMessages = $("#form-messages");
-						var form = $(".formHorario");
-
-						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
-							consulta = "HORARIO_GLOBAL_DIA";
-
-						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
-							consulta = "HORARIO_GLOBAL_RANGO";
-
-						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
-							consulta = "HORARIO_DOCTOR_DIA";
-
-						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
-							consulta = "HORARIO_DOCTOR_RANGO";
-
-						ruta = "RUTA_HORARIOS";
-						data_e = $(".formHorario").serialize();
-
-						$.ajax({
-							type: 'POST',
-							url: form.attr('action'),
-							data: {consulta:consulta, ruta:ruta, data_extra: data_e}
-						})
-
-						.done(function(response) {
-							formMessages.removeClass('hidden');
-							formMessages.addClass('alert-success');
-
-							formMessages.prepend(response);
-
-							/*console.log(response);*/
-							campoInsercion= $(".cuerpoTablaResultados");
-							$(".cuerpoTablaResultados").empty();
-							for(var key in response){
-								fila_resultado = response[key];
-								//console.log(fila_resultado);
-								$(".cuerpoTablaResultados").append(
-									"<tr>\
-										<td>" + fila_resultado.FECHA + "</td>\
-										<td>" + fila_resultado.DOCTOR + "</td>\
-										<td>" + fila_resultado.PACIENTE + "</td>\
-										<td>" + fila_resultado.TIPO + "</td>\
-									</tr>");
-							}
-
-							$(".divTablaResultados").removeClass("hidden");
-						})
-
-						.fail(function(data) {
-						console.log(data.responseText);
-							formMessages.removeClass('hidden');
-							formMessages.addClass('alert-danger');
-
-							if (data.responseText !== '')
-								formMessages.prepend(data.responseText);
-							else
-								formMessages.prepend('Oops! An error occured.');
-						});
-					});
+				$('.formHorario').submit(function(event) {
+					submitHorario(event);
+				});	
 			});
 		</script>
 	</head>
