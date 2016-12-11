@@ -41,4 +41,43 @@
     			}
     		break;
     	}
+
+
+    	function onUpdatingDevolverParametros($parameters,$values){
+    		$output = '';
+    		for($parameters as $name_attribute){
+    			if(array_key_exists(strtolower($name_attribute), $values)){
+    				if($output =='')
+    					$output = $output.' '.$name_attribute.' = '.$values[$name_attribute];
+    				else
+    					$output = $output.', '.$name_attribute.' = '.$values[$name_attribute];
+    			}
+    		}
+
+    		return $output;
+    	}
+
+    	function onInsertingDevolverParametros($parametros,$values){
+    		$output = array();
+    		$parametros_presentes = '(';
+    		$valores_presentes = '(';
+
+    		for($parameters as $name_attribute){
+    			if(array_key_exists(strtolower($name_attribute), $values)){
+    				if(strcmp($parametros_presentes,'(') == 0)
+    					$parametros_presentes = $parametros_presentes.' '.$name_attribute;
+    				else
+    					$parametros_presentes = $parametros_presentes.', '.$name_attribute;
+
+    				if(strcmp($valores_presentes,'(') == 0)
+    					$valores_presentes = $valores_presentes.' '.$values[$name_attribute];
+    				else
+    					$valores_presentes = $valores_presentes.', '.$values[$name_attribute];
+    			}
+    		}
+
+    		$output = array('params' => $parametros_presentes.')', 'values' => $valores_presentes.')');
+
+    		return $output;
+    	}
 ?>
