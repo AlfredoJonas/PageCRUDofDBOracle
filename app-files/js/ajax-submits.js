@@ -1,3 +1,6 @@
+var mensaje_exito = 'Consulta procesada con <strong>éxito</strong>';
+var mensaje_falla = 'Oops! Un <strong>error</strong> ha ocurrido';
+
 function submitConsultas(event) {
 	event.preventDefault();
 
@@ -17,7 +20,7 @@ function submitConsultas(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
+		formMessages.prepend(mensaje_exito);
 
 		var table_head = ""
 		var table_body = ""
@@ -42,7 +45,7 @@ function submitConsultas(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
+      formMessages.prepend(mensaje_falla);
 	});
 
 }
@@ -63,7 +66,7 @@ function submitEmpleado(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
+		formMessages.prepend(mensaje_exito);
 	})
 
   .fail(function(data) {
@@ -74,7 +77,7 @@ function submitEmpleado(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
+      formMessages.prepend(mensaje_falla);
 	});
 }
 
@@ -94,7 +97,7 @@ function submitCita(event){
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
+		formMessages.prepend(mensaje_exito);
 	})
 
   .fail(function(data) {
@@ -105,7 +108,7 @@ function submitCita(event){
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
+      formMessages.prepend(mensaje_falla);
 	});
 }
 
@@ -125,7 +128,7 @@ function submitImplemento(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
+		formMessages.prepend(mensaje_exito);
 	})
 
   .fail(function(data) {
@@ -136,7 +139,7 @@ function submitImplemento(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
+      formMessages.prepend(mensaje_falla);
 	});
 }
 
@@ -171,7 +174,7 @@ function submitHorario(event) {
 		formMessages.removeClass('hidden');
 		formMessages.addClass('alert-success');
 
-		formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
+		formMessages.prepend(mensaje_exito);
 
 		campoInsercion = $(".cuerpoTablaResultados");
 		$(".cuerpoTablaResultados").empty();
@@ -190,6 +193,6 @@ function submitHorario(event) {
 		if (data.responseText !== '')
 			formMessages.prepend(data.responseText);
 		else
-      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
+      formMessages.prepend(mensaje_falla);
 	});
 }
