@@ -112,14 +112,7 @@
               break;
           case 'HORARIO_GLOBAL_DIA':
               if(isset($data["diaInput"])){
-                //echo "Hola";
-                $consulta = 'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, m.NOMBRE AS DOCTOR, \'CITA\' as TIPO FROM CITA c
-                            JOIN MEDICO m ON c.CI_MEDICO = m.CI
-                            WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') = \''.$data["diaInput"].'\'
-                            UNION
-                            SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, ms.NOMBRE AS DOCTOR, \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
-                            JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
-                            WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = \''.$data["diaInput"].'\'';
+                $consulta = str_replace(':fecha_input', $data['diaInput'], HORARIO_GLOBAL_DIA_SQL);
               }
               /*$myfile = fopen("testfile.txt","w");
               ob_start();
@@ -130,14 +123,15 @@
               break;
           case 'HORARIO_GLOBAL_RANGO':
               if(isset($data["dia1Input"]) && isset($data["dia2Input"])){
-                $consulta = 'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, m.NOMBRE AS DOCTOR, \'CITA\' as TIPO FROM CITA c
-                            JOIN MEDICO m ON c.CI_MEDICO = m.CI
-                            WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') BETWEEN \''.$data["dia1Input"].'\' AND \''.$data["dia2Input"].'\'
-                            UNION
-                            SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, ms.NOMBRE AS DOCTOR, \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
-                            JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
-                            WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') BETWEEN \''.$data["dia1Input"].'\' AND \''.$data["dia2Input"].'\'';
-              }
+                $consulta = str_replace(':fecha_input1', $data['dia1Input'], HORARIO_GLOBAL_RANGO_SQL);
+                $consulta = str_replace(':fecha_input2', $data['dia2Input'], $consulta);
+                $myfile = fopen("testfile.txt","w");
+                ob_start();
+                var_dump($data);
+                $stringosa = ob_get_clean();
+                fwrite($myfile, $consulta);
+                fclose($myfile);
+                }
               break;
         }
         break;

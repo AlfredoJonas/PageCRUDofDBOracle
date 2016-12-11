@@ -58,7 +58,7 @@
 	<body>
 		<?php include('header.php');?>
 			<div class="container">
-				<div class="container col-sm-5">
+				<div class="container col-sm-6">
 
 					<div id="form-messages" class="alert alert-dismissable fade in hidden">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -69,7 +69,7 @@
 						<legend>Agenda</legend>
 
 						<fieldset>
-	            <div class="form-group">
+	            			<div class="form-group">
 								<label for="doctorGlobal" class="col-sm-3 control-label">Tipo</label>
 								<div class="col-sm-4 inputGroupContainer">
 									<div class="radio">
@@ -117,8 +117,8 @@
 								Seleccione la(s) fecha(s) de su consulta.</small>
 							</div>
 
-						<input hidden="hidden" name="consulta" id="consulta" class="consulta" value="HORARIO_DOCTOR_DIA">	
-						<input hidden="hidden" name="ruta" id="ruta" class="ruta" value="RUTA_HORARIOS">
+							<input hidden="hidden" name="consulta" id="consulta" class="consulta" value="HORARIO_DOCTOR_DIA">	
+							<input hidden="hidden" name="ruta" id="ruta" class="ruta" value="RUTA_HORARIOS">
 
 							<div class="form-group">
 								<div class="col-sm-12">
@@ -126,8 +126,23 @@
 							</div>
 						</fieldset>
 
-          </form>
-        </div>
+          			</form>
+        		</div>
+
+
+        		<div class="container col-sm-6 hidden">
+        		<table>
+        			<thead>
+        				<tr>
+        					<th>Fecha y Hora</th>
+        					<th>Nombre del doctor</th>
+        					<th>Paciente</th>
+        					<th>Tipo de </th>
+        				</tr>
+        			</thead>
+        			<tbody></tbody>
+        		</table>
+        		</div>
 			</div>
 		<?php include('footer.php'); ?>
 	</body>
