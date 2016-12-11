@@ -35,9 +35,6 @@
           case 'LISTA_ATRIBUTOS_CITA':
             if(isset($data["id_cita"])){
               $consulta = LISTA_ATRIBUTOS_CITA_SQL.$data["id_cita"];
-                  $myfile = fopen("testfile.txt", "w");
-                  fwrite($myfile, "consulta !->".$consulta."\n");
-                  fclose($myfile);
               }
             break;
         }
@@ -103,15 +100,23 @@
                             SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, ms.NOMBRE AS DOCTOR, \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
                             JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
                             WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = \''.$data["diaInput"].'\'';
-                //echo $consulta;
               }
+              $myfile = fopen("testfile.txt","w");
+              ob_start();
+              var_dump($data);
+              $stringosa = ob_get_clean();
+              fwrite($myfile, $consulta);
+              fclose($myfile);
               break;
           case 'HORARIO_GLOBAL_RANGO':
-              if(isset($data["fecha"])){
-                $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
-                             FROM nombre_tabla
-                             WHERE TO_CHAR(FECHA,'DD/MM/YYYY') = ".$data["fecha"]."
-                             ORDER BY FECHA;";
+              if(isset($data["dia1Input"]) && isset($data["dia2Input"])){
+                $consulta = 'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, m.NOMBRE AS DOCTOR, \'CITA\' as TIPO FROM CITA c
+                            JOIN MEDICO m ON c.CI_MEDICO = m.CI
+                            WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') BETWEEN \''.$data["dia1Input"].'\' AND \''.$data["dia2Input"].'\'
+                            UNION
+                            SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, ms.NOMBRE AS DOCTOR, \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
+                            JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+                            WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') BETWEEN \''.$data["dia1Input"].'\' AND \''.$data["dia2Input"].'\'';
               }
               break;
         }

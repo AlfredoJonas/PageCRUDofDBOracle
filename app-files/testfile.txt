@@ -1,9 +1,7 @@
-consulta !->SELECT p.CI || '       -        ' || p.NOMBRE AS PACIENTE,
-       m.NUM_COLEGIO || '       -       ' || m.NOMBRE AS DOCTOR,
-       TO_CHAR(c.FECHA,'DD/MM/YYYY') AS FECHA,
-       c.URL_IMAGEN_ODONTOGRAMA AS ODONTOGRAMA,
-       c.COSTO AS PRESUPUESTO
-  FROM CITA c
-  JOIN MEDICO m ON c.CI_MEDICO = m.CI
-  JOIN PACIENTE p ON c.CI_PACIENTE = p.CI
-  WHERE c.ID = 20
+SELECT TO_CHAR(c.FECHA,'DD/MM/YYYY') AS FECHA, m.NOMBRE AS DOCTOR, 'CITA' as TIPO FROM CITA c
+                            JOIN MEDICO m ON c.CI_MEDICO = m.CI
+                            WHERE TO_CHAR(c.FECHA,'YYYY-MM-DD') = '2016-12-05'
+                            UNION
+                            SELECT TO_CHAR(ct.FECHA,'DD/MM/YYYY') AS FECHA, ms.NOMBRE AS DOCTOR, 'TRATAMIENTO' as TIPO FROM CITA_TRATAMIENTO ct
+                            JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+                            WHERE TO_CHAR(ct.FECHA,'YYYY-MM-DD') = '2016-12-05'

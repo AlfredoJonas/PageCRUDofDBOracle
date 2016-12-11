@@ -1,14 +1,19 @@
 <?php
   require 'querys.php';
 
-  echo $_POST;
-
-  if(!ISSET($_POST['data_extra']))
+  if(!isset($_POST['data_extra']))
     $consulta = preprocesar_cosultas($_POST['consulta'], $_POST['ruta']);
   else
     $consulta = preprocesar_cosultas($_POST['consulta'], $_POST['ruta'], $_POST['data_extra']);
 
   $statement = exec_query($consulta);
+
+  /*$myfile = fopen("testfile.txt","w");
+              ob_start();
+              var_dump($data);
+              $stringosa = ob_get_clean();
+              fwrite($myfile, $statement);
+              fclose($myfile);*/
 
   $json = array();
 
