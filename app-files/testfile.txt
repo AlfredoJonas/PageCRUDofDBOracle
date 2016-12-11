@@ -6,4 +6,4 @@ consulta !->SELECT p.CI || '       -        ' || p.NOMBRE AS PACIENTE,
   FROM CITA c
   JOIN MEDICO m ON c.CI_MEDICO = m.CI
   JOIN PACIENTE p ON c.CI_PACIENTE = p.CI
-  WHERE c.ID = 12
+  WHERE c.ID = 20;  
