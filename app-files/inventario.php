@@ -14,9 +14,10 @@
 
 					<form class="formImplemento well form-horizontal" action="ajax-handler.php" role="form">
 
-						<legend>Inventario</legend>
+						<?php include('checks.php'); ?>
 
-						<fieldset>
+						<fieldset class="fields hidden">
+							<legend>Inventario</legend>
 							<div class="form-group">
 								<label for="nfi" class="col-sm-3 control-label">Nombre</label>
 								<div class="col-sm-9 inputGroupContainer">
@@ -67,11 +68,10 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-							  <div class="col-sm-12">
-							    <button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-plus"></span></button>
-									<button type="submit" class="btn btn-primary" >Actualizar <span class="glyphicon glyphicon-refresh"></span></button>
-							  </div>
+							<div class="form-group row">
+								<div class="col-sm-4">
+									<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-ok"></span></button>
+								</div>
 							</div>
 						</fieldset>
 					</form>
