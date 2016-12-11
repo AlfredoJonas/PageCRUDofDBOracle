@@ -12,7 +12,7 @@
 
   while($data = oci_fetch_array($statement, OCI_ASSOC + OCI_FETCHSTATEMENT_BY_ROW)) {
     if(!$data)
-      throw_error(oci_error($statement)['message']);
+      throw_error(oci_error($statement)['message']); 
 
     $json[] = $data;
   }

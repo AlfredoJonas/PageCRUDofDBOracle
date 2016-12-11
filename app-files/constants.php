@@ -28,7 +28,7 @@
   
   define("LISTA_ATRIBUTOS_CITA_SQL",
   'SELECT p.CI || \'       -        \' || p.NOMBRE AS PACIENTE,
-       m.NUM_COLEGIO || '       -       ' || m.NOMBRE AS DOCTOR,
+       m.NUM_COLEGIO || \'       -       \' || m.NOMBRE AS DOCTOR,
        TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA,
        c.URL_IMAGEN_ODONTOGRAMA AS ODONTOGRAMA,
        c.COSTO AS PRESUPUESTO

@@ -1,0 +1,9 @@
+consulta !->SELECT p.CI || '       -        ' || p.NOMBRE AS PACIENTE,
+       m.NUM_COLEGIO || '       -       ' || m.NOMBRE AS DOCTOR,
+       TO_CHAR(c.FECHA,'DD/MM/YYYY') AS FECHA,
+       c.URL_IMAGEN_ODONTOGRAMA AS ODONTOGRAMA,
+       c.COSTO AS PRESUPUESTO
+  FROM CITA c
+  JOIN MEDICO m ON c.CI_MEDICO = m.CI
+  JOIN PACIENTE p ON c.CI_PACIENTE = p.CI
+  WHERE c.ID = 2

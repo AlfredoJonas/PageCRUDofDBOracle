@@ -102,7 +102,9 @@ function requestDoctorGlobalSchedule(){
 }
 
 function requestInformacionCita(){
-  var id_cita = parseInt($(".identificadorInput").text());
+  var id_cita = parseInt($(".identificadorInput").val());
+	console.log("Esto es lo que hay: "+$(".identificadorInput").val());
+	$(".identificadorInput").val(id_cita+"");
   var ruta = $('.identificadorInput').data("ruta");
 	var consulta = $('.identificadorInput').data("consulta");
   var formMessages = $('#form-messages');
@@ -110,11 +112,11 @@ function requestInformacionCita(){
   $.ajax({
     type: 'POST',
     url: 'ajax-handler.php',
-    data: {ruta: ruta, consulta: consulta}
+    data: {ruta: ruta, consulta: consulta, data_extra:{id_cita : id_cita}}
   })
 
   .done(function(response){
-    if(response.PACIENTE){
+    if(typeof response.PACIENTE !== 'undefined'){
       $('.doctorSeleccion').remove();
 
       $('.doctorSeleccionDiv').append('<input type="text" id="doctorInput" name="doctorInput" class="form-control doctorInput" readonly text="'+ response.doctor +'">');

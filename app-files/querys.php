@@ -6,7 +6,8 @@
     $data = array();
 
     if(!is_null($data_adicional)){
-      parse_str($data_adicional, $data);
+      /*parse_str($data_adicional, $data);*/
+      $data =  $data_adicional;
     }
     
     switch ($from_page) {
@@ -31,7 +32,12 @@
             $consulta = LISTA_NOMBRES_PACIENTES_SQL;
             break;
           case 'LISTA_ATRIBUTOS_CITA':
-            $consulta = LISTA_ATRIBUTOS_CITA_SQL;
+            if(isset($data["id_cita"])){
+              $consulta = LISTA_ATRIBUTOS_CITA_SQL.$data["id_cita"];
+                  $myfile = fopen("testfile.txt", "w");
+                  fwrite($myfile, "consulta !->".$consulta."\n");
+                  fclose($myfile);
+              }
             break;
         }
         break;
