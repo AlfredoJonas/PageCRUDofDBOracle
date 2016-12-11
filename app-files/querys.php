@@ -4,6 +4,7 @@
   function preprocesar_cosultas($tipo_query = '', $from_page = '', $data_adicional = 0){
 
     $data = array();
+    $consulta = "";
 
     if(!is_null($data_adicional)){
       /*parse_str($data_adicional, $data);*/
@@ -85,15 +86,33 @@
 
       case 'RUTA_HORARIOS':
         switch ($tipo_query) {
-          case 'HORARIO_DOCTOR_FECHA':
+          case 'HORARIO_DOCTOR_RANGO':
               if(isset($data["fechaInicio"]) && isset($data["fechaFin"])) {
-                $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
-                             FROM nombre_tabla
-                             WHERE FECHA BETWEEN TO_DATE(".$data["fechaInicio"].") AND TO_DATE(".$data["fechaFin"].")
-                             ORDER BY FECHA;";
+                $consulta = '';
               }
           break;
           case 'HORARIO_DOCTOR_DIA':
+              if(isset($data["fecha"])){
+                $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
+                             FROM nombre_tabla
+                             WHERE TO_CHAR(FECHA,'DD/MM/YYYY') = ".$data["fecha"]."
+                             ORDER BY FECHA;";
+              }
+              break;
+          case 'HORARIO_GLOBAL_DIA':
+              if(isset($_POST["diaInput"])){
+                echo "Hola";
+                $consulta = 'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, m.NOMBRE AS DOCTOR, \'CITA\' as TIPO FROM CITA c
+                            JOIN MEDICO m ON c.CI_MEDICO = m.CI
+                            WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') = \''.$_POST["diaInput"].'\'
+                            UNION
+                            SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, ms.NOMBRE AS DOCTOR, \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
+                            JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
+                            WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = \''.$_POST["diaInput"].'\'';
+                echo $consulta;
+              }
+              break;
+          case 'HORARIO_GLOBAL_RANGO':
               if(isset($data["fecha"])){
                 $consulta = "SELECT TO_CHAR(nombre_variable,'hh24:mi')
                              FROM nombre_tabla

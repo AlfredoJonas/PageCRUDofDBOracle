@@ -103,8 +103,6 @@ function requestDoctorGlobalSchedule(){
 
 function requestInformacionCita(){
   var id_cita = parseInt($(".identificadorInput").val());
-	console.log("Esto es lo que hay: "+$(".identificadorInput").val());
-	$(".identificadorInput").val(id_cita+"");
   var ruta = $('.identificadorInput').data("ruta");
 	var consulta = $('.identificadorInput').data("consulta");
   var formMessages = $('#form-messages');

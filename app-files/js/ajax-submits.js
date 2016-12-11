@@ -148,3 +148,47 @@ function submitImplemento(event) {
       formMessages.prepend('Oops! An error occured.');
 	});
 }
+
+function submitHorario(event) {
+	event.preventDefault();
+
+	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
+		$(".consulta").attr("value","HORARIO_DOCTOR_DIA")
+	
+	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
+		$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
+	
+
+
+	var form = $('.formImplemento');
+	var data = form.serialize();
+	var formMessages = $('#form-messages');
+
+	console.log($(".consulta").val());
+	console.log("YOLO");
+
+	$.ajax({
+			type: 'POST',
+			url: form.attr('action'),
+			data: data
+	})
+
+  .done(function(response) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-success');
+
+    //formMessages.prepend(response);
+		//console.log(response);
+	})
+
+  .fail(function(data) {
+
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+      formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend('Oops! An error occured.');
+	});
+}
