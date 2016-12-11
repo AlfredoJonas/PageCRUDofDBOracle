@@ -97,8 +97,6 @@
   //Las super consultas
   const CONSULTAS = array(
     "Tratamientos realizados" => "t-realizados",
-    "Horarios disponibles" => "h-disponibles",
-    "Citas disponibles" => "c-disponibles",
     "Ganancias generales" => "g-generales",
     "Ganancias por mes" => "g-por-mes",
     "El doctor derrochador" => "d-derrochador",

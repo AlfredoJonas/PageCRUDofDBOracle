@@ -23,7 +23,6 @@ function requestEspecializaciones() {
 
 	.done(function(response) {
 		for(var key in response) {
-      console.log(response[key]);
 			document.querySelector('.especializaciones').options.add(parseData(response[key], 'multiple_select'));
 		}
 	})

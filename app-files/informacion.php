@@ -40,11 +40,11 @@
 
 					<div class="<?php echo CONSULTAS['El doctor derrochador']?> hidden">
 						<div class="form-group implemento">
-							<label for="imp-consulta" class="col-sm-3 control-label">ID Implemento</label>
+							<label for="doc-consulta" class="col-sm-3 control-label">ID Implemento</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="id" id="imp-consulta" placeholder="Ingrese el implemento que desea evaluar">
+									<input type="text" class="form-control" name="id" id="doc-consulta" placeholder="Ingrese el implemento que desea evaluar">
 								</div>
 							</div>
 						</div>
@@ -64,11 +64,23 @@
 
 					<div class="<?php echo CONSULTAS['Historial de tratamientos']?> hidden">
 						<div class="form-group implemento">
-							<label for="imp-consulta" class="col-sm-3 control-label">CI Paciente</label>
+							<label for="imp2-consulta" class="col-sm-3 control-label">CI Paciente</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="ci" id="imp-consulta" placeholder="Ingrese el CI del paciente">
+									<input type="text" class="form-control" name="ci" id="imp2-consulta" placeholder="Ingrese el CI del paciente">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="<?php echo CONSULTAS['Tratamientos realizados']?> hidden">
+						<div class="form-group implemento">
+							<label for="trat-consulta" class="col-sm-3 control-label">Fecha a revisar</label>
+							<div class="col-sm-9 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="date" class="form-control" name="fecha" id="trat-consulta">
 								</div>
 							</div>
 						</div>
@@ -82,19 +94,18 @@
 				</form>
 			</div>
 
-				<div class="container col-sm-7">
-					<div class="panel panel-primary">
-						<div class="panel-heading">Resultado de la consulta</div>
-						<div class="panel-body consulta-body">
-							<table class="table table-hover">
-						    <thead>
+			<div class="container col-sm-7">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Resultado de la consulta</div>
+					<div class="panel-body consulta-body">
+						<table class="table table-hover table-striped">
+					    <thead class="table-head">
 
-						    </thead>
-						    <tbody class="table-body">
+					    </thead>
+					    <tbody class="table-body">
 
-						    </tbody>
-						  </table>
-						</div>
+					    </tbody>
+					  </table>
 					</div>
 				</div>
 			</div>

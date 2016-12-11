@@ -48,12 +48,18 @@ function insertHTML(tipo) {
 	}
 }
 
-
 function parseData(data, tipo) {
 	if(tipo === "multiple_select" || tipo == "single_select")
-  		return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
-	else
-		return null;
+  	return new Option(data.NOMBRE.toLowerCase(), data.NOMBRE);
+	else {
+		var resp = "<tr>";
+		for(var key in data) {
+			resp += '<td>'+data[key]+'</td>';
+		}
+		resp += "</tr>"
+
+		return resp;
+	}
 }
 
 function doctorGlobalRequest(option){

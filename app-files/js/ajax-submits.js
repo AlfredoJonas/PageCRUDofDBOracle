@@ -26,9 +26,9 @@ function submitConsultas(event) {
   var formMessages = $('#form-messages');
 
 	$.ajax({
-	    type: 'POST',
-	    url: form.attr('action'),
-	    data: {ruta: ruta, consulta: consulta, data_extra: data}
+	  type: 'POST',
+	  url: form.attr('action'),
+	  data: {ruta: ruta, consulta: consulta, data_extra: data}
 	})
 
   .done(function(response) {
@@ -37,11 +37,20 @@ function submitConsultas(event) {
 
     formMessages.prepend('Consulta procesada con éxito');
 
-		for(var key in response) {
-			$('.table-body').append(parseData(response[key]));
-		}
+		var table_head = ""
+		var table_body = ""
 
-		form.trigger("reset");
+		var keys = Object.keys(response[0]);
+
+		for(var key in keys)
+			table_head += '<th>'+ keys[key]+'</th>';
+
+		$('.table-head').html(table_head);
+
+		for(var key in response)
+			table_body += parseData(response[key]);
+
+		$('.table-body').html(table_body);
 	})
 
   .fail(function(data) {
@@ -154,10 +163,10 @@ function submitHorario(event) {
 
 	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
 		$(".consulta").attr("value","HORARIO_DOCTOR_DIA")
-	
+
 	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
 		$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
-	
+
 
 
 	var form = $('.formImplemento');
