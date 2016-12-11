@@ -7,8 +7,8 @@
     $consulta = "";
 
     if(!is_null($data_adicional)){
-      /*parse_str($data_adicional, $data);*/
-      $data =  $data_adicional;
+      parse_str($data_adicional, $data);
+      //$data =  $data_adicional;
     }
     
     switch ($from_page) {
@@ -101,7 +101,7 @@
               break;
           case 'HORARIO_GLOBAL_DIA':
               if(isset($_POST["diaInput"])){
-                echo "Hola";
+                //echo "Hola";
                 $consulta = 'SELECT TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA, m.NOMBRE AS DOCTOR, \'CITA\' as TIPO FROM CITA c
                             JOIN MEDICO m ON c.CI_MEDICO = m.CI
                             WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') = \''.$_POST["diaInput"].'\'
@@ -109,7 +109,7 @@
                             SELECT TO_CHAR(ct.FECHA,\'DD/MM/YYYY\') AS FECHA, ms.NOMBRE AS DOCTOR, \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
                             JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
                             WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = \''.$_POST["diaInput"].'\'';
-                echo $consulta;
+                //echo $consulta;
               }
               break;
           case 'HORARIO_GLOBAL_RANGO':

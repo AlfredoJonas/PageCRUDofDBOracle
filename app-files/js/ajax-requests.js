@@ -110,7 +110,7 @@ function requestInformacionCita(){
   $.ajax({
     type: 'POST',
     url: 'ajax-handler.php',
-    data: {ruta: ruta, consulta: consulta, data_extra:{id_cita : id_cita}}
+    data: {ruta: ruta, consulta: consulta, data_extra:"id_cita="+id_cita}
   })
 
   .done(function(response){
