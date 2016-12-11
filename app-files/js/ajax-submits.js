@@ -35,7 +35,7 @@ function submitConsultas(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend('Consulta procesada con éxito');
+    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 
 		var table_head = ""
 		var table_body = ""
@@ -81,7 +81,7 @@ function submitEmpleado(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend(response);
+    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 	})
 
   .fail(function(data) {
@@ -92,7 +92,7 @@ function submitEmpleado(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('Oops! An error occured.');
+      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
 	});
 }
 
@@ -112,7 +112,7 @@ function submitCita(event){
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend(response);
+    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 	})
 
   .fail(function(data) {
@@ -123,7 +123,7 @@ function submitCita(event){
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('Oops! An error occured.');
+      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
 	});
 }
 
@@ -143,7 +143,7 @@ function submitImplemento(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend(response);
+    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 	})
 
   .fail(function(data) {
@@ -154,7 +154,7 @@ function submitImplemento(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('Oops! An error occured.');
+      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
 	});
 }
 
@@ -166,8 +166,6 @@ function submitHorario(event) {
 
 	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
 		$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
-
-
 
 	var form = $('.formImplemento');
 	var data = form.serialize();
@@ -198,6 +196,6 @@ function submitHorario(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('Oops! An error occured.');
+      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
 	});
 }

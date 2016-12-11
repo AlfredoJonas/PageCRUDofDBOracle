@@ -5,8 +5,10 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				requestConsultas();
+				var clone = $("#form-messages").clone();
 				$('.selectConsultas').change(function(event) {
 					requestConsultas();
+					$("#form-messages").replaceWith(clone.clone());
 				});
 			});
 		</script>
@@ -17,6 +19,7 @@
 			<div class="container col-sm-5">
 				<div id="form-messages" class="alert alert-dismissable fade in hidden">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<div class="mensaje"></div>
 				</div>
 
 				<form class="formConsultas well form-horizontal" action="ajax-handler.php">
