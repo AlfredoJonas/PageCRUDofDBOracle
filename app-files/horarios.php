@@ -4,51 +4,9 @@
 		<?php include('head.php'); ?>
 		<script type="text/javascript">
 			$(document).ready(function() {
-					$('.formHorario').submit(function(event) {
-						event.preventDefault();
-
-						var formMessages = $("#form-messages");
-						var form = $(".formHorario");
-
-						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
-							consulta = "HORARIO_GLOBAL_DIA";
-
-						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
-							consulta = "HORARIO_GLOBAL_RANGO";
-
-						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
-							consulta = "HORARIO_DOCTOR_DIA";
-
-						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
-							consulta = "HORARIO_DOCTOR_RANGO";
-
-						ruta = "RUTA_HORARIOS";
-						data_e = $(".formHorario").serialize();
-
-						$.ajax({
-							type: 'POST',
-							url: form.attr('action'),
-							data: {consulta:consulta, ruta:ruta, data_extra: data_e}
-						})
-
-						.done(function(response) {
-							formMessages.removeClass('hidden');
-							formMessages.addClass('alert-success');
-
-							formMessages.prepend(response);
-						})
-
-						.fail(function(data) {
-						console.log(data.responseText);
-							formMessages.removeClass('hidden');
-							formMessages.addClass('alert-danger');
-
-							if (data.responseText !== '')
-								formMessages.prepend(data.responseText);
-							else
-								formMessages.prepend('Oops! An error occured.');
-						});
-					});
+				$('.formHorario').submit(function(event) {
+					submitHorario(event);
+				});	
 			});
 		</script>
 	</head>
@@ -131,22 +89,28 @@
 									<button type="submit" class="btn btn-primary">Buscar <span class="glyphicon glyphicon-plus"></span></button>
 							</div>
 						</fieldset>
-    			</form>
-  			</div>
+          			</form>
+        		</div>
 
-    		<div class="container col-sm-6 hidden">
-	    		<table>
-	    			<thead>
-	    				<tr>
-	    					<th>Fecha y Hora</th>
-	    					<th>Nombre del doctor</th>
-	    					<th>Paciente</th>
-	    					<th>Tipo de </th>
-	    				</tr>
-	    			</thead>
-	    			<tbody></tbody>
-	    		</table>
-    		</div>
+
+        		<div class="container col-sm-6 hidden divTablaResultados">
+	        		<div class="panel panel-primary">
+						<div class="panel-heading">Resultado de la consulta</div>
+						<div class="panel-body consulta-body">
+			        		<table class="table table-hover table-striped">
+			        			<thead class="table-head">
+			        				<tr>
+			        					<th>Fecha y Hora</th>
+			        					<th>Nombre del doctor</th>
+			        					<th>Paciente</th>
+			        					<th>Tipo de actividad</th>
+			        				</tr>
+			        			</thead>
+			        			<tbody class="cuerpoTablaResultados table-body"></tbody>
+			        		</table>
+			        	</div>
+			        </div>
+        		</div>
 			</div>
 		<?php include('footer.php'); ?>
 	</body>

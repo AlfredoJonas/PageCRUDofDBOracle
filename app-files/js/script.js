@@ -30,7 +30,7 @@ function insertHTML(from = '', tipo = 0) {
 					$(".doctorSeleccion").prop("disabled", false);
 				break;
 			}
-			agenda_DoctorOGlobal = option;
+			agenda_DoctorOGlobal = tipo;
 			break;
 
 		case 'empleados':
@@ -69,7 +69,7 @@ function insertHTML(from = '', tipo = 0) {
 					break;
 				}
 
-			agenda_DiarioRango = option;
+			agenda_DiarioRango = tipo;
 			$(".fechasDiv").removeClass("hidden");
 			break;
 	}
