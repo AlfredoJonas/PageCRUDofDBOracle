@@ -1,5 +1,4 @@
 function requestConsultas(event) {
-
 	var options = $('.selectConsultas option:not(:selected)');
 	for (var option in options) {
 		$('.'+options[option].value).addClass('hidden');
@@ -116,7 +115,7 @@ function requestInformacionCita(){
   })
 
   .done(function(response){
-		data_response = response[0]; 
+		data_response = response[0];
 		console.log(data_response);
     if(typeof data_response.DOCTOR !== 'undefined'){
       $('.doctorSeleccion').remove();

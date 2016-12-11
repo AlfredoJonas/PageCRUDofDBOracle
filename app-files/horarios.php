@@ -19,7 +19,7 @@
 
 					<form class="formHorario well form-horizontal" action="ajax-handler.php" role="form">
 
-						<legend>Empleados</legend>
+						<legend>Horarios</legend>
 
 						<fieldset>
 	            <div class="form-group">
