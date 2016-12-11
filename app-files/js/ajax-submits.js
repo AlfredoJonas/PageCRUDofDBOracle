@@ -35,7 +35,7 @@ function submitConsultas(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-		formMessages.prepend('Consulta procesada con <strong>éxito</strong>');
+    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 
 		var table_head = ""
 		var table_body = ""
@@ -81,7 +81,7 @@ function submitEmpleado(event) {
     formMessages.removeClass('hidden');
     formMessages.addClass('alert-success');
 
-    formMessages.prepend('Consulta procesada con <strong>éxito</strong>');
+    formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 	})
 
   .fail(function(data) {

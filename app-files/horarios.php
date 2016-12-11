@@ -5,10 +5,11 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 					$('.formHorario').submit(function(event) {
-						//submitHorario(event);
-						console.log($("HOLA"));
+						event.preventDefault();
+						console.log("HOLA");	
 
-						var formMenssages = $("#form-messages");
+						var formMessages = $("#form-messages");
+						var form = $(".formHorario");
 
 						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
 							consulta = "HORARIO_GLOBAL_DIA";
@@ -20,17 +21,17 @@
 							consulta = "HORARIO_DOCTOR_DIA";
 						
 						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
-							//$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
 							consulta = "HORARIO_DOCTOR_RANGO";
 
 						
+						console.log(consulta);
 						ruta = "RUTA_HORARIOS";
-						//data_e = $(".formHorario").serialize();
+						data_e = $(".formHorario").serialize();
 
 						$.ajax({
 							type: 'POST',
 							url: form.attr('action'),
-							data: {consulta:consulta,ruta:ruta}
+							data: {consulta:consulta,ruta:ruta, data_extra: data_e}
 						})
 
 						.done(function(response) {
@@ -48,7 +49,7 @@
 							if (data.responseText !== '')
 								formMessages.prepend(data.responseText);
 							else
-								formMessages.prepend('Oops! An error occured.');*/
+								formMessages.prepend('Oops! An error occured.');
 						});
 					});
 			});
