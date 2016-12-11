@@ -1,21 +1,3 @@
-$(document).ready(function() {
-	$('.formEmpleado').submit(function(event) {
-		submitEmpleado(event);
-	});
-
-	$('.formCita').submit(function(event) {
-		submitCita(event);
-	});
-
-	$('.formImplemento').submit(function(event) {
-		submitImplemento(event);
-	});
-
-	$('.formConsultas').submit(function(event) {
-		submitConsultas(event);
-	});
-});
-
 function submitConsultas(event) {
 	event.preventDefault();
 
@@ -43,7 +25,7 @@ function submitConsultas(event) {
 		var keys = Object.keys(response[0]);
 
 		for(var key in keys)
-			table_head += '<th>'+ keys[key]+'</th>';
+			table_head += '<th>'+keys[key]+'</th>';
 
 		$('.table-head').html(table_head);
 
@@ -60,7 +42,7 @@ function submitConsultas(event) {
     if (data.responseText !== '')
       formMessages.prepend(data.responseText);
     else
-      formMessages.prepend('Oops! An error occured.');
+      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
 	});
 
 }
@@ -161,64 +143,53 @@ function submitImplemento(event) {
 function submitHorario(event) {
 	event.preventDefault();
 
-						var formMessages = $("#form-messages");
-						var form = $(".formHorario");
+	var formMessages = $("#form-messages");
+	var form = $(".formHorario");
 
-						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
-							consulta = "HORARIO_GLOBAL_DIA";
+	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
+		consulta = "HORARIO_GLOBAL_DIA";
 
-						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
-							consulta = "HORARIO_GLOBAL_RANGO";
+	if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
+		consulta = "HORARIO_GLOBAL_RANGO";
 
-						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
-							consulta = "HORARIO_DOCTOR_DIA";
+	if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
+		consulta = "HORARIO_DOCTOR_DIA";
 
-						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
-							consulta = "HORARIO_DOCTOR_RANGO";
+	if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
+		consulta = "HORARIO_DOCTOR_RANGO";
 
-						console.log("DG: " + agenda_DoctorOGlobal + "     DR: " + agenda_DiarioRango);
+	ruta = "RUTA_HORARIOS";
+	data_e = $(".formHorario").serialize();
 
-						ruta = "RUTA_HORARIOS";
-						data_e = $(".formHorario").serialize();
+	$.ajax({
+		type: 'POST',
+		url: form.attr('action'),
+		data: {consulta:consulta, ruta:ruta, data_extra: data_e}
+	})
 
-						$.ajax({
-							type: 'POST',
-							url: form.attr('action'),
-							data: {consulta:consulta, ruta:ruta, data_extra: data_e}
-						})
+	.done(function(response) {
+		formMessages.removeClass('hidden');
+		formMessages.addClass('alert-success');
 
-						.done(function(response) {
-							formMessages.removeClass('hidden');
-							formMessages.addClass('alert-success');
+		formMessages.prepend('<div>Consulta procesada con <strong>éxito</strong></div>');
 
-							formMessages.prepend(response);
+		campoInsercion = $(".cuerpoTablaResultados");
+		$(".cuerpoTablaResultados").empty();
 
-							/*console.log(response);*/
-							campoInsercion= $(".cuerpoTablaResultados");
-							$(".cuerpoTablaResultados").empty();
-							for(var key in response){
-								fila_resultado = response[key];
-								//console.log(fila_resultado);
-								$(".cuerpoTablaResultados").append(
-									"<tr>\
-										<td>" + fila_resultado.FECHA + "</td>\
-										<td>" + fila_resultado.DOCTOR + "</td>\
-										<td>" + fila_resultado.PACIENTE + "</td>\
-										<td>" + fila_resultado.TIPO + "</td>\
-									</tr>");
-							}
+		for(var key in response)
+			$(".cuerpoTablaResultados").append(parseData(response[key]));
 
-							$(".divTablaResultados").removeClass("hidden");
-						})
+		$(".divTablaResultados").removeClass("hidden");
+	})
 
-						.fail(function(data) {
-						console.log(data.responseText);
-							formMessages.removeClass('hidden');
-							formMessages.addClass('alert-danger');
+	.fail(function(data) {
+	console.log(data.responseText);
+		formMessages.removeClass('hidden');
+		formMessages.addClass('alert-danger');
 
-							if (data.responseText !== '')
-								formMessages.prepend(data.responseText);
-							else
-								formMessages.prepend('Oops! An error occured.');
-						});
+		if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+		else
+      formMessages.prepend('<div>Oops! An <strong>error</strong> occured</div>');
+	});
 }

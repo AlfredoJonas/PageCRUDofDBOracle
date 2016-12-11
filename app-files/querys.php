@@ -94,12 +94,6 @@
               if(isset($data["diaInput"])){
                 $consulta = str_replace(':fecha_input', $data['diaInput'], HORARIO_GLOBAL_DIA_SQL);
               }
-              /*$myfile = fopen("testfile.txt","w");
-              ob_start();
-              var_dump($data);
-              $stringosa = ob_get_clean();
-              fwrite($myfile, $consulta);
-              fclose($myfile);*/
               break;
           case 'HORARIO_GLOBAL_RANGO':
               if(isset($data["dia1Input"]) && isset($data["dia2Input"])){
