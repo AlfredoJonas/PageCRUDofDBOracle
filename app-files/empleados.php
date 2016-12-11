@@ -87,18 +87,47 @@
 								<div class="col-sm-4 inputGroupContainer">
 									<div class="radio">
 										<label>
-											<input type="radio" name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertHTML(1)">Empleado
+											<input type="radio" name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertHTML('empleados', 1)">Empleado
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertHTML(2)">Doctor
+											<input type="radio" name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertHTML('empleados', 2)">Doctor
 										</label>
 									</div>
 								</div>
 							</div>
 
-							<div class="temp"></div>
+							<div class="form-group empleado hidden">
+								<label for="cargo_empleado" class="col-sm-3 control-label">Cargo</label>
+								<div class="col-sm-9 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" name="cargo" id="cargo_empleado">
+									</div>
+								</div>
+							</div>
+
+							<div class="doctor hidden">
+								<div class="form-group">
+									<label for="rif" class="col-sm-3 control-label">RIF</label>
+									<div class="col-sm-9 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" class="form-control" name="rif" id="rif">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="numColegio" class="col-sm-3 control-label">Número del colegio</label>
+									<div class="col-sm-9 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" class="form-control" name="numColegio" id="numColegio">
+										</div>
+									</div>
+								</div>
+							</div>
 
 							<div class="form-group">
 								<label for="especializacion" class="col-sm-3 control-label">Especializacion</label>

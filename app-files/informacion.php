@@ -4,10 +4,10 @@
 		<?php include('head.php'); ?>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				requestConsultas();
+				insertHTML('consultas');
 				var clone = $("#form-messages").clone();
 				$('.selectConsultas').change(function(event) {
-					requestConsultas();
+					insertHTML('consultas');
 					$("#form-messages").replaceWith(clone.clone());
 				});
 			});

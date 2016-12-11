@@ -1,15 +1,3 @@
-function requestConsultas(event) {
-	var options = $('.selectConsultas option:not(:selected)');
-	for (var option in options) {
-		$('.'+options[option].value).addClass('hidden');
-		$('.'+options[option].value+' input').prop('disabled', true);
-	}
-
-	var option = $('.selectConsultas option:selected').val();
-	$('.'+option).removeClass('hidden');
-	$('.'+option+' input').prop('disabled', false);
-}
-
 function requestEspecializaciones() {
 	var ruta = $('.especializaciones').data("ruta");
 	var consulta = $('.especializaciones').data("consulta");

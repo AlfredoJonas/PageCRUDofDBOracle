@@ -3,48 +3,75 @@ agenda_DoctorOGlobal = 0;
 agenda_DiarioRango = 0;
 
 
-function insertHTML(tipo) {
-	var contenedor = $(".temp");
+function insertHTML(from = '', tipo = 0) {
 
-	switch(tipo){
-		case 1:
-			contenedor.html(' \
-				<div class="form-group"> \
-					<label for="cargo_empleado" class="col-sm-3 control-label">Cargo</label> \
-					<div class="col-sm-9 inputGroupContainer">\
-						<div class="input-group">\
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
-							<input type="text" class="form-control" name="cargo" id="cargo_empleado"> \
-						</div> \
-					</div> \
-				</div> \
-			');
+	switch (from) {
+		case 'consultas':
+			var options = $('.selectConsultas option:not(:selected)');
+			for (var option in options) {
+				$('.'+options[option].value).addClass('hidden');
+				$('.'+options[option].value+' input').prop('disabled', true);
+			}
 
-		break;
+			var option = $('.selectConsultas option:selected').val();
+			$('.'+option).removeClass('hidden');
+			$('.'+option+' input').prop('disabled', false);
+			break;
 
-		case 2:
-			contenedor.html(' \
-				<div class="form-group"> \
-					<label for="rif" class="col-sm-3 control-label">RIF</label> \
-					<div class="col-sm-9 inputGroupContainer">\
-						<div class="input-group">\
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
-							<input type="text" class="form-control" name="rif" id="rif"> \
-						</div> \
-					</div> \
-				</div> \
-				 \
-				<div class="form-group"> \
-					<label for="numColegio" class="col-sm-3 control-label">Número del colegio</label> \
-					<div class="col-sm-9 inputGroupContainer">\
-						<div class="input-group">\
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
-							<input type="text" class="form-control" name="numColegio" id="numColegio"> \
-						</div> \
-					</div> \
-				</div> \
-			');
-		break;
+		case 'doctor':
+			switch(tipo){
+				case 1:
+					$(".divDoctores").addClass("hidden");
+					$(".doctorSeleccion").prop("disabled", true);
+				break;
+				case 2:
+					requestDoctores();
+					$(".divDoctores").removeClass("hidden");
+					$(".doctorSeleccion").prop("disabled", false);
+				break;
+			}
+			agenda_DoctorOGlobal = option;
+			break;
+
+		case 'empleados':
+			switch(tipo){
+				case 1:
+					$(".empleado").removeClass('hidden');
+					$(".empleado input").prop("disabled", false);
+
+					$(".doctor").addClass('hidden');
+					$(".doctor input").prop("disabled", true);
+				break;
+
+				case 2:
+					$(".doctor").removeClass('hidden');
+					$(".doctor input").prop("disabled", false);
+
+					$(".empleado").addClass('hidden');
+					$(".empleado input").prop("disabled", true);
+				break;
+			}
+			break;
+
+		case 'dia':
+			switch(tipo){
+				case 1:
+					$(".dia-especifico").removeClass('hidden');
+					$('.dia-especifico').prop('disabled', false);
+					$(".rango").addClass('hidden');
+					$('.rango').prop('disabled', true);
+					break;
+				case 2:
+					$(".rango").removeClass('hidden');
+					$('.rango').prop('disabled', false);
+					$(".dia-especifico").addClass('hidden');
+					$('.dia-especifico').prop('disabled', true);
+					break;
+				}
+
+			agenda_DiarioRango = option;
+			$(".fechasDiv").removeClass("hidden");
+			break;
 	}
 }
 
@@ -60,53 +87,4 @@ function parseData(data, tipo) {
 
 		return resp;
 	}
-}
-
-function doctorGlobalRequest(option){
-	switch(option){
-		case 1:
-			//cosas globales
-		break;
-		case 2:
-			requestDoctores();
-			$(".divDoctores").removeClass("hidden");
-			$(".doctorSeleccion").removeAttr("disabled");
-		break;
-	}
-	agenda_DoctorOGlobal = option;
-}
-
-function diarioRangoRequest(option){
-	$(".fechasDiv").html("");
-	$(".fechasDiv").append(
-		'<label for="fechaespecificadiv" class="col-sm-3 control-label">Fecha</label>'
-	);
-		switch(option){
-			case 1:
-				$(".fechasDiv").append(
-					'<div class="col-sm-9 inputGroupContainer">\
-						<div class="input-group">\
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
-							<input type="date" class="diaInput form-control" id="diaInput" name="diaInput" placeholder="Día específico">\
-						</div>\
-					</div>'
-				);
-			break;
-			case 2:
-				$(".fechasDiv").append(
-					'<div class="input-group">\
-						<div class="col-sm-6">\
-							<input type="date" class="dia1Input form-control" id="dia1Input" name="dia1Input" placeholder="Fecha inicial">\
-						</div>\
-						<div class="col-sm-6">\
-							<input type="date" class="dia2Input form-control" id="dia2Input" name="dia2Input" placeholder="Fecha final">\
-						</div>\
-					</div>'
-				);
-			break;
-		}
-
-	agenda_DiarioRango = option;
-	$(".fechasDiv").removeClass("hidden");
-
 }
