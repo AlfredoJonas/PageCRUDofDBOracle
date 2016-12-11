@@ -39,6 +39,23 @@
 							formMessages.addClass('alert-success');
 
 							formMessages.prepend(response);
+
+							/*console.log(response);*/
+							campoInsercion= $(".cuerpoTablaResultados");
+							$(".cuerpoTablaResultados").empty();
+							for(var key in response){
+								fila_resultado = response[key];
+								//console.log(fila_resultado);
+								$(".cuerpoTablaResultados").append(
+									"<tr>\
+										<td>" + fila_resultado.FECHA + "</td>\
+										<td>" + fila_resultado.DOCTOR + "</td>\
+										<td>" + fila_resultado.PACIENTE + "</td>\
+										<td>" + fila_resultado.TIPO + "</td>\
+									</tr>");
+							}
+
+							$(".divTablaResultados").removeClass("hidden");
 						})
 
 						.fail(function(data) {
@@ -130,18 +147,23 @@
         		</div>
 
 
-        		<div class="container col-sm-6 hidden">
-        		<table>
-        			<thead>
-        				<tr>
-        					<th>Fecha y Hora</th>
-        					<th>Nombre del doctor</th>
-        					<th>Paciente</th>
-        					<th>Tipo de </th>
-        				</tr>
-        			</thead>
-        			<tbody></tbody>
-        		</table>
+        		<div class="container col-sm-6 hidden divTablaResultados">
+	        		<div class="panel panel-primary">
+						<div class="panel-heading">Resultado de la consulta</div>
+						<div class="panel-body consulta-body">
+			        		<table class="table table-hover table-striped">
+			        			<thead class="table-head">
+			        				<tr>
+			        					<th>Fecha y Hora</th>
+			        					<th>Nombre del doctor</th>
+			        					<th>Paciente</th>
+			        					<th>Tipo de actividad</th>
+			        				</tr>
+			        			</thead>
+			        			<tbody class="cuerpoTablaResultados table-body"></tbody>
+			        		</table>
+			        	</div>
+			        </div>
         		</div>
 			</div>
 		<?php include('footer.php'); ?>

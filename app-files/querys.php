@@ -82,23 +82,12 @@
                 $consulta = str_replace(':fecha_input2', $data['dia2Input'], $consulta);
                 $consulta = str_replace(':doctor_cadena', $data['doctorSeleccion'], $consulta);
                             $myfile = fopen("testfile.txt","w");
-              ob_start();
-              var_dump($data);
-              $stringosa = ob_get_clean();
-              fwrite($myfile, $consulta);
-              fclose($myfile);  
               }
           break;
           case 'HORARIO_DOCTOR_DIA':
               if(isset($data["diaInput"]) && isset($data["doctorSeleccion"])){
                 $consulta = str_replace(':fecha_input', $data['diaInput'], HORARIO_DOCTOR_DIA_SQL);
                 $consulta = str_replace(':doctor_cadena', $data['doctorSeleccion'], $consulta);
-                /*$myfile = fopen("testfile.txt","w");
-                ob_start();
-                var_dump($data);
-                $stringosa = ob_get_clean();
-                fwrite($myfile, $consulta);
-                fclose($myfile);*/ 
               }
               break;
           case 'HORARIO_GLOBAL_DIA':
@@ -116,12 +105,6 @@
               if(isset($data["dia1Input"]) && isset($data["dia2Input"])){
                 $consulta = str_replace(':fecha_input1', $data['dia1Input'], HORARIO_GLOBAL_RANGO_SQL);
                 $consulta = str_replace(':fecha_input2', $data['dia2Input'], $consulta);
-                /*$myfile = fopen("testfile.txt","w");
-                ob_start();
-                var_dump($data);
-                $stringosa = ob_get_clean();
-                fwrite($myfile, $consulta);
-                fclose($myfile);*/
                 }
               break;
         }
