@@ -8,17 +8,48 @@
 						//submitHorario(event);
 						console.log($("HOLA"));
 
+						var formMenssages = $("#form-messages");
+
 						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
-							$(".consulta").attr("value","HORARIO_GLOBAL_DIA")
+							consulta = "HORARIO_GLOBAL_DIA";
 						
 						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
-							$(".consulta").attr("value","HORARIO_GLOBAL_RANGO")
+							consulta = "HORARIO_GLOBAL_RANGO";
 
 						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
-							$(".consulta").attr("value","HORARIO_DOCTOR_DIA")
+							consulta = "HORARIO_DOCTOR_DIA";
 						
 						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
-							$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
+							//$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
+							consulta = "HORARIO_DOCTOR_RANGO";
+
+						
+						ruta = "RUTA_HORARIOS";
+						//data_e = $(".formHorario").serialize();
+
+						$.ajax({
+							type: 'POST',
+							url: form.attr('action'),
+							data: {consulta:consulta,ruta:ruta}
+						})
+
+						.done(function(response) {
+							formMessages.removeClass('hidden');
+							formMessages.addClass('alert-success');
+
+							formMessages.prepend(response);
+						})
+
+						.fail(function(data) {
+						console.log(data.responseText);
+							formMessages.removeClass('hidden');
+							formMessages.addClass('alert-danger');
+
+							if (data.responseText !== '')
+								formMessages.prepend(data.responseText);
+							else
+								formMessages.prepend('Oops! An error occured.');*/
+						});
 					});
 			});
 		</script>
@@ -32,7 +63,7 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<form class="formHorario well form-horizontal" action="ajax-handler.php" role="form" method="POST">
+					<form id="formHorario" class="formHorario well form-horizontal" action="ajax-handler.php" role="form">
 
 						<legend>Agenda</legend>
 
@@ -85,6 +116,8 @@
 								Seleccione la(s) fecha(s) de su consulta.</small>
 							</div>
 
+						<input hidden="hidden" name="consulta" id="consulta" class="consulta" value="HORARIO_DOCTOR_DIA">	
+						<input hidden="hidden" name="ruta" id="ruta" class="ruta" value="RUTA_HORARIOS">
 
 							<div class="form-group">
 								<div class="col-sm-12">
@@ -92,8 +125,6 @@
 							</div>
 						</fieldset>
 
-						<input hidden="hidden" name="consulta" id="consulta" class="consulta" value="HORARIO_DOCTOR_DIA">
-						<input hidden="hidden" name="ruta" id="ruta" class="ruta" value="RUTA_HORARIOS">
           </form>
         </div>
 			</div>
