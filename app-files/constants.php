@@ -42,6 +42,11 @@
   WHERE c.ID = ',
   true);
 
+  /*define("HORARIO_GLOBAL_DIA",,);
+  define("HORARIO_GLOBAL_RANGO",,);
+  define("HORARIO_DOCTOR_DIA",,);
+  define("HORARIO_DOCTOR_RANGO",,);*/
+
   define("HISTORIAL_CITAS_SQL",
   "SELECT NOMBRE, FECHA, MOTIVO
   FROM CITA JOIN PACIENTE ON (CI = CITA.CI_PACIENTE)

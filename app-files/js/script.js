@@ -62,7 +62,7 @@ function doctorGlobalRequest(option){
 			//cosas globales
 		break;
 		case 2:
-			//requestDoctores();
+			requestDoctores();
 			$(".divDoctores").removeClass("hidden");
 			$(".doctorSeleccion").removeAttr("disabled");
 		break;

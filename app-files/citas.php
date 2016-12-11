@@ -19,7 +19,7 @@
 
 					<form class="formCitas well form-horizontal" action="ajax-handler.php" role="form">
 
-						<legend>Empleados</legend>
+						<legend>Control de citas</legend>
 
 						<fieldset>
 							<div class="form-group">

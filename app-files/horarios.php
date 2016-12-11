@@ -3,9 +3,24 @@
 	<head>
 		<?php include('head.php'); ?>
 		<script type="text/javascript">
-			/*$(document).ready(function() {
-				requestEspecializaciones();
-			});*/
+			$(document).ready(function() {
+					$('.formHorario').submit(function(event) {
+						//submitHorario(event);
+						console.log($("HOLA"));
+
+						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 1)
+							$(".consulta").attr("value","HORARIO_GLOBAL_DIA")
+
+						if(agenda_DoctorOGlobal === 1 && agenda_DiarioRango === 2)
+							$(".consulta").attr("value","HORARIO_GLOBAL_RANGO")
+
+						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 1)
+							$(".consulta").attr("value","HORARIO_DOCTOR_DIA")
+
+						if(agenda_DoctorOGlobal === 2 && agenda_DiarioRango === 2)
+							$(".consulta").attr("value","HORARIO_DOCTOR_RANGO")
+					});
+			});
 		</script>
 	</head>
 	<body>
@@ -17,9 +32,9 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<form class="formHorario well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formHorario well form-horizontal" action="ajax-handler.php" role="form" method="POST">
 
-						<legend>Horarios</legend>
+						<legend>Agenda</legend>
 
 						<fieldset>
 	            <div class="form-group">
@@ -66,16 +81,19 @@
 							</div>
 
 							<div class="fechasDiv form-group hidden">
-							<small id="select-esp-help" class="form-text text-muted">\
-							  Seleccione la(s) fecha(s) de su consulta.</small>
+								<small id="select-esp-help" class="form-text text-muted">\
+								Seleccione la(s) fecha(s) de su consulta.</small>
 							</div>
 
 
 							<div class="form-group">
 								<div class="col-sm-12">
-									<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-plus"></span></button>
+									<button type="submit" class="btn btn-primary">Buscar <span class="glyphicon glyphicon-plus"></span></button>
 							</div>
 						</fieldset>
+
+						<input hidden="hidden" name="consulta" id="consulta" class="consulta" value="HORARIO_DOCTOR_DIA">
+						<input hidden="hidden" name="ruta" id="ruta" class="ruta" value="RUTA_HORARIOS">
           </form>
         </div>
 			</div>
