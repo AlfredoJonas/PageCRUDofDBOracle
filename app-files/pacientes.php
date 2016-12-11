@@ -12,7 +12,7 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<form class="formEmpleado  well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formEmpleado well form-horizontal" action="ajax-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 

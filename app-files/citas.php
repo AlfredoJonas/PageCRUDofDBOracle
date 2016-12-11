@@ -6,6 +6,11 @@
 			$(document).ready(function() {
 				requestPacientes();
 				requestDoctores();
+
+				$('.selectConsultas').change(function(event) {
+					insertHTML('consultas');
+					$("#form-messages").replaceWith(clone.clone());
+				});
 			});
 		</script>
 	</head>

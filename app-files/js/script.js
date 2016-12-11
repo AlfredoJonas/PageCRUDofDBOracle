@@ -72,6 +72,17 @@ function insertHTML(from = '', tipo = 0) {
 			agenda_DiarioRango = tipo;
 			$(".fechasDiv").removeClass("hidden");
 			break;
+
+		case 'CRUD':
+			switch(tipo) {
+				case 1:
+					$(".fields").removeClass("hidden");
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				}
 	}
 }
 
