@@ -26,12 +26,12 @@
               <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
                 <div class="radio-inline">
                   <label>
-                    <input type="radio" name="graficas" id="graficas" value="GANANCIA_POR_MES" onclick="insertHTML('graficas', 1)">Ganancia por mes
+                    <input type="radio" name="graficas" id="graficas" value="TRATAMIENTOS_MES" onclick="insertHTML('graficas', 1)">Ganancia por mes
                   </label>
                 </div>
                 <div class="radio-inline">
                   <label>
-                    <input type="radio" name="graficas" id="graficas" value="PORCENTAJE_TRATAMIENTOS" onclick="insertHTML('graficas', 2)">Porcentaje de tratamientos en un año
+                    <input type="radio" name="graficas" id="graficas" value="GANANCIA_POR_MES" onclick="insertHTML('graficas', 2)">Porcentaje de tratamientos en un año
                   </label>
                 </div>
                 <div class="radio-inline">
@@ -42,7 +42,17 @@
               </div>
             </div>
 
-						<div class="form-group campo-grafica campo-grafica-1">
+						<div class="form-group campo-grafica campo-grafica-1 hidden">
+							<label for="ocupacion" class="col-sm-3 control-label">Mes</label>
+							<div class="col-sm-9 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" class="form-control" name="mes" id="mes" placeholder="Ingrese el mes a evaluar">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group campo-grafica campo-grafica-1 hidden">
 							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
@@ -52,7 +62,7 @@
 							</div>
 						</div>
 
-						<div class="form-group campo-grafica campo-grafica-2">
+						<div class="form-group campo-grafica campo-grafica-2 hidden">
 							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
