@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<form method="get" action="dml-handler.php">
+	<form method="post" action="dml-handler.php">
 		<input type="text" name="ruta" placeholder="ruta">
 		<input type="text" name="operacion" placeholder="operacion">
 		<input type="text" name="data_extra" placeholder="data_extra">
@@ -17,18 +17,21 @@
 
 	$sentencia_dml = 0;
 
-	if(isset($_GET["ruta"]) && isset($_GET["operacion"]) && isset($_GET["data_extra"])){
+	if(isset($_POST["ruta"]) && isset($_POST["operacion"]) && isset($_POST["data_extra"])){
 		$data = array();
     	
-    	parse_str($_GET["data_extra"],$data);
+    	parse_str($_POST["data_extra"],$data);
 
     	if(isset($data["fecha_nac"]))
 			$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
 
-    	switch(strtoupper($_GET["ruta"])) {
+		if(isset($data["fecha"]))
+			$data["fecha"] = 'TO_DATE('.$data["fecha"].', \'YYYY-MM-DD\')';
+
+    	switch(strtoupper($_POST["ruta"])) {
     		case 'RUTA_EMPLEADOS':
     			//echo 'recibido';
-    			switch(strtolower($_GET["operacion"])) {
+    			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
     					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
 
@@ -47,7 +50,7 @@
     			}
     		break;
     		case 'RUTA_DOCTORES':
-    			switch(strtolower($_GET["operacion"])) {
+    			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
     					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
 
@@ -67,7 +70,7 @@
     			}
     		break;
 			case 'RUTA_PACIENTES':
-    			switch(strtolower($_GET["operacion"])) {
+    			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
     					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
 
@@ -86,7 +89,7 @@
     			}
     		break;
     		case 'RUTA_CITAS':
-    			switch(strtolower($_GET["operacion"])) {
+    			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
     					$array_suplantable = onInsertingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
 
@@ -106,14 +109,14 @@
     			}
     		break;
     		case 'RUTA_INVENTARIO':
-    			switch(strtolower($_GET["operacion"])) {
+    			switch(strtolower($_POST["operacion"])) {
     				case 'insert':break;
     				case 'update':break;
     				case 'delete':break;
     			}
     		break;
     		case 'RUTA_CONSULTAS':
-    			switch(strtolower($_GET["operacion"])) {
+    			switch(strtolower($_POST["operacion"])) {
     				case 'insert':break;
     				case 'update':break;
     				case 'delete':break;
