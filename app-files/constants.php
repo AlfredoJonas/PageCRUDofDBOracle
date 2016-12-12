@@ -256,9 +256,15 @@
   'SELECT SUM(NVL2(COSTO,COSTO,0)) AS ESPERADAS, SUM(NVL2(ABONADO,ABONADO,0)) AS OBTENIDAS FROM CITA_TRATAMIENTO',
   true);
 
+  define("GRAFICO_BARRAS_SQL",
+  'SELECT I.NOMBRE IMPLEMENTO, SUM(TI.CANTIDAD) CANTIDAD FROM TRATAMIENTO_IMPLEMENTO TI JOIN CITA_TRATAMIENTO CT
+  ON (TI.TRATAMIENTO_ID=CT.TRATAMIENTO_ID AND TI.CITA_ID=CT.CITA_ID) JOIN IMPLEMENTO I
+  ON (TI.IMPLEMENTO_ID=I.ID) WHERE TO_CHAR(FECHA,\'MONTH\') = UPPER(\':mes\') AND TO_CHAR(FECHA,\'YYYY\')=\':anio\'
+  GROUP BY I.NOMBRE',
+  true);
+
   //Las super consultas
   const CONSULTAS = array(
-    "Graficas" => "graficas",
     "Tratamientos realizados" => "t-realizados",
     "Ganancias generales" => "g-generales",
     "Ganancias por mes" => "g-por-mes",

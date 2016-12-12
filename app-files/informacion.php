@@ -46,28 +46,6 @@
 				 		</div>
 			 		</div>
 
-					<div class="<?php echo CONSULTAS['Graficas']?> hidden">
-						<div class="form-group">
-					    <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
-					      <div class="radio">
-					        <label>
-					          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="1" onclick="insertHTML('graficas', 1)">Ingresos por mes en un año dado
-					        </label>
-					      </div>
-					      <div class="radio">
-					        <label>
-					          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="2" onclick="insertHTML('graficas', 2)">Ingresos por mes dados dos años
-					        </label>
-					      </div>
-					      <div class="radio">
-					        <label>
-					          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="3" onclick="insertHTML('graficas', 3)">Otra gráfica ahí
-					        </label>
-					      </div>
-					    </div>
-					  </div>
-					</div>
-
 					<div class="<?php echo CONSULTAS['El doctor derrochador']?> hidden">
 						<div class="form-group">
 							<label for="doc-consulta" class="col-sm-3 control-label">ID Implemento</label>

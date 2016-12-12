@@ -9,7 +9,6 @@ function submitConsultas(event) {
 	var consulta = $('.selectConsultas option:selected').data("consulta");
 	var data = form.serialize();
   var formMessages = $('#form-messages');
-	var grafica = $('input[name=tipoCRUD]:checked').val()
 
 	$.ajax({
 	  type: 'POST',

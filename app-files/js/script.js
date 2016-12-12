@@ -87,6 +87,24 @@ function insertHTML(from = '', tipo = 0) {
 			$('.fields-tratamiento').removeClass('hidden');
 
 			break;
+
+		case 'graficas':
+			$('.campo-grafica').addClass('hidden');
+
+			switch(tipo){
+				case 1:
+					$('.campo-grafica-1').removeClass('hidden');
+					break;
+
+				case 2:
+					$('.campo-grafica-2').removeClass('hidden');
+					break;
+
+				case 3:
+					$('.campo-grafica-3').removeClass('hidden');
+					break;
+			}
+			break;
 	}
 }
 
