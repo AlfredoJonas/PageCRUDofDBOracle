@@ -23,11 +23,7 @@
 
     	parse_str($_POST["data_extra"],$data);
 
-    	if(isset($data["fecha_nac"]))
-			$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
-
-		if(isset($data["fecha"]))
-			$data["fecha"] = 'TO_DATE('.$data["fecha"].', \'YYYY-MM-DD\')';
+    	comprobarData($data);
 
     	switch(strtoupper($_POST["ruta"])) {
     		case 'RUTA_EMPLEADOS':
@@ -113,8 +109,21 @@
     		break;
     		case 'RUTA_INVENTARIO':
     			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':break;
-    				case 'update':break;
+    				case 'insert':
+    					$array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['IMPLEMENTO']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+
+    				break;
+    				case 'update':
+    					if(isset($data["id"])){
+	    					$clave_valor = onUpdatingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
+
+	    					$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['IMPLEMENTO']['update']);
+	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
+    					}
+    				break;
     				case 'delete':break;
     			}
     		break;
@@ -133,47 +142,63 @@
     	//}
     }
 
+    function onUpdatingDevolverParametros($parameters,$values){
+    		$output = '';
+    		foreach($parameters as $name_attribute) {
+    				if(isset($values[strtolower($name_attribute)])){
 
-	function onUpdatingDevolverParametros($parameters, $values) {
-		$output = '';
-		foreach($parameters as $name_attribute) {
-				if(isset($values[strtolower($name_attribute)])){
+	    				if($output == '')
+	    					$output = $output.' '.$name_attribute.' = '.$values[strtolower($name_attribute)];
+	    				else
+	    					$output = $output.', '.$name_attribute.' = '.$values[strtolower($name_attribute)];
+    				}
+    		}
 
-  				if($output == '')
-  					$output = $output.' '.$name_attribute.' = '.$values[strtolower($name_attribute)];
-  				else
-  					$output = $output.', '.$name_attribute.' = '.$values[strtolower($name_attribute)];
-				}
-		}
+    		return $output;
+    	}
 
-		return $output;
-	}
+    	function onInsertingDevolverParametros($parameters,$values){
+    		$output = array();
+    		$parametros_presentes = '(';
+    		$valores_presentes = '(';
 
-	function onInsertingDevolverParametros($parameters, $values) {
-		$output = array();
-		$parametros_presentes = '(';
-		$valores_presentes = '(';
+    		foreach($parameters as $name_attribute) {
+    			if(array_key_exists(strtolower($name_attribute), $values)){
+    				if(strcmp($parametros_presentes,'(') == 0)
+    					$parametros_presentes = $parametros_presentes.''.$name_attribute;
+    				else
+    					$parametros_presentes = $parametros_presentes.', '.$name_attribute;
 
-		foreach($parameters as $name_attribute) {
-			if(array_key_exists(strtolower($name_attribute), $values)){
-				if(strcmp($parametros_presentes,'(') == 0)
-					$parametros_presentes = $parametros_presentes.''.$name_attribute;
-				else
-					$parametros_presentes = $parametros_presentes.', '.$name_attribute;
+    				if(strcmp($valores_presentes,'(') == 0)
+    					$valores_presentes = $valores_presentes.''.$values[strtolower($name_attribute)];
+    				else
+    					$valores_presentes = $valores_presentes.', '.$values[strtolower($name_attribute)];
+    			}
+    		}
+    		$parametros_presentes = $parametros_presentes.')';
+    		$valores_presentes = $valores_presentes.')';
 
-				if(strcmp($valores_presentes,'(') == 0)
-					$valores_presentes = $valores_presentes.''.$values[strtolower($name_attribute)];
-				else
-					$valores_presentes = $valores_presentes.', '.$values[strtolower($name_attribute)];
-			}
-		}
-		$parametros_presentes = $parametros_presentes.')';
-		$valores_presentes = $valores_presentes.')';
+    		$output = array('params' => $parametros_presentes, 'values' => $valores_presentes);
 
-		$output = array('params' => $parametros_presentes, 'values' => $valores_presentes);
+    		return $output;
+    	}
 
-		return $output;
-	}
+    	function comprobarData(&$data){
+            $array_varchares_db = array('NOMBRE','MARCA','DESCRIPCION','RIF','DIRECCION','TELEFONO','OCUPACION');
+
+            foreach ($array_varchares_db as $value) {
+                if(array_key_exists(strtolower($value), $data)){
+                    $data[strtolower($value)] = '\''.$data[strtolower($value)].'\'';
+                    echo $data[strtolower($value)];
+                }
+            }
+
+    		if(isset($data["fecha_nac"]))
+			$data["fecha_nac"] = 'TO_DATE(\''.$data["fecha_nac"].'\', \'YYYY-MM-DD\')';
+
+			if(isset($data["fecha"]))
+				$data["fecha"] = 'TO_DATE(\''.$data["fecha"].'\', \'YYYY-MM-DD\')';
+    	}
 ?>
 
 <!-- </body>
