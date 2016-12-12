@@ -269,6 +269,16 @@
                     'update' => 'UPDATE MEDICO SET :columna_valores WHERE CI = :ci OR NUM_COLEGIO = :num_cole',
                     'delete' => 'DELETE FROM MEDICO WHERE CI = :ci OR NUM_COLEGIO = :num_cole'
                 ),
+    'ESPECIALIZACION_MED_EMP' => array(
+                  'MEDICO' => array(
+                                'insert' => 'INSERT INTO ESPECIALIZACION_MED_EMP :campos VALUES :valores',
+                                'delete' => 'DELETE FROM ESPECIALIZACION_MED_EMP WHERE CI_EMPLEADO IS NULL AND CI_MEDICO = :ci_med'
+                              ),
+                  'EMPLEADO' => array(
+                                'insert' => 'INSERT INTO ESPECIALIZACION_MED_EMP :campos VALUES :valores',
+                                'delete' => 'DELETE FROM ESPECIALIZACION_MED_EMP WHERE CI_MEDICO IS NULL AND CI_EMPLEADO = :ci_empl'
+                              )
+                ),
     'PACIENTE' => array(
                     'insert' => 'INSERT INTO PACIENTE :campos VALUES :valores',
                     'update' => 'UPDATE PACIENTE SET :columna_valores WHERE CI = :ci',

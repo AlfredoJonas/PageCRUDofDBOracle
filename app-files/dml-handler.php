@@ -280,6 +280,8 @@
                 }
             }
 
+            //if(isset)
+
     		if(isset($data["fecha_nac"]))
 			$data["fecha_nac"] = 'TO_DATE(\''.$data["fecha_nac"].'\', \'YYYY-MM-DD\')';
 
