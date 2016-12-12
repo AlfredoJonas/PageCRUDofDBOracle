@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['año', 'Año1', 'Año2'],
+          ['Enero',  1000,      400],
+          ['Febrero',  1170,      460],
+          ['Marzo',  660,       1897],
+          ['Abril',  1030,      1667],
+          ['Mayo',  1123,      1235],
+          ['Junio',  1010,     654],
+          ['Julio',  1022,      1332],
+          ['Agosto',  1122,      1233],
+          ['Septiembre',  2313,   1123],
+          ['Octubre',  1233,      2420],
+          ['Noviembre',  1232,     1233],
+          ['Diciembre',  1213,      1233]
+        ]);
+
+        var options = {
+          title: 'Centro Odontologico DIENTES DE SABLE',
+          hAxis: {title: 'Mes',  titleTextStyle: {color: '#333'}},
+          vAxis: {title: 'Ingresos',minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  </body>
+</html>
