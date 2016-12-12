@@ -49,9 +49,6 @@
     		case 'RUTA_DOCTORES':
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':
-    					if(isset($data["fecha_nac"]))
-    						$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
-
     					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
 
     					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['MEDICO']['insert']);
@@ -71,8 +68,20 @@
     		break;
 			case 'RUTA_PACIENTES':
     			switch(strtolower($_GET["operacion"])) {
-    				case 'insert':break;
-    				case 'update':break;
+    				case 'insert':
+    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['PACIENTE']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+    				break;
+    				case 'update':
+    					if(isset($data["ci"])){
+    						$clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
+
+    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['PACIENTE']['update']);
+	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
+    					}
+    				break;
     				case 'delete':break;
     			}
     		break;
