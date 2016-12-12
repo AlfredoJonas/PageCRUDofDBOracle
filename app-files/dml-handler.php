@@ -25,133 +25,143 @@
 
     	comprobarData($data);
 
-    	switch(strtoupper($_POST["ruta"])) {
-    		case 'RUTA_EMPLEADOS':
-    			//echo 'recibido';
-    			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':
-    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+        $sentencia_dml = preprocesarDML($_POST["ruta"],$_POST["operacion"],$data);
 
-    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['EMPLEADO']['insert']);
-    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
-    				break;
-    				case 'update':
-    					if(isset($data["ci"])){
-    						$clave_valor = onUpdatingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+    	//if($sentencia_dml != 0){
+    		echo $sentencia_dml;
+    		exec_query($sentencia_dml);
+    	//}
+    }
 
-    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['EMPLEADO']['update']);
-	    					$sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
-    					}
-    				break;
-    				case 'delete':
+    function preprocesarDML($ruta,$operacion,$data) {
+        $sentencia_dml = 0;
+        switch(strtoupper($ruta)) {
+            case 'RUTA_EMPLEADOS':
+                //echo 'recibido';
+                switch(strtolower($operacion)) {
+                    case 'insert':
+                        $array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['EMPLEADO']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+                    break;
+                    case 'update':
+                        if(isset($data["ci"])){
+                            $clave_valor = onUpdatingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['EMPLEADO']['update']);
+                            $sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
+                        }
+                    break;
+                    case 'delete':
                         if(isset($data["ci"]))
                             $sentencia_dml = str_replace(':ci', $data["ci"], DML_SENTENCES['EMPLEADO']['delete']);
                     break;
-    			}
-    		break;
+                }
+            break;
 
-    		case 'RUTA_DOCTORES':
-    			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':
-    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
+            case 'RUTA_DOCTORES':
+                switch(strtolower($operacion)) {
+                    case 'insert':
+                        $array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
 
-    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['MEDICO']['insert']);
-    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
-    				break;
-    				case 'update':
-    					if(isset($data["ci"]) || isset($data["num_colegio"]) ){
-    						$clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['MEDICO']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+                    break;
+                    case 'update':
+                        if(isset($data["ci"]) || isset($data["num_colegio"]) ){
+                            $clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
 
-    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['MEDICO']['update']);
-	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
-	    					$sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
-    					}
-    				break;
-    				case 'delete':
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['MEDICO']['update']);
+                            $sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
+                            $sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
+                        }
+                    break;
+                    case 'delete':
                         if(isset($data["ci"]) || isset($data["num_colegio"])){
                            $sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', DML_SENTENCES['MEDICO']['delete']);
                             $sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
                         }
                     break;
-    			}
-    		break;
+                }
+            break;
 
-				case 'RUTA_PACIENTES':
-    			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':
-    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
+                case 'RUTA_PACIENTES':
+                switch(strtolower($operacion)) {
+                    case 'insert':
+                        $array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
 
-    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['PACIENTE']['insert']);
-    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
-    				break;
-    				case 'update':
-    					if(isset($data["ci"])){
-    						$clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['PACIENTE']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+                    break;
+                    case 'update':
+                        if(isset($data["ci"])){
+                            $clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
 
-    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['PACIENTE']['update']);
-	    					$sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
-    					}
-    				break;
-    				case 'delete':
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['PACIENTE']['update']);
+                            $sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
+                        }
+                    break;
+                    case 'delete':
               if(isset($data["ci"]))
                   $sentencia_dml = str_replace(':ci', $data["ci"],DML_SENTENCES['PACIENTE']['delete']);
-          	break;
-    			}
-    		break;
+            break;
+                }
+            break;
 
-    		case 'RUTA_CITAS':
-    			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':
-    					$array_suplantable = onInsertingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+            case 'RUTA_CITAS':
+                switch(strtolower($operacion)) {
+                    case 'insert':
+                        $array_suplantable = onInsertingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
 
-    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['CITA']['insert']);
-    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['CITA']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
 
-    				break;
-    				case 'update':
-    					if(isset($data["id"])){
-	    					$clave_valor = onUpdatingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+                    break;
+                    case 'update':
+                        if(isset($data["id"])){
+                            $clave_valor = onUpdatingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
 
-	    					$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['CITA']['update']);
-	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
-    					}
-    				break;
-    				case 'delete':
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['CITA']['update']);
+                            $sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
+                        }
+                    break;
+                    case 'delete':
                         if(isset($data["id"]))
                             $sentencia_dml = str_replace(':id', $data["id"], DML_SENTENCES['CITA']['delete']);
                     break;
-    			}
-    		break;
+                }
+            break;
 
-    		case 'RUTA_INVENTARIO':
-    			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':
+            case 'RUTA_INVENTARIO':
+                switch(strtolower($operacion)) {
+                    case 'insert':
                         if(!isset($data["id"]))
                             $data["id"] = rand(1000,100000000000000000);
 
-    					$array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
+                        $array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
 
-    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['IMPLEMENTO']['insert']);
-    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['IMPLEMENTO']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
 
-    				break;
-    				case 'update':
-    					if(isset($data["id"])){
-	    					$clave_valor = onUpdatingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
+                    break;
+                    case 'update':
+                        if(isset($data["id"])){
+                            $clave_valor = onUpdatingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
 
-	    					$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['IMPLEMENTO']['update']);
-	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
-    					}
-    				break;
-    				case 'delete':
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['IMPLEMENTO']['update']);
+                            $sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
+                        }
+                    break;
+                    case 'delete':
                         if(isset($data["id"]))
                             $sentencia_dml = str_replace(':id', $data["id"], DML_SENTENCES['IMPLEMENTO']['delete']);
                     break;
-    			}
-    		break;
+                }
+            break;
 
                 case 'RUTA_CITA_TRATAMIENTO':
-                    switch(strtolower($_POST["operacion"])) {
+                    switch(strtolower($operacion)) {
                         case 'insert':
                             $array_suplantable = onInsertingDevolverParametros(array('CITA_ID','TRATAMIENTO_ID','CI_MEDICO','FECHA','COSTO','ABONADO'), $data);
 
@@ -178,16 +188,16 @@
                     }
                 break;
 
-    		case 'RUTA_TRATAMIENTO_IMPLEMENTO':
-    			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':
+            case 'RUTA_TRATAMIENTO_IMPLEMENTO':
+                switch(strtolower($operacion)) {
+                    case 'insert':
                         $array_suplantable = onInsertingDevolverParametros(array('TRATAMIENTO_ID','IMPLEMENTO_ID','CITA_ID','CANTIDAD','COSTO'), $data);
 
                         $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['TRATAMIENTO_IMPLEMENTO']['insert']);
                         $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
 
                     break;
-    				case 'update':
+                    case 'update':
                         if(isset($data["cita_id"]) && isset($data["tratamiento_id"]) && isset($data["implemento_id"])){
                             $clave_valor = onUpdatingDevolverParametros(array('TRATAMIENTO_ID','IMPLEMENTO_ID','CITA_ID','CANTIDAD','COSTO'), $data);
 
@@ -197,29 +207,26 @@
                             $sentencia_dml = str_replace(':ii', $data["implemento_id"], $sentencia_dml);
                         }
                     break;
-    				case 'delete':
+                    case 'delete':
                         if(isset($data["cita_id"]) && isset($data["tratamiento_id"]) && isset($data["implemento_id"])){
                              $sentencia_dml = str_replace(':ci', $data["cita_id"], DML_SENTENCES['TRATAMIENTO_IMPLEMENTO']['delete']);
                             $sentencia_dml = str_replace(':ti', $data["tratamiento_id"], $sentencia_dml);
                             $sentencia_dml = str_replace(':ii', $data["implemento_id"], $sentencia_dml);
                         }
                     break;
-    			}
-    		break;
+                }
+            break;
 
             case 'RUTA_CONSULTAS':
-                switch(strtolower($_POST["operacion"])) {
+                switch(strtolower($operacion)) {
                     case 'insert':break;
                     case 'update':break;
                     case 'delete':break;
                 }
             break;
-    	}
+        }
 
-    	//if($sentencia_dml != 0){
-    		echo $sentencia_dml;
-    		exec_query($sentencia_dml);
-    	//}
+        return $sentencia_dml;
     }
 
     function onUpdatingDevolverParametros($parameters,$values){
