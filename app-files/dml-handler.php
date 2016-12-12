@@ -80,8 +80,6 @@
 
     						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['PACIENTE']['update']);
 	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
-
-								die($sentencia_dml);
     					}
     				break;
     				case 'delete':break;

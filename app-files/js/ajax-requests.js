@@ -282,7 +282,7 @@ function requestField(tipo = '', form = '') {
 
 		var inputs = {
 			formEmpleado: [
-				$("input[name=cedula]"),
+				$("input[name=ci]"),
 				$("input[name=nombre]"),
 				$("input[name=fecha_nac]"),
 				$("input[name=direccion]"),
@@ -311,7 +311,7 @@ function requestField(tipo = '', form = '') {
 				$("select[name=ci_doctor]")
 			],
 			formPaciente: [
-				$("input[name=cedula]"),
+				$("input[name=ci]"),
 				$("input[name=nombre]"),
 				$("input[name=fecha_nac]"),
 				$("input[name=direccion]"),

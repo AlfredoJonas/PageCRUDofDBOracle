@@ -33,7 +33,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="number" class="form-control" name="cedula" id="ci-paciente" placeholder="Ingrese la cedula de identidad o el pasaporte del paciente" required>
+										<input type="number" class="form-control" name="ci" id="ci-paciente" placeholder="Ingrese la cedula de identidad o el pasaporte del paciente" required>
 									</div>
 								</div>
 							</div>
