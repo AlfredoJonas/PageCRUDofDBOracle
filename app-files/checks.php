@@ -24,7 +24,7 @@
     <label for="search" class="col-sm-3 control-label">Identificador</label>
     <div class="col-sm-9 inputGroupContainer">
       <div class="input-group">
-        <input type="search" id="search" name="ci" class="form-control" placeholder="Identificador" required>
+        <input type="search" id="search" name="ci" class="form-control" placeholder="Identificador">
         <span class="input-group-btn">
           <button type="button" id="search" class="btn btn-info btn-md" onclick="requestField(parseInt($('input[name=tipoCRUD]:checked').val()), $('.form-horizontal').attr('class').split(' ')[0])">
             <i class="glyphicon glyphicon-search"></i>

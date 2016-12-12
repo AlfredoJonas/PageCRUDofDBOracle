@@ -328,7 +328,6 @@ function requestField(tipo = '', form = '') {
 
 			for(var index in response) {
 				$('.forms').append(parseData(response[index], 'forms'));
-
 			}
 		}
 
