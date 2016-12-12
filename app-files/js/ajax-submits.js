@@ -56,6 +56,7 @@ function submitEmpleado(event) {
     formMessages.addClass('alert-success');
 
 		formMessages.prepend(mensaje_exito);
+		requestEmpleados();
 	})
 
   .fail(function(data) {
@@ -88,6 +89,7 @@ function submitCita(event){
     formMessages.addClass('alert-success');
 
 		formMessages.prepend(mensaje_exito);
+		requestCitas();
 	})
 
   .fail(function(data) {
@@ -120,6 +122,7 @@ function submitPaciente(event){
     formMessages.addClass('alert-success');
 
 		formMessages.prepend(mensaje_exito);
+		requestPacientes();
 	})
 
   .fail(function(data) {
@@ -152,6 +155,7 @@ function submitImplemento(event) {
     formMessages.addClass('alert-success');
 
 		formMessages.prepend(mensaje_exito);
+		requestInventario();
 	})
 
   .fail(function(data) {
