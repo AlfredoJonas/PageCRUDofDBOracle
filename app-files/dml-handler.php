@@ -126,6 +126,9 @@
     		case 'RUTA_INVENTARIO':
     			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
+                        if(!isset($data["id"]))
+                            $data["id"] = rand(1000,100000000000000000);
+
     					$array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
 
     					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['IMPLEMENTO']['insert']);
