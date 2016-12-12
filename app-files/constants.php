@@ -267,13 +267,11 @@
     'ESPECIALIZACION_MED_EMP' => array(
                   'MEDICO' => array(
                                 'insert' => 'INSERT INTO ESPECIALIZACION_MED_EMP :campos VALUES :valores',
-                                'update' => 'UPDATE ESPECIALIZACION_MED_EMP SET :columna_valores WHERE CI = :ci OR NUM_COLEGIO = :num_cole',
-                                'delete' => 'DELETE FROM ESPECIALIZACION_MED_EMP WHERE CI = :ci OR NUM_COLEGIO = :num_cole'
+                                'delete' => 'DELETE FROM ESPECIALIZACION_MED_EMP WHERE CI_EMPLEADO IS NULL AND CI_MEDICO = :ci_med'
                               ),
                   'EMPLEADO' => array(
                                 'insert' => 'INSERT INTO ESPECIALIZACION_MED_EMP :campos VALUES :valores',
-                                'update' => 'UPDATE ESPECIALIZACION_MED_EMP SET :columna_valores WHERE CI = :ci OR NUM_COLEGIO = :num_cole',
-                                'delete' => 'DELETE FROM ESPECIALIZACION_MED_EMP WHERE CI = :ci OR NUM_COLEGIO = :num_cole'
+                                'delete' => 'DELETE FROM ESPECIALIZACION_MED_EMP WHERE CI_MEDICO IS NULL AND CI_EMPLEADO = :ci_empl'
                               )
                 ),
     'PACIENTE' => array(
