@@ -12,24 +12,67 @@
 	</form>
 
 <?php
-	require_once 'constants.php';
+	//require_once 'constants.php';
+	require_once 'conexion.php';
+
+	$sentencia_dml = 0;
 
 	if(isset($_GET["ruta"]) && isset($_GET["operacion"]) && isset($_GET["data_extra"])){
 		$data = array();
     	
     	parse_str($_GET["data_extra"],$data);
 
+    	if(isset($data["fecha_nac"]))
+			$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
+
     	switch(strtoupper($_GET["ruta"])) {
     		case 'RUTA_EMPLEADOS':
     			//echo 'recibido';
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':
-    					$array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['EMPLEADO']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
     				break;
     				case 'update':
-    					//echo 'recibido';
-    					$clave_valor = onUpdatingDevolverParametros(array('ID','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+    					if(isset($data["ci"])){
+    						$clave_valor = onUpdatingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
+
+    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['EMPLEADO']['update']);
+	    					$sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
+    					}
     				break;
+    				case 'delete':break;
+    			}
+    		break;
+    		case 'RUTA_DOCTORES':
+    			switch(strtolower($_GET["operacion"])) {
+    				case 'insert':
+    					if(isset($data["fecha_nac"]))
+    						$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
+
+    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['MEDICO']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+    				break;
+    				case 'update':
+    					if(isset($data["ci"]) || isset($data["num_colegio"]) ){
+    						$clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
+
+    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['MEDICO']['update']);
+	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
+	    					$sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
+    					}
+    				break;
+    				case 'delete':break;
+    			}
+    		break;
+			case 'RUTA_PACIENTES':
+    			switch(strtolower($_GET["operacion"])) {
+    				case 'insert':break;
+    				case 'update':break;
     				case 'delete':break;
     			}
     		break;
@@ -43,24 +86,17 @@
 
     				break;
     				case 'update':
-    					$clave_valor = onUpdatingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
+    					if(isset($data["id"])){
+	    					$clave_valor = onUpdatingDevolverParametros(array('ID','URL_IMAGEN_ODONTOGRAMA','FECHA','COSTO','MOTIVO','CI_PACIENTE','CI_MEDICO'), $data);
 
-    					$sentencia_dml = str_replace(':columna_valore', $clave_valor, DML_SENTENCES['CITA']['update']);
-    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
-
-    					echo $sentencia_dml;
+	    					$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['CITA']['update']);
+	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
+    					}
     				break;
     				case 'delete':break;
     			}
     		break;
     		case 'RUTA_INVENTARIO':
-    			switch(strtolower($_GET["operacion"])) {
-    				case 'insert':break;
-    				case 'update':break;
-    				case 'delete':break;
-    			}
-    		break;
-    		case 'RUTA_PACIENTE':
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':break;
     				case 'update':break;
@@ -75,6 +111,11 @@
     			}
     		break;
     	}
+
+    	//if($sentencia_dml != 0){
+    		echo $sentencia_dml;
+    		exec_query($sentencia_dml);
+    	//}
     }
 
 
