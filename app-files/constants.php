@@ -17,7 +17,7 @@
 
   define("EMPLEADO_ESPECIFICO_SQL",
   'SELECT x.ci ci, x.nombre nombre, TO_CHAR(x.fecha_nac, \'YYYY/MM/DD\') fecha,
-  x.direccion direccion, x.telefono telefono, x.a, x.b, e.nombre especializacion,
+  x.direccion direccion, x.telefono telefono, e.id id_especializacion, x.a, x.b, e.nombre especializacion,
   nvl(eme.ci_empleado, 0) is_empleado, nvl(eme.ci_medico, 0) is_medico
   FROM (
     SELECT ci, e.nombre, fecha_nac, direccion, telefono, TO_CHAR(sueldo) a, TO_CHAR(c.nombre) b

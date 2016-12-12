@@ -82,6 +82,11 @@ function insertHTML(from = '', tipo = 0) {
 				$('.fields').removeClass('hidden');
 
 			break;
+
+		case 'tratamiento':
+			$('.fields-tratamiento').removeClass('hidden');
+
+			break;
 	}
 }
 
@@ -89,20 +94,48 @@ function parseData(data, tipo) {
 	if(tipo === "multiple_select" || tipo == "single_select")
   	return new Option(data.NOMBRE, data.NOMBRE);
 	else if(tipo === 'forms') {
-		var resp = '<form class="formTratamiento well form-horizontal" action="dml-handler.php" role="form">\
-									<?php include("checks.php"); ?>\
-										<fieldset class="fields hidden" data-ruta="RUTA_CITAS" data-consulta="CITA_ESPECIFICA">\
-											<legend>Tratamiento</legend>';
+		var resp = '<form class="formTratamiento well form-horizontal tratamiento" action="dml-handler.php" role="form">\
+		<fieldset class="checks">\
+		  <legend>Tipo de operación</legend>\
+		  <div class="form-group">\
+		    <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">\
+		      <div class="radio-inline">\
+		        <label>\
+		          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="update" onclick="insertHTML(\'tratamiento\', 2)">Actualizar\
+		        </label>\
+		      </div>\
+		      <div class="radio-inline">\
+		        <label>\
+		          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="delete" onclick="insertHTML(\'tratamiento\', 3)">Eliminar\
+		        </label>\
+		      </div>\
+		    </div>\
+		  </div>\
+		</fieldset>\
+		<fieldset class="fields-tratamiento hidden" data-ruta="RUTA_CITAS" data-consulta="CITA_ESPECIFICA">\
+			<legend>Tratamiento</legend>';
 
-		for(var key in data)
-			console.log(data[key]);
+		var count = 0;
+		var keys = Object.keys(data);
+
+		for(var key in data) {
+			resp += '<div class="form-group">\
+			<label for="'+data[key]+'" class="col-sm-3 control-label">'+keys[count++]+'</label>\
+				<div class="col-sm-12 col-sm-offset-2 inputGroupContainer">\
+					<div class="input-group">\
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
+						<input type="text" id="'+data[key]+'" name="'+data[key]+'" class="form-control '+data[key]+'" value="'+data[key]+'">\
+					</div>\
+				</div>\
+			</div>\
+			'
+		}
 
 		resp += '</fieldset>\
 					</form>';
 
 		return resp;
-	}
-	else {
+	}	else {
 		var resp = "<tr>";
 		for(var key in data) {
 			resp += '<td>'+data[key]+'</td>';

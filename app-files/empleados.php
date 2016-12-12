@@ -22,6 +22,8 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
+					<input type="text" class="form-control" name="id_especializacion" hidden>
+
 					<form class="formEmpleado well form-horizontal" action="dml-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
