@@ -286,7 +286,8 @@ function requestField(tipo = '', form = '') {
 				$("input[name=nombre]"),
 				$("input[name=fecha_nac]"),
 				$("input[name=direccion]"),
-				$("input[name=telefono]")
+				$("input[name=telefono]"),
+				$("select[name=id_especializacion]")
 			],
 			formImplemento: [
 				$("input[name=nombre]"),
@@ -326,7 +327,9 @@ function requestField(tipo = '', form = '') {
 		if(form === 'formCita') {
 			document.querySelector("input[name=fecha]").valueAsDate = new Date(response[0].FECHA);
 
-			for(var index in response) 
+		$('.forms').empty();
+
+			for(var index in response)
 				$('.forms').append(parseData(response[index], 'forms'));
 		}
 
@@ -355,7 +358,8 @@ function requestField(tipo = '', form = '') {
 		if($('input[name=tipoCRUD]:checked').val() === 'delete') {
 			$('.fields :input').prop('disabled', true);
 			$('.fields button').prop('disabled', false);
-		}
+		} else
+			$('.fields :input').prop('disabled', false);
 
 		$('.fields').removeClass('hidden');
   })
