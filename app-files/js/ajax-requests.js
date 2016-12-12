@@ -286,11 +286,7 @@ function requestField(tipo = '', form = '') {
 				$("input[name=nombre]"),
 				$("input[name=fecha_nac]"),
 				$("input[name=direccion]"),
-				$("input[name=telefono]"),
-				$("input[name=tipo]"),
-				$("input[name=cargo]"),
-				$("input[name=rif]"),
-				$("input[name=num_colegio]")
+				$("input[name=telefono]")
 			],
 			formImplemento: [
 				$("input[name=aux]"),
@@ -326,16 +322,40 @@ function requestField(tipo = '', form = '') {
 				inputs[form][count++].val(response[0][key]);
 		}
 
-		if(form === 'formPaciente' || form === 'formEmpleado')
+		if(form === 'formPaciente')
 			document.querySelector("input[name=fecha_nac]").valueAsDate = new Date(response[0].FECHA);
 
 		if(form === 'formCita')
 			document.querySelector("input[name=fecha]").valueAsDate = new Date(response[0].FECHA);
 
-		$('.fields').removeClass('hidden');
+		if(form === 'formEmpleado') {
 
-		if(tipo === 'delete')
-			$('.fields input').prop('disabled', true);
+			if(response[0].IS_EMPLEADO > 0) {
+				$("input[name=tipo_empleado]").filter('[value=1]').trigger("click");
+				$("input[name=sueldo]").val(response[0].A);
+				$("input[name=cargo]").val(response[0].B);
+			} else {
+				$("input[name=tipo_empleado]").filter('[value=2]').trigger("click");
+				$("input[name=rif]").val(response[0].A);
+				$("input[name=num_colegio]").val(response[0].B);
+			}
+
+			document.querySelector("input[name=fecha_nac]").valueAsDate = new Date(response[0].FECHA);
+
+			var especializaciones = [];
+
+			for(var index in response)
+				especializaciones.push(response[index].ESPECIALIZACION);
+
+			$(".especializaciones").val(especializaciones);
+		}
+
+		if($('input[name=tipoCRUD]:checked').val() === 'delete') {
+			$('.fields :input').prop('disabled', true);
+			$('.fields button').prop('disabled', false);
+		}
+
+		$('.fields').removeClass('hidden');
   })
 
   .fail(function(data) {
