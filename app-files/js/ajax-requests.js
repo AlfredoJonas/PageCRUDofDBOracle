@@ -325,6 +325,8 @@ function requestField(tipo = 0, form = '') {
 			],
 		};
 
+		console.log(inputs[form])
+
 		for(key in response[0])
 			if(count < inputs[form].length)
 				inputs[form][count++].val(response[0][key]);

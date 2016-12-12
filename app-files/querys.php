@@ -20,6 +20,9 @@
           case 'LISTA_ESPECIALIZACIONES':
             $consulta = LISTA_ESPECIALIZACIONES_SQL;
             break;
+          case 'EMPLEADO_ESPECIFICO':
+            $consulta = str_replace(':id', $data['id'], EMPLEADO_ESPECIFICO_SQL);
+            break;
         }
         break;
 
@@ -38,6 +41,9 @@
             break;
           case 'LISTA_CITAS':
             $consulta = LISTA_CITAS_SQL;
+            break;
+          case 'CITA_ESPECIFICA':
+            $consulta = str_replace(':id', $data['id'], CITA_ESPECIFICA_SQL);
             break;
         }
         break;
