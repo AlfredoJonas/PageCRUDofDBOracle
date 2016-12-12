@@ -120,19 +120,25 @@ function parseData(data, tipo) {
 
 		for(var key in data) {
 			resp += '<div class="form-group">\
-			<label for="'+data[key]+'" class="col-sm-3 control-label">'+keys[count++]+'</label>\
-				<div class="col-sm-12 col-sm-offset-2 inputGroupContainer">\
+			<label for="'+data[key]+'" class="col-sm-3 control-label">'+keys[count]+'</label>\
+				<div class="col-sm-9 inputGroupContainer">\
 					<div class="input-group">\
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>\
-						<input type="text" id="'+data[key]+'" name="'+data[key]+'" class="form-control '+data[key]+'" value="'+data[key]+'">\
+						<input type="text" id="'+data[key]+'" name="'+keys[count].toLowerCase()+'" class="form-control '+data[key]+'" value="'+data[key]+'">\
 					</div>\
 				</div>\
-			</div>\
-			'
+			</div>'
+
+			count++;
 		}
 
-		resp += '</fieldset>\
-					</form>';
+		resp += '<div class="form-group row">\
+							<div class="col-sm-4">\
+								<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon\ glyphicon-ok"></span></button>\
+							</div>\
+						</div>\
+					</fieldset>\
+				</form>';
 
 		return resp;
 	}	else {
