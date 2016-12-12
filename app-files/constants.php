@@ -7,19 +7,30 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, sueldo
-  FROM empleado',
+  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono
+  FROM empleado
+  UNION
+  SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono
+  FROM medico
+  ORDER BY 2',
   true);
 
   define("EMPLEADO_ESPECIFICO_SQL",
-  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, sueldo
-  FROM empleado
-  WHERE CI = :id',
+  'SELECT x.ci ci, x.nombre nombre, TO_CHAR(x.fecha_nac, \'YYYY-MM-DD\') fecha_nac, x.direccion direccion, x.telefono telefono, x.a, x.b, id_especializacion, nvl(eme.ci_empleado, 0), nvl(eme.ci_medico, 0)
+  FROM (
+    SELECT ci, nombre, fecha_nac, direccion, telefono, TO_CHAR(sueldo) a, TO_CHAR(cargo_id) b
+    FROM empleado e JOIN cargo_empleado c ON (e.ci = c.ci_empleado)
+    UNION
+    SELECT ci, nombre, fecha_nac, direccion, telefono, TO_CHAR(rif) a, TO_CHAR(num_colegio) b
+    FROM medico) x
+  JOIN especializacion_med_emp eme ON (x.ci = eme.ci_empleado OR x.ci = eme.ci_medico)
+  WHERE x.ci = &ci;',
   true);
 
   define("LISTA_CITAS_SQL",
   'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'YYYY/MM/DD\') fecha, costo, motivo, ci_paciente paciente, m.num_colegio medico
-  FROM cita c JOIN medico m ON(c.ci_medico = m.ci)',
+  FROM cita c JOIN medico m ON(c.ci_medico = m.ci)
+  ORDER BY 1',
   true);
 
   define("CITA_ESPECIFICA_SQL",
@@ -46,7 +57,8 @@
 
   define("LISTA_PACIENTES_SQL",
   'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, ocupacion
-  FROM paciente',
+  FROM paciente
+  ORDER BY 2',
   true);
 
   define("PACIENTE_ESPECIFICO_SQL",

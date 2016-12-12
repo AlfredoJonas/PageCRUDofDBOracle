@@ -94,12 +94,23 @@
 								</div>
 							</div>
 
-							<div class="form-group empleado hidden">
-								<label for="cargo_empleado" class="col-sm-3 control-label">Cargo</label>
-								<div class="col-sm-9 inputGroupContainer">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="cargo" id="cargo_empleado">
+							<div class="empleado hidden">
+								<div class="form-group">
+									<label for="sueldo" class="col-sm-3 control-label">Sueldo</label>
+									<div class="col-sm-9 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="tel" class="form-control" name="sueldo" id="sueldo" placeholder="Ingrese el sueldo del empleado">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="cargo_empleado" class="col-sm-3 control-label">Cargo</label>
+									<div class="col-sm-9 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" class="form-control" name="cargo" id="cargo_empleado">
+										</div>
 									</div>
 								</div>
 							</div>
