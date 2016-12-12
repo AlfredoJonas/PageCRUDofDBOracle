@@ -269,8 +269,13 @@
                     ),
     'CITA_TRATAMIENTO' => array(
                             'insert' => 'INSERT INTO CITA_TRATAMIENTO :campos VALUES :valores',
-                            'update' => 'UPDATE CITA_TRATAMIENTO SET :columna_valores WHERE CITA_ID = :ci AND TRATAMIENTO_ID = :ti',
-                            'delete' => 'DELETE FROM CITA_TRATAMIENTO WHERE CITA_ID = :ci AND TRATAMIENTO_ID = :ti'
+                            'update' => 'UPDATE CITA_TRATAMIENTO SET :columna_valores WHERE CITA_ID = :ci AND TRATAMIENTO_ID = :ti AND FECHA = :fecha',
+                            'delete' => 'DELETE FROM CITA_TRATAMIENTO WHERE CITA_ID = :ci AND TRATAMIENTO_ID = :ti AND FECHA = :fecha'
+                          ),
+    'TRATAMIENTO_IMPLEMENTO' => array(
+                            'insert' => 'INSERT INTO TRATAMIENTO_IMPLEMENTO :campos VALUES :valores',
+                            'update' => 'UPDATE TRATAMIENTO_IMPLEMENTO SET :columna_valores WHERE TRATAMIENTO_ID = :ti AND IMPLEMENTO_ID = :ii AND CITA_ID = :ci',
+                            'delete' => 'DELETE FROM TRATAMIENTO_IMPLEMENTO WHERE CITA_ID = :ci AND TRATAMIENTO_ID = :ti AND IMPLEMENTO_ID = :ii'
                           ),
   );
 

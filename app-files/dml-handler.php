@@ -49,6 +49,7 @@
                     break;
     			}
     		break;
+
     		case 'RUTA_DOCTORES':
     			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
@@ -74,6 +75,7 @@
                     break;
     			}
     		break;
+
 			case 'RUTA_PACIENTES':
     			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
@@ -96,6 +98,7 @@
                     break;
     			}
     		break;
+
     		case 'RUTA_CITAS':
     			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
@@ -119,6 +122,7 @@
                     break;
     			}
     		break;
+
     		case 'RUTA_INVENTARIO':
     			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
@@ -142,13 +146,56 @@
                     break;
     			}
     		break;
-    		case 'RUTA_CONSULTAS':
+
+            case 'RUTA_CITA_TRATAMIENTO':
+                switch(strtolower($_POST["operacion"])) {
+                    case 'insert':
+                        $array_suplantable = onInsertingDevolverParametros(array('CITA_ID','TRATAMIENTO_ID','CI_MEDICO','FECHA','COSTO','ABONADO'), $data);
+
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['CITA_TRATAMIENTO']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+                    break;
+                    case 'update':
+                        if(isset($data["cita_id"]) && isset($data["tratamiento_id"]) && isset($data["fecha"])){
+                            $clave_valor = onUpdatingDevolverParametros(array('CITA_ID','TRATAMIENTO_ID','CI_MEDICO','FECHA','COSTO','ABONADO'), $data);
+
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['CITA_TRATAMIENTO']['update']);
+                            $sentencia_dml = str_replace(':ci', $data["cita_id"], $sentencia_dml);
+                            $sentencia_dml = str_replace(':ti', $data["tratamiento_id"], $sentencia_dml);
+                            $sentencia_dml = str_replace(':fecha', $data["fecha"], $sentencia_dml);
+                        }
+                    break;
+                    case 'delete':
+                        if(isset($data["cita_id"]) && isset($data["tratamiento_id"]) && isset($data["fecha"])){
+                             $sentencia_dml = str_replace(':ci', $data["cita_id"], DML_SENTENCES['CITA_TRATAMIENTO']['delete']);
+                            $sentencia_dml = str_replace(':ti', $data["tratamiento_id"], $sentencia_dml);
+                            $sentencia_dml = str_replace(':fecha', $data["fecha"], $sentencia_dml);
+                        }
+                    break;
+                }
+            break;
+
+    		case 'RUTA_TRATAMIENTO_IMPLEMENTO':
     			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':break;
+    				case 'insert':
+                        $array_suplantable = onInsertingDevolverParametros(array('TRATAMIENTO_ID','IMPLEMENTO_ID','CITA_ID','CANTIDAD','COSTO'), $data);
+
+                        $sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['TRATAMIENTO_IMPLEMENTO']['insert']);
+                        $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+
+                    break;
     				case 'update':break;
     				case 'delete':break;
     			}
     		break;
+
+            case 'RUTA_CONSULTAS':
+                switch(strtolower($_POST["operacion"])) {
+                    case 'insert':break;
+                    case 'update':break;
+                    case 'delete':break;
+                }
+            break;
     	}
 
     	//if($sentencia_dml != 0){
