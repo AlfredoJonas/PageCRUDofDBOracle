@@ -20,37 +20,31 @@
   header('Content-Type: application/json; charset=UTF-8');
   echo json_encode($json);
 
-	function generarConsultaFuncion(){
+	function generarConsultaFuncion() {
 		$consulta = 0;
-		if(isset($_POST["ruta"]){
-			switch ($_POST["ruta"]) {
-				case 'PORCENTAJE_TRATAMIENTOS':
-					if(isset($_POST["mes"]) && isset($_POST["ano"])){
-						$consulta = GRAFICO_BARRAS_SQL;
-					}
-					break;
 
-				case 'GANANCIA_POR_MES':
-					if(isset($_POST["mes"]) && isset($_POST["ano"])){
-						$consulta = oci_parse(get_conexion(), 'begin :r := GANANCIA(:mes,:anho); end;');
-						oci_bind_by_name($consulta, ':mes', $_POST["mes"]);
-						oci_bind_by_name($consulta, ':anho', $_POST["ano"]);
-						oci_bind_by_name($consulta, ':r', $_SESSION["resp"],40);
-					}
-					break;
+		$data = array();
+		parse_str($_POST["data_extra"],$data);
 
-				case 'GRAFICA_X':
-					if(isset($_POST["ano"])){
-						$consulta = oci_parse(get_conexion(), 'begin :r := GRAFICOANIO(:anho); end;');
-						oci_bind_by_name($consulta, ':anho', $_POST["ano"]);
-						oci_bind_by_name($consulta, ':r', $_SESSION["resp"],40);
-					}
-					break;
+		switch ($_POST["consulta"]) {
+			case 'TRATAMIENTOS_MES':
+				$consulta = GRAFICO_BARRAS_SQL;
+				break;
 
-				case 4:
-					'ganancias año'
-					break;
-			}
+			case 'GANANCIA_POR_MES':
+				$consulta = oci_parse(get_conexion(), 'begin :r := GANANCIA(:mes,:anho); end;');
+				oci_bind_by_name($consulta, ':mes', $_POST["mes"]);
+				oci_bind_by_name($consulta, ':anho', $_POST["ano"]);
+				oci_bind_by_name($consulta, ':r', $_SESSION["resp"], 40);
+				break;
+
+			case 'GRAFICA_X':
+				$consulta = oci_parse(get_conexion(), 'begin :r := GRAFICOANIO(:anho); end;');
+				oci_bind_by_name($consulta, ':anho', $_POST["ano"]);
+				oci_bind_by_name($consulta, ':r', $_SESSION["resp"], 40);
+				break;
+		}
+
 		return $consulta;
 	}
 

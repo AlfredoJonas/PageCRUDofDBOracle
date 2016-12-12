@@ -189,32 +189,33 @@ function fillTable(response) {
 
 function draw(tipo = '', params = []){
 
-	var data = new google.visualization.DataTable();
-
 	switch (tipo) {
 		case 1:
-			data.addColumn('string',params[0]);
-			data.addColumn('number',params[1]);
-
-			data.addRows([
-				['Enero',700],
-				['Febrero',650],
-				['Marzo',780],
-				['Abril',562],
-				['Mayo',357],
-				['Junio',100],
-				['Julio',156],
-				['Agosto',964],
-				['Septiembre',358],
-				['Octubre',849],
-				['Noviembre',395],
-				['Diciembre',489]
-			]);
-
-			var opciones = {'title':'Ingresos durante el año ','width':800,'height':500};
-			var grafica = new google.visualization.ColumnChart(document.getElementById('charts'));
-
-			grafica.draw(data,opciones);
+		$(".charts").CanvasJSChart({
+			title: {
+				text: "Basic JQuery Line Charts"
+			},
+			axisX: {
+				interval: 10
+			},
+			data: [
+			{
+				type: "line",
+				dataPoints: [
+						{ x: 10, y: 450 },
+						{ x: 20, y: 414 },
+						{ x: 30, y: 520 },
+						{ x: 40, y: 460 },
+						{ x: 50, y: 450 },
+						{ x: 60, y: 500 },
+						{ x: 70, y: 480 },
+						{ x: 80, y: 480 },
+						{ x: 90, y: 410 },
+						{ x: 100, y: 500 },
+					]
+				}
+				]
+			});
 			break;
 
 		case 2:

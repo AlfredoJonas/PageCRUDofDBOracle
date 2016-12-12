@@ -12,75 +12,79 @@
 	</head>
 	<body>
 		<?php include('header.php'); ?>
-    <div class="container-fluid">
-      <div class="container col-sm-5">
-        <div id="form-messages" class="alert alert-dismissable fade in hidden">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        </div>
+      <div class="container-fluid">
+        <div class="container col-sm-5">
+          <div id="form-messages" class="alert alert-dismissable fade in hidden">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          </div>
 
-        <form class="formGraficas well form-horizontal" action="graficas-handler.php" role="form">
+          <form class="formGraficas well form-horizontal" action="graficas-handler.php" role="form">
 
-          <fieldset class="fields">
-            <legend>Graficas</legend>
-            <div class="form-group">
-              <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
-                <div class="radio-inline">
-                  <label>
-                    <input type="radio" name="graficas" id="graficas" value="TRATAMIENTOS_MES" onclick="insertHTML('graficas', 1)">Ganancia por mes
-                  </label>
-                </div>
-                <div class="radio-inline">
-                  <label>
-                    <input type="radio" name="graficas" id="graficas" value="GANANCIA_POR_MES" onclick="insertHTML('graficas', 2)">Porcentaje de tratamientos en un año
-                  </label>
-                </div>
-                <div class="radio-inline">
-                  <label>
-                    <input type="radio" name="graficas" id="graficas" value="GRAFICA_X" onclick="insertHTML('graficas', 3)">Otra grafica x
-                  </label>
+            <fieldset class="fields">
+              <legend>Graficas</legend>
+              <div class="form-group">
+                <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
+                  <div class="radio-inline">
+                    <label>
+                      <input type="radio" name="graficas" id="graficas" value="TRATAMIENTOS_MES" onclick="insertHTML('graficas', 1)">Ganancia por mes
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label>
+                      <input type="radio" name="graficas" id="graficas" value="GANANCIA_POR_MES" onclick="insertHTML('graficas', 2)">Porcentaje de tratamientos en un año
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label>
+                      <input type="radio" name="graficas" id="graficas" value="GRAFICA_X" onclick="insertHTML('graficas', 3)">Otra grafica x
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
 
-						<div class="form-group campo-grafica campo-grafica-1 hidden">
-							<label for="ocupacion" class="col-sm-3 control-label">Mes</label>
-							<div class="col-sm-9 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="mes" id="mes" placeholder="Ingrese el mes a evaluar">
-								</div>
-							</div>
-						</div>
+  						<div class="form-group campo-grafica campo-grafica-3 hidden">
+  							<label for="ocupacion" class="col-sm-3 control-label">Mes</label>
+  							<div class="col-sm-9 inputGroupContainer">
+  								<div class="input-group">
+  									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  									<input type="text" class="form-control" name="mes" id="mes" placeholder="Ingrese el mes a evaluar">
+  								</div>
+  							</div>
+  						</div>
 
-						<div class="form-group campo-grafica campo-grafica-1 hidden">
-							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
-							<div class="col-sm-9 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="año" id="año" placeholder="Ingrese el año a evaluar">
-								</div>
-							</div>
-						</div>
+  						<div class="form-group campo-grafica campo-grafica-3 hidden">
+  							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
+  							<div class="col-sm-9 inputGroupContainer">
+  								<div class="input-group">
+  									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  									<input type="text" class="form-control" name="ano" id="año" placeholder="Ingrese el año a evaluar">
+  								</div>
+  							</div>
+  						</div>
 
-						<div class="form-group campo-grafica campo-grafica-2 hidden">
-							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
-							<div class="col-sm-9 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="año" id="año" placeholder="Ingrese el año a evaluar">
-								</div>
-							</div>
-						</div>
+  						<div class="form-group campo-grafica campo-grafica-2 hidden">
+  							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
+  							<div class="col-sm-9 inputGroupContainer">
+  								<div class="input-group">
+  									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  									<input type="text" class="form-control" name="año" id="año" placeholder="Ingrese el año a evaluar">
+  								</div>
+  							</div>
+  						</div>
 
-						<div class="form-group row">
-							<div class="col-sm-4">
-								<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-ok"></span></button>
-							</div>
-						</div>
-          </fieldset>
-        </form>
+  						<div class="form-group row">
+  							<div class="col-sm-4">
+  								<button type="submit" class="btn btn-primary">Guardar <span class="glyphicon glyphicon-ok"></span></button>
+  							</div>
+  						</div>
+            </fieldset>
+          </form>
+        </div>
+
+    		<div class="container col-sm-7 charts">
+    		</div>
+
       </div>
-    </div>
 		<?php include('footer.php'); ?>
 	</body>
 </html>

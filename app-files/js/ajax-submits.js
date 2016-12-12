@@ -21,6 +21,7 @@ function submitGraficas(event) {
 
 		formMessages.prepend(mensaje_exito);
 
+		draw(' ', ['Implemento', 'cantidad', response]);
 	})
 
 	.fail(function(data) {
