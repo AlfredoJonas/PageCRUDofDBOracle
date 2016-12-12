@@ -80,18 +80,6 @@
 						</div>
 					</div>
 
-					<div class="<?php echo CONSULTAS['Ganancias por mes']?> hidden">
-						<div class="form-group">
-							<label for="ganacias-consulta" class="col-sm-3 control-label">Mes a evaluar</label>
-							<div class="col-sm-9 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" class="form-control" name="mes" id="mes" placeholder="Ingrese el mes que desea evaluar">
-								</div>
-							</div>
-						</div>
-					</div>
-
 					<div class="<?php echo CONSULTAS['Historial de citas']?> hidden">
 						<div class="form-group">
 							<label for="imp-consulta" class="col-sm-3 control-label">CI Paciente</label>

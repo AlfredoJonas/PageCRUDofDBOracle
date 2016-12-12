@@ -78,10 +78,10 @@
             $consulta = str_replace('&FECHA', $data['fecha'], TRATAMIENTOS_DIA_SQL);
             break;
           case CONSULTAS['Ganancias generales']:
-            $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
+            $consulta = GANANCIAS_TOTALES_SQL;
             break;
           case CONSULTAS['Ganancias por mes']:
-            $consulta = str_replace(':mes', $data['mes'], GANANCIAS_MES_SQL);
+            $consulta = GANANCIAS_MES_SQL;
             break;
 
           //Las que estan ready
