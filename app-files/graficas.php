@@ -13,7 +13,7 @@
 	<body>
 		<?php include('header.php'); ?>
       <div class="container-fluid">
-        <div class="container col-sm-5">
+        <div class="container col-sm-6">
           <div id="form-messages" class="alert alert-dismissable fade in hidden">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           </div>
@@ -81,9 +81,10 @@
           </form>
         </div>
 
-    		<div class="container col-sm-7 charts">
-    		</div>
-
+        <div class="container container col-sm-6">
+          <canvas class="charts" id="chart" width="400" height="400">
+          </canvas>          
+        </div>
       </div>
 		<?php include('footer.php'); ?>
 	</body>

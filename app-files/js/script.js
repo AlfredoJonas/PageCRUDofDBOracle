@@ -187,43 +187,138 @@ function fillTable(response) {
 	$('.table-body').html(table_body);
 }
 
-function draw(tipo = '', params = []){
+function draw(tipo = 0, data){
+
+	var values = [];
+	var labels = [];
+
+	var keys = Object.keys(response[0]);
+
+	for(var key in keys)
+		labels.push(keys[key]);
+
+	for(var key in data) 
+		values.push(data[key]);
 
 	switch (tipo) {
-		case 1:
-		$(".charts").CanvasJSChart({
-			title: {
-				text: "Basic JQuery Line Charts"
-			},
-			axisX: {
-				interval: 10
-			},
-			data: [
-			{
-				type: "line",
-				dataPoints: [
-						{ x: 10, y: 450 },
-						{ x: 20, y: 414 },
-						{ x: 30, y: 520 },
-						{ x: 40, y: 460 },
-						{ x: 50, y: 450 },
-						{ x: 60, y: 500 },
-						{ x: 70, y: 480 },
-						{ x: 80, y: 480 },
-						{ x: 90, y: 410 },
-						{ x: 100, y: 500 },
-					]
-				}
-				]
+		case 1: 
+			var ctx = document.getElementById("chart");
+		 	var chart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			        labels: labels,
+			        datasets: [{
+			            label: 'Some random label',
+			            data: values,
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(153, 102, 255, 0.2)',
+			                'rgba(255, 159, 64, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)',
+			                'rgba(255, 159, 64, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
 			});
 			break;
 
 		case 2:
-
+			var ctx = document.getElementById("chart");
+		 	var chart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			        labels: labels,
+			        datasets: [{
+			            label: 'Some random label',
+			            data: values,
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(153, 102, 255, 0.2)',
+			                'rgba(255, 159, 64, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)',
+			                'rgba(255, 159, 64, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
 			break;
 
 		case 3:
-
+			var ctx = document.getElementById("chart");
+		 	var chart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			        labels: labels,
+			        datasets: [{
+			            label: 'Some random label',
+			            data: values,
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(153, 102, 255, 0.2)',
+			                'rgba(255, 159, 64, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)',
+			                'rgba(255, 159, 64, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
 			break;
 	}
 }
