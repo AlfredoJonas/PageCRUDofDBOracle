@@ -17,18 +17,19 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<form class="formEmpleado well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formPaciente well form-horizontal" action="ajax-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 
-						<fieldset class="fields hidden">
+						<fieldset class="fields hidden" data-ruta="RUTA_PACIENTES" data-consulta="PACIENTE_ESPECIFICO">
 							<legend>Pacientes</legend>
+
 							<div class="form-group">
 								<label for="ci-paciente" class="col-sm-3 control-label">C.I. o pasaporte</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="cedula" id="ci-paciente" placeholder="Ingrese la cedula de identidad o el pasaporte del paciente" required>
+										<input type="number" class="form-control" name="cedula" id="ci-paciente" placeholder="Ingrese la cedula de identidad o el pasaporte del paciente" required>
 									</div>
 								</div>
 							</div>
@@ -39,16 +40,6 @@
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control" name="nombre" id="nombre-paciente" placeholder="Ingrese el nombre del paciente">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="apellido-paciente" class="col-sm-3 control-label">Apellido</label>
-								<div class="col-sm-9 inputGroupContainer">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="apellido" id="apellido-paciente" placeholder="Ingrese el apellido del paciente">
 									</div>
 								</div>
 							</div>
@@ -88,7 +79,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="telefono" id="ocu-paciente" placeholder="Ingrese la ocupación del paciente">
+										<input type="text" class="form-control" name="ocupacion" id="ocu-paciente" placeholder="Ingrese la ocupación del paciente">
 									</div>
 								</div>
 							</div>

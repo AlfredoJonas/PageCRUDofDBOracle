@@ -8,13 +8,6 @@
 
   $statement = exec_query($consulta);
 
-  /*$myfile = fopen("testfile.txt","w");
-              ob_start();
-              var_dump($data);
-              $stringosa = ob_get_clean();
-              fwrite($myfile, $statement);
-              fclose($myfile);*/
-
   $json = array();
 
   while($data = oci_fetch_array($statement, OCI_ASSOC + OCI_FETCHSTATEMENT_BY_ROW)) {

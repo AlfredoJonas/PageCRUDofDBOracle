@@ -2,7 +2,6 @@
 agenda_DoctorOGlobal = 0;
 agenda_DiarioRango = 0;
 
-
 function insertHTML(from = '', tipo = 0) {
 
 	switch (from) {
@@ -74,20 +73,15 @@ function insertHTML(from = '', tipo = 0) {
 			break;
 
 		case 'CRUD':
-			switch(tipo) {
-				case 1:
-					$(".fields input").prop("disabled", false);
-					$(".fields").removeClass("hidden");
-					break;
-				case 2:
-					$(".fields input").prop("disabled", false);
-					$(".fields").removeClass("hidden");
-					break;
-				case 3:
-					$(".fields input").prop("disabled", true);
-					$(".fields").removeClass("hidden");
-					break;
-				}
+			$('.fields').addClass('hidden');
+			$('.search').addClass('hidden');
+
+			if(tipo != 1)
+				$('.search').removeClass('hidden');
+			else
+				$('.fields').removeClass('hidden');
+
+			break;
 	}
 }
 

@@ -164,7 +164,6 @@ function submitHorario(event) {
 		formMessages.prepend(mensaje_exito);
 
 		fillTable(response);
-
 	})
 
 	.fail(function(data) {
