@@ -43,7 +43,10 @@
 	    					$sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
     					}
     				break;
-    				case 'delete':break;
+    				case 'delete':
+                        if(isset($data["ci"]))
+                            $sentencia_dml = str_replace(':ci', $data["ci"], DML_SENTENCES['EMPLEADO']['delete']);
+                    break;
     			}
     		break;
     		case 'RUTA_DOCTORES':
@@ -63,7 +66,12 @@
 	    					$sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
     					}
     				break;
-    				case 'delete':break;
+    				case 'delete':
+                        if(isset($data["ci"]) || isset($data["num_colegio"])){
+                           $sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', DML_SENTENCES['MEDICO']['delete']);
+                            $sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
+                        }
+                    break;
     			}
     		break;
 			case 'RUTA_PACIENTES':
@@ -79,10 +87,13 @@
     						$clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
 
     						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['PACIENTE']['update']);
-	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
+	    					$sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
     					}
     				break;
-    				case 'delete':break;
+    				case 'delete':
+                        if(isset($data["ci"]))
+                            $sentencia_dml = str_replace(':ci', $data["ci"],DML_SENTENCES['PACIENTE']['delete']);
+                    break;
     			}
     		break;
     		case 'RUTA_CITAS':
@@ -102,7 +113,10 @@
 	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
     					}
     				break;
-    				case 'delete':break;
+    				case 'delete':
+                        if(isset($data["id"]))
+                            $sentencia_dml = str_replace(':id', $data["id"], DML_SENTENCES['CITA']['delete']);
+                    break;
     			}
     		break;
     		case 'RUTA_INVENTARIO':
@@ -122,7 +136,10 @@
 	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
     					}
     				break;
-    				case 'delete':break;
+    				case 'delete':
+                        if(isset($data["id"]))
+                            $sentencia_dml = str_replace(':id', $data["id"], DML_SENTENCES['IMPLEMENTO']['delete']);
+                    break;
     			}
     		break;
     		case 'RUTA_CONSULTAS':
