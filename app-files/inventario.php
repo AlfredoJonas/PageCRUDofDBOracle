@@ -20,8 +20,6 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<input type="number" class="hidden" name="aux" value="0">
-
 					<form class="formImplemento well form-horizontal" action="dml-handler.php" role="form">
 
 						<?php include('checks.php'); ?>

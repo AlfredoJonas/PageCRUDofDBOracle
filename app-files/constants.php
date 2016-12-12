@@ -16,7 +16,7 @@
   true);
 
   define("EMPLEADO_ESPECIFICO_SQL",
-  'SELECT x.ci ci, x.nombre nombre, TO_CHAR(x.fecha_nac, \'YYYY/MM/DD\') fecha, 
+  'SELECT x.ci ci, x.nombre nombre, TO_CHAR(x.fecha_nac, \'YYYY/MM/DD\') fecha,
   x.direccion direccion, x.telefono telefono, x.a, x.b, e.nombre especializacion,
   nvl(eme.ci_empleado, 0) is_empleado, nvl(eme.ci_medico, 0) is_medico
   FROM (
@@ -38,12 +38,19 @@
   true);
 
   define("CITA_ESPECIFICA_SQL",
-  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'YYYY/MM/DD\') fecha, TO_CHAR(fecha, \'HH24:MI\') hora, costo, motivo,
+  'SELECT c.url_imagen_odontograma, TO_CHAR(c.fecha, \'YYYY/MM/DD\') fecha, TO_CHAR(c.fecha, \'HH24:MI\') hora, c.costo, c.motivo,
   p.ci || \' - \' || p.nombre paciente,
-  m.num_colegio || \' - \' || m.nombre medico
-  FROM cita c JOIN paciente p ON(c.ci_paciente = p.ci)
+  m.num_colegio || \' - \' || m.nombre medico,
+  t.id, t.descripcion, ct.ci_medico, ct.abonado,
+  i.nombre, i.marca, ti.costo, ti.cantidad
+  FROM cita c
+    JOIN cita_tratamiento ct ON(c.id = ct.cita_id)
+    JOIN tratamiento t ON(ct.tratamiento_id = t.id)
+    JOIN tratamiento_implemento ti ON(t.id = ti.tratamiento_id)
+    JOIN implemento i ON(i.id = ti.implemento_id)
+    JOIN paciente p ON(c.ci_paciente = p.ci)
     JOIN medico m ON(c.ci_medico = m.ci)
-  WHERE ID = :id',
+  WHERE c.id = :id',
   true);
 
   define("LISTA_ESPECIALIZACIONES_SQL",
@@ -55,7 +62,7 @@
   true);
 
   define("IMPLEMENTO_ESPECIFICO_SQL",
-  'SELECT * FROM implemento
+  'SELECT nombre, marca, descripcion, costo, cantidad FROM implemento
   WHERE ID = :id',
   true);
 

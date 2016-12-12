@@ -76,7 +76,7 @@
     			}
     		break;
 
-			case 'RUTA_PACIENTES':
+				case 'RUTA_PACIENTES':
     			switch(strtolower($_POST["operacion"])) {
     				case 'insert':
     					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','OCUPACION'),$data);
@@ -93,9 +93,9 @@
     					}
     				break;
     				case 'delete':
-                        if(isset($data["ci"]))
-                            $sentencia_dml = str_replace(':ci', $data["ci"],DML_SENTENCES['PACIENTE']['delete']);
-                    break;
+              if(isset($data["ci"]))
+                  $sentencia_dml = str_replace(':ci', $data["ci"],DML_SENTENCES['PACIENTE']['delete']);
+          	break;
     			}
     		break;
 
