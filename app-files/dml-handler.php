@@ -110,8 +110,21 @@
     		break;
     		case 'RUTA_INVENTARIO':
     			switch(strtolower($_POST["operacion"])) {
-    				case 'insert':break;
-    				case 'update':break;
+    				case 'insert':
+    					$array_suplantable = onInsertingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['IMPLEMENTO']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+
+    				break;
+    				case 'update':
+    					if(isset($data["id"])){
+	    					$clave_valor = onUpdatingDevolverParametros(array('ID','NOMBRE','MARCA','DESCRIPCION','COSTO','CANTIDAD'), $data);
+
+	    					$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['IMPLEMENTO']['update']);
+	    					$sentencia_dml = str_replace(':id', $data["id"], $sentencia_dml);
+    					}
+    				break;
     				case 'delete':break;
     			}
     		break;
