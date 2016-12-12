@@ -23,6 +23,7 @@
 					<li class=""><a href="citas.php">Citas</a></li>
 					<li class=""><a href="informacion.php">Informacion</a></li>
 					<li class=""><a href="horarios.php">Agenda</a></li>
+					<li class=""><a href="graficas.php">Graficas</a></li>
 				</ul>
 			</div>
 		</div>
