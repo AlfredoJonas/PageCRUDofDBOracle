@@ -42,11 +42,13 @@ function submitEmpleado(event) {
 	var form = $('.formEmpleado');
 	var data = form.serialize();
   var formMessages = $('#form-messages');
+	var ruta = 'RUTA_EMPLEADO';
+	var operacion = $('input[name=tipoCRUD]:checked').val();
 
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: data
+	    data: {data, ruta: ruta, operacion: operacion}
 	})
 
   .done(function(response) {

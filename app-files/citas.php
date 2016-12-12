@@ -20,7 +20,7 @@
 
 					<input type="number" class="hidden" name="aux" value="0">
 
-					<form class="formCita well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formCita well form-horizontal" action="dml-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 

@@ -256,7 +256,7 @@ function requestPacientes(){
   });
 }
 
-function requestField(tipo = 0, form = '') {
+function requestField(tipo = '', form = '') {
 
 	var id = $('#search').val();
 
@@ -341,7 +341,7 @@ function requestField(tipo = 0, form = '') {
 
 		$('.fields').removeClass('hidden');
 
-		if(tipo === 3)
+		if(tipo === 'delete')
 			$('.fields input').prop('disabled', true);
   })
 

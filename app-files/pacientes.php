@@ -17,7 +17,7 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<form class="formPaciente well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formPaciente well form-horizontal" action="dml-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 
