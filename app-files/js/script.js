@@ -89,7 +89,18 @@ function parseData(data, tipo) {
 	if(tipo === "multiple_select" || tipo == "single_select")
   	return new Option(data.NOMBRE, data.NOMBRE);
 	else if(tipo === 'forms') {
+		var resp = '<form class="formTratamiento well form-horizontal" action="dml-handler.php" role="form">\
+									<?php include("checks.php"); ?>\
+										<fieldset class="fields hidden" data-ruta="RUTA_CITAS" data-consulta="CITA_ESPECIFICA">\
+											<legend>Tratamiento</legend>';
 
+		for(var key in data)
+			console.log(data[key]);
+
+		resp += '</fieldset>\
+					</form>';
+
+		return resp;
 	}
 	else {
 		var resp = "<tr>";
