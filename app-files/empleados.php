@@ -6,6 +6,10 @@
 			$(document).ready(function() {
 				requestEspecializaciones();
 				requestEmpleados();
+
+				$('.formEmpleado').submit(function(event) {
+					submitEmpleado(event);
+				});
 			});
 		</script>
 	</head>
@@ -29,7 +33,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="cedula" id="cifi" placeholder="Ingrese la cedula de identidad o el pasaporte del empleado" required>
+										<input type="text" class="form-control" name="ci" id="cifi" placeholder="Ingrese la cedula de identidad o el pasaporte del empleado" required>
 									</div>
 								</div>
 							</div>
@@ -49,7 +53,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="date" class="form-control" name="fechaNacimiento" id="ffi">
+										<input type="date" class="form-control" name="fecha_nac" id="ffi">
 									</div>
 								</div>
 							</div>
@@ -115,7 +119,7 @@
 									<div class="col-sm-9 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" class="form-control" name="numColegio" id="numColegio">
+											<input type="text" class="form-control" name="num_colegio" id="numColegio">
 										</div>
 									</div>
 								</div>

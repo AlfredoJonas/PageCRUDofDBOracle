@@ -5,6 +5,10 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				requestPacientes();
+
+				$('.formPaciente').submit(function(event) {
+					submitPaciente(event);
+				});
 			});
 		</script>
 	</head>
@@ -35,51 +39,51 @@
 							</div>
 
 							<div class="form-group">
-								<label for="nombre-paciente" class="col-sm-3 control-label">Nombre</label>
+								<label for="nombre" class="col-sm-3 control-label">Nombre</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="nombre" id="nombre-paciente" placeholder="Ingrese el nombre del paciente">
+										<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre del paciente">
 									</div>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="nac-paciente" class="col-sm-3 control-label">Fecha de nacimiento</label>
+								<label for="fecha_nac" class="col-sm-3 control-label">Fecha de nacimiento</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="date" class="form-control" name="fechaNacimiento" id="nac-paciente">
+										<input type="date" class="form-control" name="fecha_nac" id="fecha_nac">
 									</div>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="dir-paciente" class="col-sm-3 control-label">Direccion</label>
+								<label for="direccion" class="col-sm-3 control-label">Direccion</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="direccion" id="dir-paciente" placeholder="Ingrese la direccion del paciente">
+										<input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ingrese la direccion del paciente">
 									</div>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="tel-paciente" class="col-sm-3 control-label">Teléfono</label>
+								<label for="telefono" class="col-sm-3 control-label">Teléfono</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="tel" class="form-control" name="telefono" id="tel-paciente" placeholder="Ingrese el teléfono del paciente">
+										<input type="tel" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el teléfono del paciente">
 									</div>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="ocu-paciente" class="col-sm-3 control-label">Ocupación</label>
+								<label for="ocupacion" class="col-sm-3 control-label">Ocupación</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="ocupacion" id="ocu-paciente" placeholder="Ingrese la ocupación del paciente">
+										<input type="text" class="form-control" name="ocupacion" id="ocupacion" placeholder="Ingrese la ocupación del paciente">
 									</div>
 								</div>
 							</div>

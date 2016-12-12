@@ -5,6 +5,10 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				requestInventario();
+
+				$('.formInventario').submit(function(event) {
+					submitInventario(event);
+				});
 			});
 		</script>
 	</head>

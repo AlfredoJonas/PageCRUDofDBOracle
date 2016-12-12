@@ -48,7 +48,7 @@ function submitEmpleado(event) {
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {data, ruta: ruta, operacion: operacion}
+	    data: {ruta: ruta, operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {
@@ -75,11 +75,44 @@ function submitCita(event){
 	var form = $('.formCita');
 	var data = form.serialize();
   var formMessages = $('#form-messages');
+	var operacion = $('input[name=tipoCRUD]:checked').val();
 
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: data
+	    data: {ruta: ruta, operacion: operacion, data_extra:data}
+	})
+
+  .done(function(response) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-success');
+
+		formMessages.prepend(mensaje_exito);
+	})
+
+  .fail(function(data) {
+
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+      formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend(mensaje_falla);
+	});
+}
+
+function submitPaciente(event){
+  event.preventDefault();
+	var form = $('.formPaciente');
+	var data = form.serialize();
+  var formMessages = $('#form-messages');
+	var operacion = $('input[name=tipoCRUD]:checked').val();
+
+	$.ajax({
+    type: 'POST',
+    url: form.attr('action'),
+    data: {ruta: 'RUTA_PACIENTES', operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {
@@ -106,11 +139,12 @@ function submitImplemento(event) {
 	var form = $('.formImplemento');
 	var data = form.serialize();
   var formMessages = $('#form-messages');
+	var operacion = $('input[name=tipoCRUD]:checked').val();
 
 	$.ajax({
-			type: 'POST',
-			url: form.attr('action'),
-			data: data
+	    type: 'POST',
+	    url: form.attr('action'),
+	    data: {ruta: ruta, operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {
