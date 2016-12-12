@@ -22,7 +22,7 @@
 
 						<?php include('checks.php'); ?>
 
-						<fieldset class="fields hidden">
+						<fieldset class="fields hidden" data-ruta="RUTA_EMPLEADOS" data-consulta="EMPLEADO_ESPECIFICO">
 							<legend>Empleados</legend>
 							<div class="form-group">
 								<label for="cifi" class="col-sm-3 control-label">C.I. o pasaporte</label>
@@ -40,16 +40,6 @@
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control" name="nombre" id="nfi" placeholder="Ingrese el nombre del empleado">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="afi" class="col-sm-3 control-label">Apellido</label>
-								<div class="col-sm-9 inputGroupContainer">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" name="apellido" id="afi" placeholder="Ingrese el apellido del empleado">
 									</div>
 								</div>
 							</div>

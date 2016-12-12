@@ -255,3 +255,96 @@ function requestPacientes(){
       formMessages.prepend('Oops! An error occured.');
   });
 }
+
+function requestField(tipo = 0, form = '') {
+
+	var id = $('#search').val();
+
+	if(id === '')
+		return;
+
+	var ruta = $('.fields').data("ruta");
+	var consulta = $('.fields').data("consulta");
+  var formMessages = $('#form-messages');
+
+	var inputs = [
+		$("input[name=cedula]"),
+		$("input[name=nombre]"),
+		$("input[name=fechaNacimiento]"),
+		$("input[name=direccion]"),
+		$("input[name=telefono]"),
+		$("input[name=ocupacion]"),
+	];
+
+	$.ajax({
+    type: 'POST',
+    url: 'ajax-handler.php',
+    data: {ruta: ruta, consulta: consulta, data_extra:"id="+id}
+  })
+
+  .done(function(response){
+
+		var count = 0;
+
+		var inputs = {
+			formEmpleado: [
+				$("input[name=cedula]"),
+				$("input[name=nombre]"),
+				$("input[name=fechaNacimiento]"),
+				$("input[name=direccion]"),
+				$("input[name=telefono]"),
+				$("input[name=tipoEmpleado]"),
+				$("input[name=cargo]"),
+				$("input[name=rif]"),
+				$("input[name=numColegio]")
+			],
+			formImplemento: [
+				$("input[name=aux]"),
+				$("input[name=nombre]"),
+				$("input[name=marca]"),
+				$("input[name=descripcion]"),
+				$("input[name=costo]"),
+				$("input[name=cantidad]")
+			],
+			formCita: [
+				$("input[name=pacienteSeleccion]"),
+				$("input[name=doctorSeleccion]"),
+				$("input[name=fechaNacimiento]"),
+				$("input[name=fechaInput]"),
+				$("input[name=horaInput]"),
+				$("input[name=odontogramaInput]"),
+				$("input[name=presupuestoInput]")
+			],
+			formPaciente: [
+				$("input[name=cedula]"),
+				$("input[name=nombre]"),
+				$("input[name=fechaNacimiento]"),
+				$("input[name=direccion]"),
+				$("input[name=telefono]"),
+				$("input[name=ocupacion]")
+			],
+		};
+
+		for(key in response[0])
+			if(count < inputs[form].length)
+				inputs[form][count++].val(response[0][key]);
+
+		if(form === 'formPaciente' || form === 'formEmpleado')
+			document.querySelector("input[name=fechaNacimiento]").valueAsDate = new Date(response[0].FECHA_NAC);
+
+		$('.fields').removeClass('hidden');
+
+		if(tipo === 3)
+			$('.fields input').prop('disabled', true);
+  })
+
+  .fail(function(data) {
+    formMessages.removeClass('hidden');
+    formMessages.addClass('alert-danger');
+
+    if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+    else
+      formMessages.prepend('Oops! An error occured.');
+  });
+}

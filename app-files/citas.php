@@ -20,7 +20,7 @@
 
 						<?php include('checks.php'); ?>
 
-						<fieldset class="fields hidden">
+						<fieldset class="fields hidden" data-ruta="RUTA_CITAS" data-consulta="CITA_ESPECIFICA">
 							<legend>Control de citas</legend>
 							<div class="form-group">
 								<label for="identificadorInput" class="col-sm-3 control-label">Identificador</label>

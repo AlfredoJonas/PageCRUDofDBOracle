@@ -47,6 +47,9 @@
           case 'LISTA_INVENTARIO':
             $consulta = LISTA_INVENTARIO_SQL;
             break;
+          case 'IMPLEMENTO_ESPECIFICO':
+            $consulta = str_replace(':id', $data['id'], IMPLEMENTO_ESPECIFICO_SQL);
+            break;
         }
         break;
 
@@ -54,6 +57,9 @@
         switch ($tipo_query) {
           case 'LISTA_PACIENTES':
             $consulta = LISTA_PACIENTES_SQL;
+            break;
+          case 'PACIENTE_ESPECIFICO':
+            $consulta = str_replace(':id', $data['id'], PACIENTE_ESPECIFICO_SQL);
             break;
         }
         break;

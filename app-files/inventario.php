@@ -17,11 +17,13 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
+					<input type="number" class="hidden" name="aux" value="0">
+
 					<form class="formImplemento well form-horizontal" action="ajax-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 
-						<fieldset class="fields hidden">
+						<fieldset class="fields hidden" data-ruta="RUTA_INVENTARIO" data-consulta="IMPLEMENTO_ESPECIFICO">
 							<legend>Inventario</legend>
 							<div class="form-group">
 								<label for="nfi" class="col-sm-3 control-label">Nombre</label>

@@ -7,23 +7,39 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  "select * from empleado",
+  'SELECT * FROM empleado',
+  true);
+
+  define("EMPLEADO_ESPECFICIO_SQL",
+  'SELECT * FROM empleado WHERE CI = :id',
   true);
 
   define("LISTA_CITAS_SQL",
-  "select * from cita",
+  'SELECT * FROM cita',
+  true);
+
+  define("CITA_ESPECIFICA_SQL",
+  'SELECT * FROM cita WHERE ID = :id',
   true);
 
   define("LISTA_ESPECIALIZACIONES_SQL",
-  "select * from especializacion",
+  'SELECT * FROM especializacion',
   true);
 
   define("LISTA_INVENTARIO_SQL",
-  "select * from implemento",
+  'SELECT * FROM implemento',
+  true);
+
+  define("IMPLEMENTO_ESPECIFICO_SQL",
+  'SELECT * FROM implemento WHERE ID = :id',
   true);
 
   define("LISTA_PACIENTES_SQL",
-  "select * from paciente",
+  'SELECT * FROM paciente',
+  true);
+
+  define("PACIENTE_ESPECIFICO_SQL",
+  'SELECT * FROM paciente WHERE CI = :id',
   true);
 
   define("LISTA_NOMBRES_DOCTORES_SQL",
