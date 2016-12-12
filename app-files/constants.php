@@ -41,7 +41,7 @@
   'SELECT c.url_imagen_odontograma, TO_CHAR(c.fecha, \'YYYY/MM/DD\') fecha, TO_CHAR(c.fecha, \'HH24:MI\') hora, c.costo, c.motivo,
   p.ci || \' - \' || p.nombre paciente,
   m.num_colegio || \' - \' || m.nombre medico,
-  t.id, t.descripcion, ct.ci_medico, ct.abonado,
+  t.id id_tratamiento, t.descripcion, ct.ci_medico, ct.abonado,
   i.nombre, i.marca, ti.costo, ti.cantidad
   FROM cita c
     JOIN cita_tratamiento ct ON(c.id = ct.cita_id)
