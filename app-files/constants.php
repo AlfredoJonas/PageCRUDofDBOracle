@@ -16,15 +16,19 @@
   true);
 
   define("EMPLEADO_ESPECIFICO_SQL",
-  'SELECT x.ci ci, x.nombre nombre, TO_CHAR(x.fecha_nac, \'YYYY-MM-DD\') fecha_nac, x.direccion direccion, x.telefono telefono, x.a, x.b, id_especializacion, nvl(eme.ci_empleado, 0), nvl(eme.ci_medico, 0)
+  'SELECT x.ci ci, x.nombre nombre, TO_CHAR(x.fecha_nac, \'YYYY/MM/DD\') fecha, 
+  x.direccion direccion, x.telefono telefono, x.a, x.b, e.nombre especializacion,
+  nvl(eme.ci_empleado, 0) is_empleado, nvl(eme.ci_medico, 0) is_medico
   FROM (
-    SELECT ci, nombre, fecha_nac, direccion, telefono, TO_CHAR(sueldo) a, TO_CHAR(cargo_id) b
-    FROM empleado e JOIN cargo_empleado c ON (e.ci = c.ci_empleado)
+    SELECT ci, e.nombre, fecha_nac, direccion, telefono, TO_CHAR(sueldo) a, TO_CHAR(c.nombre) b
+    FROM empleado e JOIN cargo_empleado ce ON (e.ci = ce.ci_empleado)
+      JOIN cargo c ON(ce.cargo_id = c.id)
     UNION
     SELECT ci, nombre, fecha_nac, direccion, telefono, TO_CHAR(rif) a, TO_CHAR(num_colegio) b
     FROM medico) x
   JOIN especializacion_med_emp eme ON (x.ci = eme.ci_empleado OR x.ci = eme.ci_medico)
-  WHERE x.ci = &ci;',
+  JOIN especializacion e ON (eme.id_especializacion = e.id)
+  WHERE x.ci = :id',
   true);
 
   define("LISTA_CITAS_SQL",

@@ -79,16 +79,16 @@
 							</div>
 
 							<div class="form-group">
-								<label for="tipoEmpleado" class="col-sm-3 control-label">Tipo</label>
+								<label for="tipo_empleado" class="col-sm-3 control-label">Tipo</label>
 								<div class="col-sm-4 inputGroupContainer">
 									<div class="radio">
 										<label>
-											<input type="radio" name="tipoEmpleado" id="tipoEmpleado" value="1" onclick="insertHTML('empleados', 1)">Empleado
+											<input type="radio" name="tipo_empleado" id="tipo_empleado" value="1" onclick="insertHTML('empleados', 1)">Empleado
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="tipoEmpleado" id="tipoEmpleado" value="2" onclick="insertHTML('empleados', 2)">Doctor
+											<input type="radio" name="tipo_empleado" id="tipo_empleado" value="2" onclick="insertHTML('empleados', 2)">Doctor
 										</label>
 									</div>
 								</div>
@@ -109,7 +109,7 @@
 									<div class="col-sm-9 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" class="form-control" name="cargo" id="cargo_empleado">
+											<input type="text" class="form-control" name="cargo" id="cargo_empleado" placeholder="Ingrese el cargo del empleado">
 										</div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 									<div class="col-sm-9 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" class="form-control" name="rif" id="rif">
+											<input type="text" class="form-control" name="rif" id="rif" placeholder="Ingrese el RIF del doctor">
 										</div>
 									</div>
 								</div>
@@ -130,7 +130,7 @@
 									<div class="col-sm-9 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" class="form-control" name="num_colegio" id="numColegio">
+											<input type="text" class="form-control" name="num_colegio" id="numColegio" placeholder="Ingrese el número de colegio del doctor">
 										</div>
 									</div>
 								</div>
@@ -144,7 +144,7 @@
 									</select>
 								</div>
 								<div class="col-sm-4">
-									<small class="form-text text-muted">Puede seleccionar mas de una</small>
+									<small class="form-text text-muted">Siempre mantenga presionado CTRL</small>
 								</div>
 							</div>
 
