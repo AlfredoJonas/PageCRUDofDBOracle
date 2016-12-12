@@ -46,8 +46,30 @@
 				 		</div>
 			 		</div>
 
+					<div class="<?php echo CONSULTAS['Graficas']?> hidden">
+						<div class="form-group">
+					    <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
+					      <div class="radio">
+					        <label>
+					          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="1" onclick="insertHTML('graficas', 1)">Ingresos por mes en un año dado
+					        </label>
+					      </div>
+					      <div class="radio">
+					        <label>
+					          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="2" onclick="insertHTML('graficas', 2)">Ingresos por mes dados dos años
+					        </label>
+					      </div>
+					      <div class="radio">
+					        <label>
+					          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="3" onclick="insertHTML('graficas', 3)">Otra gráfica ahí
+					        </label>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
 					<div class="<?php echo CONSULTAS['El doctor derrochador']?> hidden">
-						<div class="form-group implemento">
+						<div class="form-group">
 							<label for="doc-consulta" class="col-sm-3 control-label">ID Implemento</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
@@ -58,8 +80,20 @@
 						</div>
 					</div>
 
+					<div class="<?php echo CONSULTAS['Ganancias por mes']?> hidden">
+						<div class="form-group">
+							<label for="ganacias-consulta" class="col-sm-3 control-label">Mes a evaluar</label>
+							<div class="col-sm-9 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" class="form-control" name="mes" id="mes" placeholder="Ingrese el mes que desea evaluar">
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="<?php echo CONSULTAS['Historial de citas']?> hidden">
-						<div class="form-group implemento">
+						<div class="form-group">
 							<label for="imp-consulta" class="col-sm-3 control-label">CI Paciente</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
@@ -71,7 +105,7 @@
 					</div>
 
 					<div class="<?php echo CONSULTAS['Historial de tratamientos']?> hidden">
-						<div class="form-group implemento">
+						<div class="form-group">
 							<label for="imp2-consulta" class="col-sm-3 control-label">CI Paciente</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">
@@ -83,7 +117,7 @@
 					</div>
 
 					<div class="<?php echo CONSULTAS['Tratamientos realizados']?> hidden">
-						<div class="form-group implemento">
+						<div class="form-group">
 							<label for="trat-consulta" class="col-sm-3 control-label">Fecha a revisar</label>
 							<div class="col-sm-9 inputGroupContainer">
 								<div class="input-group">

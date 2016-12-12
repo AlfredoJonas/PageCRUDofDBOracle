@@ -227,17 +227,22 @@
   true);
 
   define("TRATAMIENTOS_DIA_SQL",
-  "SELECT P.NOMBRE 'Paciente', M.NOMBRE 'Medico', T.DESCRIPCION 'Descripcion tratamiento'
+  'SELECT P.NOMBRE paciente, M.NOMBRE medico, T.DESCRIPCION descripcion
   FROM CITA_TRATAMIENTO CT
     JOIN CITA C ON(CT.CITA_ID = C.ID)
     JOIN PACIENTE P ON (C.CI_PACIENTE = P.CI)
     JOIN MEDICO M ON(CT.CI_MEDICO = M.CI)
   JOIN TRATAMIENTO T ON(CT.TRATAMIENTO_ID = T.ID)
-  WHERE CT.FECHA = TO_DATE('&FECHA','DD/MM/YY')",
+  WHERE TO_CHAR(CT.FECHA, \'YYYY-MM-DD\') = \'&FECHA\'',
+  true);
+
+  define("GANANCIAS_MES_SQL",
+  'SELECT GANANCIA(\':mes\') Ganancia FROM DUAL',
   true);
 
   //Las super consultas
   const CONSULTAS = array(
+    "Graficas" => "graficas",
     "Tratamientos realizados" => "t-realizados",
     "Ganancias generales" => "g-generales",
     "Ganancias por mes" => "g-por-mes",
