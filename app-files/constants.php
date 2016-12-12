@@ -16,11 +16,12 @@
   true);
 
   define("LISTA_CITAS_SQL",
-  'SELECT * FROM cita',
+  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'DD/MM/YY\') fecha, costo, motivo, ci_paciente paciente, ci_medico medico
+  FROM cita',
   true);
 
   define("CITA_ESPECIFICA_SQL",
-  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'DD/MM/YY HH12:MI\') fecha, costo, motivo
+  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'DD/MM/YY HH:MI\') fecha, costo, motivo, ci_paciente paciente, ci_medico medico
   FROM cita WHERE ID = :id',
   true);
 
@@ -47,13 +48,13 @@
   true);
 
   define("LISTA_NOMBRES_DOCTORES_SQL",
-  'SELECT NUM_COLEGIO || \'       -       \' || NOMBRE AS NOMBRE
+  'SELECT NUM_COLEGIO || \' - \' || NOMBRE AS NOMBRE
   FROM MEDICO
   ORDER BY NUM_COLEGIO',
   true);
 
   define("LISTA_NOMBRES_PACIENTES_SQL",
-  'SELECT CI || \'       -       \' || NOMBRE AS NOMBRE
+  'SELECT CI || \' - \' || NOMBRE AS NOMBRE
   FROM PACIENTE
   ORDER BY CI ASC',
   true);

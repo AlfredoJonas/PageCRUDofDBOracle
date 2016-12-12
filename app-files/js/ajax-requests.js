@@ -307,13 +307,13 @@ function requestField(tipo = 0, form = '') {
 				$("input[name=cantidad]")
 			],
 			formCita: [
-				$("input[name=pacienteSeleccion]"),
-				$("input[name=doctorSeleccion]"),
-				$("input[name=fechaNacimiento]"),
+				$("input[name=aux]"),
+				$("input[name=odontogramaInput]"),
 				$("input[name=fechaInput]"),
 				$("input[name=horaInput]"),
-				$("input[name=odontogramaInput]"),
-				$("input[name=presupuestoInput]")
+				$("input[name=presupuestoInput]"),
+				$("input[name=pacienteSeleccion]"),
+				$("input[name=doctorSeleccion]")
 			],
 			formPaciente: [
 				$("input[name=cedula]"),
@@ -325,14 +325,18 @@ function requestField(tipo = 0, form = '') {
 			],
 		};
 
-		console.log(inputs[form])
-
 		for(key in response[0])
 			if(count < inputs[form].length)
 				inputs[form][count++].val(response[0][key]);
 
+		console.log(response[0]);
+
 		if(form === 'formPaciente' || form === 'formEmpleado')
 			document.querySelector("input[name=fechaNacimiento]").valueAsDate = new Date(response[0].FECHA_NAC);
+
+		if(form === 'formCita') {
+			document.querySelector("input[name=fechaInput]").valueAsDate = new Date(response[0].FECHA);
+		}
 
 		$('.fields').removeClass('hidden');
 
