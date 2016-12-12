@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -9,7 +9,7 @@
 		<input type="text" name="operacion" placeholder="operacion">
 		<input type="text" name="data_extra" placeholder="data_extra">
 		<input type="submit" name="s" value="Enviar">
-	</form>
+	</form> -->
 
 <?php
 	//require_once 'constants.php';
@@ -18,8 +18,9 @@
 	$sentencia_dml = 0;
 
 	if(isset($_POST["ruta"]) && isset($_POST["operacion"]) && isset($_POST["data_extra"])){
+
 		$data = array();
-    	
+
     	parse_str($_POST["data_extra"],$data);
 
     	comprobarData($data);
@@ -79,6 +80,8 @@
 
     						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['PACIENTE']['update']);
 	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
+
+								die($sentencia_dml);
     					}
     				break;
     				case 'delete':break;
@@ -139,7 +142,6 @@
     	//}
     }
 
-
     function onUpdatingDevolverParametros($parameters,$values){
     		$output = '';
     		foreach($parameters as $name_attribute) {
@@ -189,6 +191,6 @@
 				$data["fecha"] = 'TO_DATE(\''.$data["fecha"].'\', \'YYYY-MM-DD\')';
     	}
 ?>
-</body>
-</html>
 
+<!-- </body>
+</html> -->

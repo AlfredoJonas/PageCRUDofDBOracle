@@ -5,6 +5,10 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				requestInventario();
+
+				$('.formInventario').submit(function(event) {
+					submitInventario(event);
+				});
 			});
 		</script>
 	</head>
@@ -19,7 +23,7 @@
 
 					<input type="number" class="hidden" name="aux" value="0">
 
-					<form class="formImplemento well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formImplemento well form-horizontal" action="dml-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 

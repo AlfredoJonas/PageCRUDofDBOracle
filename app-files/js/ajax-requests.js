@@ -256,7 +256,7 @@ function requestPacientes(){
   });
 }
 
-function requestField(tipo = 0, form = '') {
+function requestField(tipo = '', form = '') {
 
 	var id = $('#search').val();
 
@@ -266,15 +266,6 @@ function requestField(tipo = 0, form = '') {
 	var ruta = $('.fields').data("ruta");
 	var consulta = $('.fields').data("consulta");
   var formMessages = $('#form-messages');
-
-	var inputs = [
-		$("input[name=cedula]"),
-		$("input[name=nombre]"),
-		$("input[name=fechaNacimiento]"),
-		$("input[name=direccion]"),
-		$("input[name=telefono]"),
-		$("input[name=ocupacion]"),
-	];
 
 	$.ajax({
     type: 'POST',
@@ -293,13 +284,13 @@ function requestField(tipo = 0, form = '') {
 			formEmpleado: [
 				$("input[name=cedula]"),
 				$("input[name=nombre]"),
-				$("input[name=fechaNacimiento]"),
+				$("input[name=fecha_nac]"),
 				$("input[name=direccion]"),
 				$("input[name=telefono]"),
-				$("input[name=tipoEmpleado]"),
+				$("input[name=tipo]"),
 				$("input[name=cargo]"),
 				$("input[name=rif]"),
-				$("input[name=numColegio]")
+				$("input[name=num_colegio]")
 			],
 			formImplemento: [
 				$("input[name=aux]"),
@@ -311,17 +302,18 @@ function requestField(tipo = 0, form = '') {
 			],
 			formCita: [
 				$("input[name=aux]"),
-				$("input[name=odontogramaInput]"),
-				$("input[name=fechaInput]"),
-				$("input[name=horaInput]"),
-				$("input[name=presupuestoInput]"),
-				$("input[name=pacienteSeleccion]"),
-				$("input[name=doctorSeleccion]")
+				$("input[name=url_imagen_odontograma]"),
+				$("input[name=fecha]"),
+				$("input[name=hora]"),
+				$("input[name=costo]"),
+				$("input[name=motivo]"),
+				$("input[name=ci_paciente]"),
+				$("input[name=ci_doctor]")
 			],
 			formPaciente: [
 				$("input[name=cedula]"),
 				$("input[name=nombre]"),
-				$("input[name=fechaNacimiento]"),
+				$("input[name=fecha_nac]"),
 				$("input[name=direccion]"),
 				$("input[name=telefono]"),
 				$("input[name=ocupacion]")
@@ -334,14 +326,14 @@ function requestField(tipo = 0, form = '') {
 		}
 
 		if(form === 'formPaciente' || form === 'formEmpleado')
-			document.querySelector("input[name=fechaNacimiento]").valueAsDate = new Date(response[0].FECHA);
+			document.querySelector("input[name=fecha_nac]").valueAsDate = new Date(response[0].FECHA);
 
 		if(form === 'formCita')
-			document.querySelector("input[name=fechaInput]").valueAsDate = new Date(response[0].FECHA);
+			document.querySelector("input[name=fecha]").valueAsDate = new Date(response[0].FECHA);
 
 		$('.fields').removeClass('hidden');
 
-		if(tipo === 3)
+		if(tipo === 'delete')
 			$('.fields input').prop('disabled', true);
   })
 

@@ -4,17 +4,17 @@
     <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
       <div class="radio-inline">
         <label>
-          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="1" onclick="insertHTML('CRUD', 1)">Insertar
+          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="insert" onclick="insertHTML('CRUD', 1)">Insertar
         </label>
       </div>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="2" onclick="insertHTML('CRUD', 2)">Actualizar
+          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="update" onclick="insertHTML('CRUD', 2)">Actualizar
         </label>
       </div>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="3" onclick="insertHTML('CRUD', 3)">Eliminar
+          <input type="radio" name="tipoCRUD" id="tipoCRUD" value="delete" onclick="insertHTML('CRUD', 3)">Eliminar
         </label>
       </div>
     </div>
@@ -33,6 +33,4 @@
       </div>
     </div>
   </div>
-
-
 </fieldset>
