@@ -48,14 +48,17 @@
 				
 				case 'GANANCIA_POR_MES':
 					if(isset($_POST["mes"]) && isset($_POST["ano"])){
-						$consulta = oci_parse($conn, 'begin :r := myfunc(:mes,:anho); end;');
+						$consulta = oci_parse($conn, 'begin :r := GANANCIA(:mes,:anho); end;');
 						oci_bind_by_name($stid, ':mes', $_POST["mes"]);
 						oci_bind_by_name($stid, ':anho', $_POST["ano"], 40);
 					}
 					break;
 
-				case 3:
-					'GRAFICA_X'
+				case 'GRAFICA_X':
+					if(isset($_POST["ano"])){
+						$consulta = oci_parse($conn, 'begin :r := GRAFICOANIO(:anho); end;');
+						oci_bind_by_name($stid, ':anho', $_POST["ano"], 40);
+					}
 					break;
 
 				case 4:
