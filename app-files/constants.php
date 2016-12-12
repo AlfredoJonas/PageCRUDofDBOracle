@@ -7,22 +7,28 @@
 
   //SQL
   define("LISTA_EMPLEADOS_SQL",
-  'SELECT * FROM empleado',
+  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, sueldo
+  FROM empleado',
   true);
 
   define("EMPLEADO_ESPECIFICO_SQL",
-  'SELECT * FROM empleado
+  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, sueldo
+  FROM empleado
   WHERE CI = :id',
   true);
 
   define("LISTA_CITAS_SQL",
-  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'DD/MM/YY\') fecha, costo, motivo, ci_paciente paciente, ci_medico medico
+  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'YYYY/MM/DD\') fecha, costo, motivo, ci_paciente paciente, ci_medico medico
   FROM cita',
   true);
 
   define("CITA_ESPECIFICA_SQL",
-  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'DD/MM/YY HH:MI\') fecha, costo, motivo, ci_paciente paciente, ci_medico medico
-  FROM cita WHERE ID = :id',
+  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'YYYY/MM/DD\') fecha, TO_CHAR(fecha, \'HH24:MI\') hora, costo, motivo,
+  p.ci || \' - \' || p.nombre paciente,
+  m.num_colegio || \' - \' || m.nombre medico
+  FROM cita c JOIN paciente p ON(c.ci_paciente = p.ci)
+    JOIN medico m ON(c.ci_medico = m.ci)
+  WHERE ID = :id',
   true);
 
   define("LISTA_ESPECIALIZACIONES_SQL",
@@ -39,11 +45,13 @@
   true);
 
   define("LISTA_PACIENTES_SQL",
-  'SELECT * FROM paciente',
+  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, ocupacion
+  FROM paciente',
   true);
 
   define("PACIENTE_ESPECIFICO_SQL",
-  'SELECT * FROM paciente
+  'SELECT ci, nombre, TO_CHAR(fecha_nac, \'YYYY/MM/DD\') fecha, direccion, telefono, ocupacion
+  FROM paciente
   WHERE CI = :id',
   true);
 
@@ -60,9 +68,9 @@
   true);
 
   define("LISTA_ATRIBUTOS_CITA_SQL",
-  'SELECT p.CI || \'       -        \' || p.NOMBRE AS PACIENTE,
-       m.NUM_COLEGIO || \'       -       \' || m.NOMBRE AS DOCTOR,
-       TO_CHAR(c.FECHA,\'DD/MM/YYYY\') AS FECHA,
+  'SELECT p.CI || \' - \' || p.NOMBRE AS PACIENTE,
+       m.NUM_COLEGIO || \' - \' || m.NOMBRE AS DOCTOR,
+       TO_CHAR(c.FECHA, \'YYYY/MM/DD\') AS FECHA,
        c.URL_IMAGEN_ODONTOGRAMA AS ODONTOGRAMA,
        c.COSTO AS PRESUPUESTO
   FROM CITA c
@@ -118,7 +126,7 @@
             \'CITA\' as TIPO FROM CITA c
       JOIN MEDICO m ON c.CI_MEDICO = m.CI
       WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') = \':fecha_input\'
-      AND (m.NUM_COLEGIO || \'       -       \' || m.NOMBRE) = \':doctor_cadena\'
+      AND (m.NUM_COLEGIO || \' - \' || m.NOMBRE) = \':doctor_cadena\'
       UNION
       SELECT ct.FECHA AS FECHA,
               ms.NOMBRE AS DOCTOR,
@@ -127,7 +135,7 @@
               \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
       JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
       WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') = :fecha_input
-      AND (ms.NUM_COLEGIO || \'       -       \' || ms.NOMBRE) = \':doctor_cadena\'
+      AND (ms.NUM_COLEGIO || \' - \' || ms.NOMBRE) = \':doctor_cadena\'
       ORDER BY FECHA
       '
     ,true);
@@ -141,7 +149,7 @@
       \'CITA\' as TIPO FROM CITA c
       JOIN MEDICO m ON c.CI_MEDICO = m.CI
       WHERE TO_CHAR(c.FECHA,\'YYYY-MM-DD\') BETWEEN \':fecha_input1\' AND \':fecha_input2\'
-      AND (m.NUM_COLEGIO || \'       -       \' || m.NOMBRE) = \':doctor_cadena\'
+      AND (m.NUM_COLEGIO || \' - \' || m.NOMBRE) = \':doctor_cadena\'
       UNION
       SELECT ct.FECHA AS FECHA,
               ms.NOMBRE AS DOCTOR,
@@ -150,7 +158,7 @@
               \'TRATAMIENTO\' as TIPO FROM CITA_TRATAMIENTO ct
       JOIN MEDICO ms ON ct.CI_MEDICO = ms.CI
       WHERE TO_CHAR(ct.FECHA,\'YYYY-MM-DD\') BETWEEN \':fecha_input1\' AND \':fecha_input2\'
-      AND (ms.NUM_COLEGIO || \'       -       \' || ms.NOMBRE) = \':doctor_cadena\'
+      AND (ms.NUM_COLEGIO || \' - \' || ms.NOMBRE) = \':doctor_cadena\'
       ORDER BY FECHA
       '
     ,true);

@@ -32,7 +32,7 @@
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="url" id="odontogramaInput" name="odontogramaInput" class="form-control odontogramaInput">
+										<input type="text" id="odontogramaInput" maxlength="250" name="odontogramaInput" class="form-control odontogramaInput">
 									</div>
 									<small id="select-esp-help" class="form-text text-muted">Inserte el URL de la imagen</small>
 								</div>

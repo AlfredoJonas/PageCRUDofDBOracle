@@ -284,6 +284,9 @@ function requestField(tipo = 0, form = '') {
 
   .done(function(response){
 
+		if(!response[0])
+			$('.'+form).trigger("reset");
+
 		var count = 0;
 
 		var inputs = {
@@ -325,18 +328,16 @@ function requestField(tipo = 0, form = '') {
 			],
 		};
 
-		for(key in response[0])
+		for(key in response[0]) {
 			if(count < inputs[form].length)
 				inputs[form][count++].val(response[0][key]);
-
-		console.log(response[0]);
+		}
 
 		if(form === 'formPaciente' || form === 'formEmpleado')
-			document.querySelector("input[name=fechaNacimiento]").valueAsDate = new Date(response[0].FECHA_NAC);
+			document.querySelector("input[name=fechaNacimiento]").valueAsDate = new Date(response[0].FECHA);
 
-		if(form === 'formCita') {
+		if(form === 'formCita')
 			document.querySelector("input[name=fechaInput]").valueAsDate = new Date(response[0].FECHA);
-		}
 
 		$('.fields').removeClass('hidden');
 
