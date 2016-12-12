@@ -42,13 +42,13 @@ function submitEmpleado(event) {
 	var form = $('.formEmpleado');
 	var data = form.serialize();
   var formMessages = $('#form-messages');
-	var ruta = 'RUTA_EMPLEADOS';
 	var operacion = $('input[name=tipoCRUD]:checked').val();
+	var ruta = $('input[name=tipoCRUD]:checked').val() === 1? 'RUTA_EMPLEADOS' : 'RUTA_DOCTORES';
 
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {ruta: 'RUTA_EMPLEADOS', operacion: operacion, data_extra:data}
+	    data: {ruta: ruta, operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {
@@ -145,9 +145,9 @@ function submitImplemento(event) {
 	var operacion = $('input[name=tipoCRUD]:checked').val();
 
 	$.ajax({
-	    type: 'POST',
-	    url: form.attr('action'),
-	    data: {ruta: 'RUTA_INVENTARIO', operacion: operacion, data_extra:data}
+    type: 'POST',
+    url: form.attr('action'),
+    data: {ruta: 'RUTA_INVENTARIO', operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {

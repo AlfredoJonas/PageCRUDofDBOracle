@@ -326,9 +326,8 @@ function requestField(tipo = '', form = '') {
 		if(form === 'formCita') {
 			document.querySelector("input[name=fecha]").valueAsDate = new Date(response[0].FECHA);
 
-			for(var index in response) {
+			for(var index in response) 
 				$('.forms').append(parseData(response[index], 'forms'));
-			}
 		}
 
 		if(form === 'formEmpleado') {

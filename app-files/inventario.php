@@ -6,8 +6,8 @@
 			$(document).ready(function(){
 				requestInventario();
 
-				$('.formInventario').submit(function(event) {
-					submitInventario(event);
+				$('.formImplemento').submit(function(event) {
+					submitImplemento(event);
 				});
 			});
 		</script>
