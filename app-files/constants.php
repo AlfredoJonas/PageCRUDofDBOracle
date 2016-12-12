@@ -18,8 +18,8 @@
   true);
 
   define("LISTA_CITAS_SQL",
-  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'YYYY/MM/DD\') fecha, costo, motivo, ci_paciente paciente, ci_medico medico
-  FROM cita',
+  'SELECT id, url_imagen_odontograma url_odontograma, TO_CHAR(fecha, \'YYYY/MM/DD\') fecha, costo, motivo, ci_paciente paciente, m.num_colegio medico
+  FROM cita c JOIN medico m ON(c.ci_medico = m.ci)',
   true);
 
   define("CITA_ESPECIFICA_SQL",

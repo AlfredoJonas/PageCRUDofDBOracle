@@ -48,7 +48,7 @@ function submitEmpleado(event) {
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {ruta: ruta, operacion: operacion, data_extra:data}
+	    data: {ruta: 'RUTA_EMPLEADO', operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {
@@ -80,7 +80,7 @@ function submitCita(event){
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {ruta: ruta, operacion: operacion, data_extra:data}
+	    data: {ruta: 'RUTA_CITAS', operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {
@@ -144,7 +144,7 @@ function submitImplemento(event) {
 	$.ajax({
 	    type: 'POST',
 	    url: form.attr('action'),
-	    data: {ruta: ruta, operacion: operacion, data_extra:data}
+	    data: {ruta: 'RUTA_INVENTARIO', operacion: operacion, data_extra:data}
 	})
 
   .done(function(response) {

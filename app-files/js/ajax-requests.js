@@ -304,11 +304,11 @@ function requestField(tipo = '', form = '') {
 				$("input[name=aux]"),
 				$("input[name=url_imagen_odontograma]"),
 				$("input[name=fecha]"),
-				$("input[name=hora]"),
+				$("select[name=hora]"),
 				$("input[name=costo]"),
 				$("input[name=motivo]"),
-				$("input[name=ci_paciente]"),
-				$("input[name=ci_doctor]")
+				$("select[name=ci_paciente]"),
+				$("select[name=ci_doctor]")
 			],
 			formPaciente: [
 				$("input[name=cedula]"),
@@ -321,8 +321,11 @@ function requestField(tipo = '', form = '') {
 		};
 
 		for(key in response[0]) {
-			if(count < inputs[form].length)
+
+			if(count < inputs[form].length) {
+				console.log(inputs[form][count]);
 				inputs[form][count++].val(response[0][key]);
+			}
 		}
 
 		if(form === 'formPaciente' || form === 'formEmpleado')
