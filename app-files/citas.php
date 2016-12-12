@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<?php include('header.php'); ?>
-			<div class="container">
+			<div class="container-fluid">
 				<div class="container col-sm-5">
 					<div id="form-messages" class="alert alert-dismissable fade in hidden">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

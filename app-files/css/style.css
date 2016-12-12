@@ -1,3 +1,7 @@
+ul {
+  list-style-type: none;
+}
+
 footer {
   height: 120px;
   background-color: #f5f5f5;
