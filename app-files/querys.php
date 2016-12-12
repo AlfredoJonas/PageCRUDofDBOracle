@@ -72,8 +72,6 @@
 
       case 'RUTA_CONSULTAS':
         switch ($tipo_query) {
-
-          //Estos necesitan funciones
           case CONSULTAS['Tratamientos realizados']:
             $consulta = str_replace('&FECHA', $data['fecha'], TRATAMIENTOS_DIA_SQL);
             break;
@@ -83,8 +81,6 @@
           case CONSULTAS['Ganancias por mes']:
             $consulta = GANANCIAS_MES_SQL;
             break;
-
-          //Las que estan ready
           case CONSULTAS['El doctor derrochador']:
             $consulta = str_replace('&IDIMPLEMENTO', $data['id'], EL_DERROCHADOR_SQL);
             break;

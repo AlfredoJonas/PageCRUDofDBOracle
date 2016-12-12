@@ -26,12 +26,12 @@
                 <div class="col-sm-12 col-sm-offset-2 inputGroupContainer">
                   <div class="radio-inline">
                     <label>
-                      <input type="radio" name="graficas" id="graficas" value="TRATAMIENTOS_MES" onclick="insertHTML('graficas', 1)">Ganancia por mes
+                      <input type="radio" name="graficas" id="graficas" value="IMPLEMENTOS_MAS_USADOS" onclick="insertHTML('graficas', 1)">Implementos mas usados
                     </label>
                   </div>
                   <div class="radio-inline">
                     <label>
-                      <input type="radio" name="graficas" id="graficas" value="GANANCIA_POR_MES" onclick="insertHTML('graficas', 2)">Porcentaje de tratamientos en un año
+                      <input type="radio" name="graficas" id="graficas" value="GANANCIA_POR_MES" onclick="insertHTML('graficas', 2)">Ganancia por mes
                     </label>
                   </div>
                   <div class="radio-inline">
@@ -42,7 +42,7 @@
                 </div>
               </div>
 
-  						<div class="form-group campo-grafica campo-grafica-3 hidden">
+  						<div class="form-group campo-grafica campo-grafica-2 hidden">
   							<label for="ocupacion" class="col-sm-3 control-label">Mes</label>
   							<div class="col-sm-9 inputGroupContainer">
   								<div class="input-group">
@@ -52,22 +52,12 @@
   							</div>
   						</div>
 
-  						<div class="form-group campo-grafica campo-grafica-3 hidden">
+  						<div class="form-group campo-grafica campo-grafica-3 campo-grafica-2 hidden">
   							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
   							<div class="col-sm-9 inputGroupContainer">
   								<div class="input-group">
   									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   									<input type="text" class="form-control" name="ano" id="año" placeholder="Ingrese el año a evaluar">
-  								</div>
-  							</div>
-  						</div>
-
-  						<div class="form-group campo-grafica campo-grafica-2 hidden">
-  							<label for="ocupacion" class="col-sm-3 control-label">Año</label>
-  							<div class="col-sm-9 inputGroupContainer">
-  								<div class="input-group">
-  									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  									<input type="text" class="form-control" name="año" id="año" placeholder="Ingrese el año a evaluar">
   								</div>
   							</div>
   						</div>
@@ -83,7 +73,7 @@
 
         <div class="container container col-sm-6">
           <canvas class="charts" id="chart" width="400" height="400">
-          </canvas>          
+          </canvas>
         </div>
       </div>
 		<?php include('footer.php'); ?>

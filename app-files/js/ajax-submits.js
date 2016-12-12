@@ -4,8 +4,6 @@ var mensaje_falla = 'Oops! Un <strong>error</strong> ha ocurrido';
 function submitGraficas(event) {
 	event.preventDefault();
 
-	draw(2);
-
 	var form = $('.formGraficas');
 	var consulta = $('input[name=graficas]:checked').val();
 	var data = form.serialize();
@@ -23,7 +21,12 @@ function submitGraficas(event) {
 
 		formMessages.prepend(mensaje_exito);
 
-		//draw(1, response);
+		if(consulta === 'IMPLEMENTOS_MAS_USADOS')
+			draw(1, response);
+		else if(consulta === 'GANANCIA_POR_MES')
+			draw(2, response);
+		else
+			draw(3, response);
 	})
 
 	.fail(function(data) {
