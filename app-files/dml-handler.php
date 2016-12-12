@@ -183,7 +183,16 @@
     		return $output;
     	}
 
-    	function comprobarData($data){
+    	function comprobarData(&$data){
+            $array_varchares_db = array('NOMBRE','MARCA','DESCRIPCION','RIF','DIRECCION','TELEFONO','OCUPACION');
+
+            foreach ($array_varchares_db as $value) {
+                if(array_key_exists(strtolower($value), $data)){
+                    $data[strtolower($value)] = '\''.$data[strtolower($value)].'\'';
+                    echo $data[strtolower($value)];
+                }
+            }
+
     		if(isset($data["fecha_nac"]))
 			$data["fecha_nac"] = 'TO_DATE(\''.$data["fecha_nac"].'\', \'YYYY-MM-DD\')';
 
