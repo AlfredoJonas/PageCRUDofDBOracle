@@ -322,10 +322,8 @@ function requestField(tipo = '', form = '') {
 
 		for(key in response[0]) {
 
-			if(count < inputs[form].length) {
-				console.log(inputs[form][count]);
+			if(count < inputs[form].length)
 				inputs[form][count++].val(response[0][key]);
-			}
 		}
 
 		if(form === 'formPaciente' || form === 'formEmpleado')
