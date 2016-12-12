@@ -1,6 +1,39 @@
 var mensaje_exito = 'Consulta procesada con <strong>éxito</strong>';
 var mensaje_falla = 'Oops! Un <strong>error</strong> ha ocurrido';
 
+function submitGraficas(event) {
+	event.preventDefault();
+
+	var form = $('.formGraficas');
+	var consulta = $('input[name=graficas]:checked').val();
+	var data = form.serialize();
+	var formMessages = $('#form-messages');
+
+	$.ajax({
+		type: 'POST',
+		url: form.attr('action'),
+		data: {consulta: consulta, data_extra: data}
+	})
+
+	.done(function(response) {
+		formMessages.removeClass('hidden');
+		formMessages.addClass('alert-success');
+
+		formMessages.prepend(mensaje_exito);
+
+	})
+
+	.fail(function(data) {
+		formMessages.removeClass('hidden');
+		formMessages.addClass('alert-danger');
+
+		if (data.responseText !== '')
+			formMessages.prepend(data.responseText);
+		else
+			formMessages.prepend(mensaje_falla);
+	});
+}
+
 function submitConsultas(event) {
 	event.preventDefault();
 
@@ -9,7 +42,6 @@ function submitConsultas(event) {
 	var consulta = $('.selectConsultas option:selected').data("consulta");
 	var data = form.serialize();
   var formMessages = $('#form-messages');
-	var grafica = $('input[name=tipoCRUD]:checked').val()
 
 	$.ajax({
 	  type: 'POST',
@@ -35,7 +67,6 @@ function submitConsultas(event) {
     else
       formMessages.prepend(mensaje_falla);
 	});
-
 }
 
 function submitEmpleado(event) {
