@@ -289,7 +289,6 @@ function requestField(tipo = '', form = '') {
 				$("input[name=telefono]")
 			],
 			formImplemento: [
-				$("input[name=aux]"),
 				$("input[name=nombre]"),
 				$("input[name=marca]"),
 				$("input[name=descripcion]"),
@@ -297,7 +296,6 @@ function requestField(tipo = '', form = '') {
 				$("input[name=cantidad]")
 			],
 			formCita: [
-				$("input[name=aux]"),
 				$("input[name=url_imagen_odontograma]"),
 				$("input[name=fecha]"),
 				$("select[name=hora]"),
@@ -325,8 +323,13 @@ function requestField(tipo = '', form = '') {
 		if(form === 'formPaciente')
 			document.querySelector("input[name=fecha_nac]").valueAsDate = new Date(response[0].FECHA);
 
-		if(form === 'formCita')
+		if(form === 'formCita') {
 			document.querySelector("input[name=fecha]").valueAsDate = new Date(response[0].FECHA);
+
+			for(var index in response) {
+				$('.forms').append(parseData(response[index], 'forms'));
+			}
+		}
 
 		if(form === 'formEmpleado') {
 
