@@ -5,6 +5,8 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				requestCitas();
+				requestNombrePacientes();
+				requestNombreDoctores();
 			});
 		</script>
 	</head>
@@ -16,39 +18,21 @@
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					</div>
 
-					<form class="formCitas well form-horizontal" action="ajax-handler.php" role="form">
+					<form class="formCita well form-horizontal" action="ajax-handler.php" role="form">
 
 						<?php include('checks.php'); ?>
 
 						<fieldset class="fields hidden" data-ruta="RUTA_CITAS" data-consulta="CITA_ESPECIFICA">
 							<legend>Control de citas</legend>
-							<div class="form-group">
-								<label for="identificadorInput" class="col-sm-3 control-label">Identificador</label>
+
+							<div class="odontogramaInputDiv form-group">
+								<label for="odontogramaInput" class="col-sm-3 control-label">Odontograma</label>
 								<div class="col-sm-9 inputGroupContainer">
 									<div class="input-group">
-										<input type="search" id="identificadorInput" name="identificadorInput" class="identificadorInput form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_ATRIBUTOS_CITA" placeholder="Buscar">
-										<span class="input-group-btn">
-											<button type="button" id="buscarIdentificadorInput" name="buscarIdentificadorInput" class="btn btn-info btn-md" value="buscar" onclick="requestInformacionCita()">
-												<i class="glyphicon glyphicon-search"></i>
-											</button>
-										</span>
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="url" id="odontogramaInput" name="odontogramaInput" class="form-control odontogramaInput">
 									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="pacienteSeleccion" class="col-sm-3 control-label">Pacientes</label>
-								<div class="col-sm-9 inputGroupContainer pacienteSeleccionDiv">
-									<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_PACIENTES">
-									</select>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="doctorSeleccion" class="col-sm-3 control-label">Doctores</label>
-								<div class="doctorSeleccionDiv col-sm-9 inputGroupContainer">
-									<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_DOCTORES">
-									</select>
+									<small id="select-esp-help" class="form-text text-muted">Inserte el URL de la imagen</small>
 								</div>
 							</div>
 
@@ -87,17 +71,6 @@
 								</div>
 							</div>
 
-							<div class="odontogramaInputDiv form-group">
-								<label for="odontogramaInput" class="col-sm-3 control-label">Odontograma</label>
-								<div class="col-sm-9 inputGroupContainer">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="url" id="odontogramaInput" name="odontogramaInput" class="form-control odontogramaInput">
-									</div>
-									<small id="select-esp-help" class="form-text text-muted">Inserte el URL de la imagen</small>
-								</div>
-							</div>
-
 							<div class="presupuestoInputDiv form-group">
 								<label for="presupuestoInput" class="col-sm-3 control-label">Presupuesto</label>
 								<div class="col-sm-9 inputGroupContainer">
@@ -106,6 +79,22 @@
 										<input type="text" id="presupuestoInput" name="presupuestoInput" class="form-control presupuestoInput">
 									</div>
 									<small id="select-esp-help" class="form-text text-muted">En USD</small>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="pacienteSeleccion" class="col-sm-3 control-label">Pacientes</label>
+								<div class="col-sm-9 inputGroupContainer pacienteSeleccionDiv">
+									<select id="pacienteSeleccion" name="pacienteSeleccion" class="pacienteSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_PACIENTES">
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="doctorSeleccion" class="col-sm-3 control-label">Doctores</label>
+								<div class="doctorSeleccionDiv col-sm-9 inputGroupContainer">
+									<select id="doctorSeleccion" name="doctorSeleccion" class="doctorSeleccion form-control" data-ruta="RUTA_CITAS" data-consulta="LISTA_NOMBRES_DOCTORES">
+									</select>
 								</div>
 							</div>
 
