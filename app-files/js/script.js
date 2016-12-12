@@ -186,3 +186,30 @@ function fillTable(response) {
 
 	$('.table-body').html(table_body);
 }
+
+function draw(tipo = '', params = []){
+
+	var data = new google.visualization.DataTable();
+	data.addColumn('string',params[0]);
+	data.addColumn('number',params[1]);
+
+	data.addRows([
+		['Enero',700],
+		['Febrero',650],
+		['Marzo',780],
+		['Abril',562],
+		['Mayo',357],
+		['Junio',100],
+		['Julio',156],
+		['Agosto',964],
+		['Septiembre',358],
+		['Octubre',849],
+		['Noviembre',395],
+		['Diciembre',489]
+	]);
+
+	var opciones = {'title':'Ingresos durante el año ','width':800,'height':500};
+	var grafica = new google.visualization.ColumnChart(document.getElementById('charts'));
+
+	grafica.draw(data,opciones);
+}
