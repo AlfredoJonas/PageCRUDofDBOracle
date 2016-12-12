@@ -214,7 +214,7 @@
     	}
 
     	//if($sentencia_dml != 0){
-    		//echo $sentencia_dml;
+    		echo $sentencia_dml;
     		exec_query($sentencia_dml);
     	//}
     }
