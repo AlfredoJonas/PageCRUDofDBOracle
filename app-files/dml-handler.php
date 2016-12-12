@@ -22,14 +22,14 @@
     	
     	parse_str($_GET["data_extra"],$data);
 
+    	if(isset($data["fecha_nac"]))
+			$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
+
     	switch(strtoupper($_GET["ruta"])) {
     		case 'RUTA_EMPLEADOS':
     			//echo 'recibido';
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':
-    					if(isset($data["fecha_nac"]))
-    						$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
-
     					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','SUELDO'),$data);
 
     					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['EMPLEADO']['insert']);
@@ -43,6 +43,36 @@
 	    					$sentencia_dml = str_replace(':ci', $data["ci"], $sentencia_dml);
     					}
     				break;
+    				case 'delete':break;
+    			}
+    		break;
+    		case 'RUTA_DOCTORES':
+    			switch(strtolower($_GET["operacion"])) {
+    				case 'insert':
+    					if(isset($data["fecha_nac"]))
+    						$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
+
+    					$array_suplantable = onInsertingDevolverParametros(array('CI','NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
+
+    					$sentencia_dml = str_replace(':campos', $array_suplantable['params'], DML_SENTENCES['MEDICO']['insert']);
+    					$sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
+    				break;
+    				case 'update':
+    					if(isset($data["ci"]) || isset($data["num_colegio"]) ){
+    						$clave_valor = onUpdatingDevolverParametros(array('NOMBRE','FECHA_NAC','DIRECCION','TELEFONO','RIF','NUM_COLEGIO'),$data);
+
+    						$sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['MEDICO']['update']);
+	    					$sentencia_dml = str_replace(':ci', (isset($data["ci"]))?$data["ci"]:'-1', $sentencia_dml);
+	    					$sentencia_dml = str_replace(':num_cole', (isset($data["num_colegio"]))?$data["num_colegio"]:'-1', $sentencia_dml);
+    					}
+    				break;
+    				case 'delete':break;
+    			}
+    		break;
+			case 'RUTA_PACIENTES':
+    			switch(strtolower($_GET["operacion"])) {
+    				case 'insert':break;
+    				case 'update':break;
     				case 'delete':break;
     			}
     		break;
@@ -67,13 +97,6 @@
     			}
     		break;
     		case 'RUTA_INVENTARIO':
-    			switch(strtolower($_GET["operacion"])) {
-    				case 'insert':break;
-    				case 'update':break;
-    				case 'delete':break;
-    			}
-    		break;
-    		case 'RUTA_PACIENTE':
     			switch(strtolower($_GET["operacion"])) {
     				case 'insert':break;
     				case 'update':break;
