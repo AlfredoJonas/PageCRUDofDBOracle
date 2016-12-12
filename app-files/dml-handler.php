@@ -22,11 +22,7 @@
     	
     	parse_str($_POST["data_extra"],$data);
 
-    	if(isset($data["fecha_nac"]))
-			$data["fecha_nac"] = 'TO_DATE('.$data["fecha_nac"].', \'YYYY-MM-DD\')';
-
-		if(isset($data["fecha"]))
-			$data["fecha"] = 'TO_DATE('.$data["fecha"].', \'YYYY-MM-DD\')';
+    	comprobarData($data);
 
     	switch(strtoupper($_POST["ruta"])) {
     		case 'RUTA_EMPLEADOS':
@@ -183,6 +179,14 @@
     		$output = array('params' => $parametros_presentes, 'values' => $valores_presentes);
 
     		return $output;
+    	}
+
+    	function comprobarData($data){
+    		if(isset($data["fecha_nac"]))
+			$data["fecha_nac"] = 'TO_DATE(\''.$data["fecha_nac"].'\', \'YYYY-MM-DD\')';
+
+			if(isset($data["fecha"]))
+				$data["fecha"] = 'TO_DATE(\''.$data["fecha"].'\', \'YYYY-MM-DD\')';
     	}
 ?>
 </body>
