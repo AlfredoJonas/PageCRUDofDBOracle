@@ -184,8 +184,23 @@
                         $sentencia_dml = str_replace(':valores', $array_suplantable['values'], $sentencia_dml);
 
                     break;
-    				case 'update':break;
-    				case 'delete':break;
+    				case 'update':
+                        if(isset($data["cita_id"]) && isset($data["tratamiento_id"]) && isset($data["implemento_id"])){
+                            $clave_valor = onUpdatingDevolverParametros(array('TRATAMIENTO_ID','IMPLEMENTO_ID','CITA_ID','CANTIDAD','COSTO'), $data);
+
+                            $sentencia_dml = str_replace(':columna_valores', $clave_valor, DML_SENTENCES['TRATAMIENTO_IMPLEMENTO']['update']);
+                            $sentencia_dml = str_replace(':ci', $data["cita_id"], $sentencia_dml);
+                            $sentencia_dml = str_replace(':ti', $data["tratamiento_id"], $sentencia_dml);
+                            $sentencia_dml = str_replace(':ii', $data["implemento_id"], $sentencia_dml);
+                        }
+                    break;
+    				case 'delete':
+                        if(isset($data["cita_id"]) && isset($data["tratamiento_id"]) && isset($data["implemento_id"])){
+                             $sentencia_dml = str_replace(':ci', $data["cita_id"], DML_SENTENCES['TRATAMIENTO_IMPLEMENTO']['delete']);
+                            $sentencia_dml = str_replace(':ti', $data["tratamiento_id"], $sentencia_dml);
+                            $sentencia_dml = str_replace(':ii', $data["implemento_id"], $sentencia_dml);
+                        }
+                    break;
     			}
     		break;
 
