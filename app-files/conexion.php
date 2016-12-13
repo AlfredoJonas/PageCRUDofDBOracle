@@ -19,7 +19,7 @@
     if(!oci_execute($statement))
       throw_error(oci_error($statement)['message']);
 
-    return $statement;
+    return $statement; dfsk
   }
 
   function throw_error($mensaje, $code = 0) {
