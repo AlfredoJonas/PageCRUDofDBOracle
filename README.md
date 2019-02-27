@@ -54,3 +54,21 @@ This CRUD software did are developed with:
 - [x]	COSTOS NEGATIVOS
 - [x]	CANTIDADES NEGATIVAS EN EL INVENTARIO DE IMPLEMENTOS
 - [x]	COSTOS NEGATIVOS
+
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/1.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/2.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/3.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/4.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/5.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/6.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/7.png)
+
+![alt text](https://raw.githubusercontent.com/alfredojonas/PageCRUDofDBOracle/master/resources/8.png)
+
