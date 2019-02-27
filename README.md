@@ -1,4 +1,4 @@
-# CRUD DB with the PHP language
+# CRUD with the PHP language and ORACLE DB
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
